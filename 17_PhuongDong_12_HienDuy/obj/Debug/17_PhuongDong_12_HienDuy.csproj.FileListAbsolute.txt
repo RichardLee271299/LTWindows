@@ -1,0 +1,35 @@
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.pdb
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csprojResolveAssemblyReference.cache
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.Properties.Resources.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmGiaoDienChinh.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmSanPham.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDichVu.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmKhachHang.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmLoaiPhong.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmNhanVien.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmPhong.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemKH.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemPhong.resources
+F:\BAITAP\C#\tuan 7\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemSanPham.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.pdb
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDichVu.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmGiaoDienChinh.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmKhachHang.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmLoaiPhong.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmNhanVien.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmPhong.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmSanPham.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemKH.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemPhong.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemSanPham.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.Properties.Resources.resources
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
+E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
