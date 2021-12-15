@@ -13,7 +13,9 @@ namespace _17_PhuongDong_12_HienDuy
         SqlConnection con = new SqlConnection();
         void ketnoi()
         {
-            con.ConnectionString = @"data source =DESKTOP-TN19T8F; initial catalog= QLKhachSan; Integrated Security = true";
+            //DESKTOP-69QU9MT\SQLEXPRESS1
+            //DESKTOP-TN19T8F
+            con.ConnectionString = @"data source = DESKTOP-69QU9MT\SQLEXPRESS1; initial catalog= QLKhachSan; Integrated Security = true";
             if(con.State == ConnectionState.Closed)
             {
                 con.Open();

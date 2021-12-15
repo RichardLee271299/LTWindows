@@ -20,7 +20,7 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet ds = new DataSet();
         void HienThiDuLieu(String sql, DataGridView dgs)
         {
-            DataSet ds = c.LayDuLieu(sql);
+            ds = c.LayDuLieu(sql);
             dgs.DataSource = ds.Tables[0];
         }
         void HienThiTextBox(DataSet d, int vt)

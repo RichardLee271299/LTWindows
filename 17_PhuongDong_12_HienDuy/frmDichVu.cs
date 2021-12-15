@@ -16,12 +16,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             InitializeComponent();
         }
-
+        DataSet ds = new DataSet();
         clsQuanLyKhachSan c = new clsQuanLyKhachSan();
 
         void HienThiDuLieu(String sql, DataGridView dgs)
         {
-            DataSet ds = c.LayDuLieu(sql);
+            ds = c.LayDuLieu(sql);
             dgs.DataSource = ds.Tables[0];
         }
 
