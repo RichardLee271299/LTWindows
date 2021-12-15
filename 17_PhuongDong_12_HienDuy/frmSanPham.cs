@@ -11,6 +11,7 @@ namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmSanPham : Form
     {
+        DataSet ds = new DataSet();
         public frmSanPham()
         {
             InitializeComponent();
@@ -23,6 +24,14 @@ namespace _17_PhuongDong_12_HienDuy
             DataSet ds = c.LayDuLieu(sql);
             dgs.DataSource = ds.Tables[0];
         }
+        void HienThiTextBox(DataSet d, int vt)
+        {
+            txtMaSP.Text = d.Tables[0].Rows[vt]["MaSP"].ToString();
+            txtTenSP.Text = d.Tables[0].Rows[vt]["TenSp"].ToString();
+            txtGiaBan.Text = d.Tables[0].Rows[vt]["GiaBan"].ToString();
+            txtSoLuong.Text = d.Tables[0].Rows[vt]["SoLuongTon"].ToString();
+            txtGiaNhap.Text = d.Tables[0].Rows[vt]["GiaNhap"].ToString();
+        }
         private void frmSanPham_Load(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
@@ -32,11 +41,7 @@ namespace _17_PhuongDong_12_HienDuy
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
-        }
-
-      
-
-
+        } 
         void Xuly_Textbox(Boolean t)
         {
             txtMaSP.ReadOnly = t;
@@ -79,6 +84,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+        }
+
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvDanhSach.CurrentCell.RowIndex;
+            HienThiTextBox(ds, vt);
         }
     }
 }
