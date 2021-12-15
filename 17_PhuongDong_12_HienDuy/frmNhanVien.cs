@@ -16,7 +16,27 @@ namespace _17_PhuongDong_12_HienDuy
         {
             InitializeComponent();
         }
+        clsQuanLyKhachSan c = new clsQuanLyKhachSan();
+        DataSet ds = new DataSet();
+        void HienThiDuLieu(String sql, DataGridView dgs)
+        {
+            DataSet ds = c.LayDuLieu(sql);
+            dgs.DataSource = ds.Tables[0];
+        }
+        void HienThiTextBox(DataSet d, int vt)
+        {
+            txtHoTen.Text = d.Tables[0].Rows[vt]["HoTen"].ToString();
+            txtMaNv.Text = d.Tables[0].Rows[vt]["MaNV"].ToString();
+            txtDiaChi.Text = d.Tables[0].Rows[vt]["DiaChi"].ToString();
+            txtSoCMND.Text = d.Tables[0].Rows[vt]["CMND"].ToString();
+            txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();           
+            string GioiTinh = d.Tables[0].Rows[vt]["GioiTinh"].ToString();
+            if (GioiTinh.ToLower() == "Nam")
+                cbmGioiTinh.SelectedIndex = 0;
+            else
+                cbmGioiTinh.SelectedIndex = 1;
 
+        }
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -66,6 +86,19 @@ namespace _17_PhuongDong_12_HienDuy
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void frmNhanVien_Load(object sender, EventArgs e)
+        {
+            Xuly_Textbox(true);
+            Xuly_Chucnang(true);
+            HienThiDuLieu("select * from NhanVien", dgvDanhSachNhanVien);
+        }
+
+        private void dgvDanhSachNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvDanhSachNhanVien.CurrentCell.RowIndex;
+            HienThiTextBox(ds, vt);
         }
     }
 }

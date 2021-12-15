@@ -186,7 +186,7 @@
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(274, 175);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(57, 15);
+            this.label8.Size = new System.Drawing.Size(67, 17);
             this.label8.TabIndex = 3;
             this.label8.Text = "Mã phòng";
             // 
@@ -196,7 +196,7 @@
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(28, 175);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 15);
+            this.label7.Size = new System.Drawing.Size(66, 17);
             this.label7.TabIndex = 3;
             this.label7.Text = "Ngày đến";
             // 
@@ -208,56 +208,56 @@
             "Nữ"});
             this.cbmGioiTinh.Location = new System.Drawing.Point(366, 37);
             this.cbmGioiTinh.Name = "cbmGioiTinh";
-            this.cbmGioiTinh.Size = new System.Drawing.Size(144, 25);
+            this.cbmGioiTinh.Size = new System.Drawing.Size(144, 27);
             this.cbmGioiTinh.TabIndex = 2;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(366, 126);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(144, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(144, 27);
             this.txtDiaChi.TabIndex = 1;
             // 
             // txtSoDienThoai
             // 
             this.txtSoDienThoai.Location = new System.Drawing.Point(366, 82);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(144, 23);
+            this.txtSoDienThoai.Size = new System.Drawing.Size(144, 27);
             this.txtSoDienThoai.TabIndex = 1;
             // 
             // txtMaPhong
             // 
             this.txtMaPhong.Location = new System.Drawing.Point(366, 170);
             this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(144, 23);
+            this.txtMaPhong.Size = new System.Drawing.Size(144, 27);
             this.txtMaPhong.TabIndex = 1;
             // 
             // txtNgayDen
             // 
             this.txtNgayDen.Location = new System.Drawing.Point(108, 170);
             this.txtNgayDen.Name = "txtNgayDen";
-            this.txtNgayDen.Size = new System.Drawing.Size(144, 23);
+            this.txtNgayDen.Size = new System.Drawing.Size(144, 27);
             this.txtNgayDen.TabIndex = 1;
             // 
             // txtSoCMND
             // 
             this.txtSoCMND.Location = new System.Drawing.Point(108, 126);
             this.txtSoCMND.Name = "txtSoCMND";
-            this.txtSoCMND.Size = new System.Drawing.Size(144, 23);
+            this.txtSoCMND.Size = new System.Drawing.Size(144, 27);
             this.txtSoCMND.TabIndex = 1;
             // 
             // txtHoTen
             // 
             this.txtHoTen.Location = new System.Drawing.Point(108, 82);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(144, 23);
+            this.txtHoTen.Size = new System.Drawing.Size(144, 27);
             this.txtHoTen.TabIndex = 1;
             // 
             // txtMaKH
             // 
             this.txtMaKH.Location = new System.Drawing.Point(108, 37);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(144, 23);
+            this.txtMaKH.Size = new System.Drawing.Size(144, 27);
             this.txtMaKH.TabIndex = 1;
             // 
             // label3
@@ -266,7 +266,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(28, 131);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 15);
+            this.label3.Size = new System.Drawing.Size(72, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Số CMND";
             // 
@@ -276,7 +276,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(28, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 15);
+            this.label2.Size = new System.Drawing.Size(53, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Họ Tên";
             // 
@@ -286,7 +286,7 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(274, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 15);
+            this.label6.Size = new System.Drawing.Size(50, 17);
             this.label6.TabIndex = 0;
             this.label6.Text = "Địa chỉ";
             // 
@@ -296,7 +296,7 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(274, 87);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 15);
+            this.label5.Size = new System.Drawing.Size(84, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Số điện thoại";
             // 
@@ -306,7 +306,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(274, 42);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 15);
+            this.label4.Size = new System.Drawing.Size(57, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Giới tính";
             // 
@@ -316,7 +316,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(28, 42);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 15);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã KH";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -344,11 +344,13 @@
             this.NgayDen,
             this.DiaChi});
             this.dgvDanhSachKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSachKhachHang.Location = new System.Drawing.Point(3, 19);
+            this.dgvDanhSachKhachHang.Location = new System.Drawing.Point(3, 23);
             this.dgvDanhSachKhachHang.Name = "dgvDanhSachKhachHang";
             this.dgvDanhSachKhachHang.RowTemplate.Height = 24;
-            this.dgvDanhSachKhachHang.Size = new System.Drawing.Size(878, 253);
+            this.dgvDanhSachKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDanhSachKhachHang.Size = new System.Drawing.Size(878, 249);
             this.dgvDanhSachKhachHang.TabIndex = 0;
+            this.dgvDanhSachKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachKhachHang_CellClick);
             this.dgvDanhSachKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachKhachHang_CellContentClick);
             // 
             // MaPH
@@ -416,7 +418,7 @@
             // 
             // frmKhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 572);
             this.Controls.Add(this.label9);
