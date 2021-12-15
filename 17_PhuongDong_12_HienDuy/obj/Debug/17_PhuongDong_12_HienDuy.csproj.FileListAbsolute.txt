@@ -33,3 +33,4 @@ E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong
 E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache
 E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
 E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
+C:\Users\Duy\Desktop\New folder\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config

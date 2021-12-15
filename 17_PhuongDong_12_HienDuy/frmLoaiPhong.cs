@@ -12,6 +12,7 @@ namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmLoaiPhong : Form
     {
+        DataSet ds = new DataSet();
         public frmLoaiPhong()
         {
             InitializeComponent();
@@ -23,6 +24,16 @@ namespace _17_PhuongDong_12_HienDuy
         {
             DataSet ds = c.LayDuLieu(sql);
             dgs.DataSource = ds.Tables[0];
+        }
+        void HienThiTextBox(DataSet d, int vt)
+        {
+            txtMaPH.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
+            string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();
+            if (LoaiPhong.ToLower() == "thường")
+                cmbLoaiPhong.SelectedIndex = 0;
+            else
+                cmbLoaiPhong.SelectedIndex = 1;
+
         }
         void Xuly_Textbox(Boolean t)
         {
@@ -67,7 +78,13 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select * from LoaiPhong", dgvDanhSach);
+            HienThiDuLieu("select * from LoaiPhong", dgvDanhSach);            
+        }
+
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvDanhSach.CurrentCell.RowIndex;
+            HienThiTextBox(ds, vt);
         }
     }
 }

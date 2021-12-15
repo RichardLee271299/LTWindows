@@ -12,6 +12,7 @@ namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmKhachHang : Form
     {
+        DataSet ds = new DataSet();
         public frmKhachHang()
         {
             InitializeComponent();
@@ -23,7 +24,23 @@ namespace _17_PhuongDong_12_HienDuy
             DataSet ds = c.LayDuLieu(sql);
             dgs.DataSource = ds.Tables[0];
         }
+        void HienThiTextBox(DataSet d, int vt)
+        {
+            txtHoTen.Text = d.Tables[0].Rows[vt]["HoTen"].ToString();
+            txtMaKH.Text = d.Tables[0].Rows[vt]["MakH"].ToString();
+            txtDiaChi.Text = d.Tables[0].Rows[vt]["DiaChi"].ToString();
+            txtSoCMND.Text = d.Tables[0].Rows[vt]["CMND"].ToString();
+            txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();
+            txtNgayDen.Text = d.Tables[0].Rows[vt]["NgayDen"].ToString();
+            txtMaKH.Text = d.Tables[0].Rows[vt]["HoTen"].ToString();
+            txtMaPhong.Text = d.Tables[0].Rows[vt]["MaPH"].ToString();
+            string GioiTinh = d.Tables[0].Rows[vt]["GioiTinh"].ToString();
+            if (GioiTinh.ToLower() == "Nam")
+                cbmGioiTinh.SelectedIndex = 0;
+            else
+                cbmGioiTinh.SelectedIndex = 1;
 
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -52,6 +69,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             HienThiDuLieu("select * from KhachHang", dgvDanhSachKhachHang);
+            HienThiTextBox(ds,0);
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -86,6 +104,12 @@ namespace _17_PhuongDong_12_HienDuy
         private void dgvDanhSachKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void dgvDanhSachKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvDanhSachKhachHang.CurrentCell.RowIndex;
+            HienThiTextBox(ds, vt);
         }
 
        
