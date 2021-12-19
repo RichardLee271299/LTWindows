@@ -29,6 +29,7 @@ namespace _17_PhuongDong_12_HienDuy
         {
             txtMaPH.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
             string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();
+            txtGiaPhong.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
             if (LoaiPhong.ToLower() == "thường")
                 cmbLoaiPhong.SelectedIndex = 0;
             else
@@ -78,7 +79,7 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select * from LoaiPhong", dgvDanhSach);            
+            HienThiDuLieu("select LoaiPhong.MaPhong,LoaiPhong.LoaiPhong,Gia from LoaiPhong inner join Phong on LoaiPhong.MaPhong = Phong.MaLoai", dgvDanhSach);            
         }
 
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
