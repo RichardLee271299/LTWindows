@@ -24,7 +24,14 @@ namespace _17_PhuongDong_12_HienDuy
             ds = c.LayDuLieu(sql);
             dgs.DataSource = ds.Tables[0];
         }
+        void HienThiTextBox(DataSet d, int vt)
+        {
 
+            txtMaDichVu.Text = d.Tables[0].Rows[vt]["MaDV"].ToString();
+            txtTenDichVu.Text = d.Tables[0].Rows[vt]["MaDV"].ToString();
+            txtSoLuong.Text = d.Tables[0].Rows[vt]["DonViTinh"].ToString();
+            txtGia.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
+        }
         void XuLy_Textbox(Boolean t)
         {
             txtMaDichVu.ReadOnly = t;
@@ -75,6 +82,17 @@ namespace _17_PhuongDong_12_HienDuy
         {
             XuLy_ChucNang(true);
             XuLy_Textbox(true);
+        }
+
+        private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvDanhSach.CurrentCell.RowIndex;
+            HienThiTextBox(ds, vt);
         }
     }
 }

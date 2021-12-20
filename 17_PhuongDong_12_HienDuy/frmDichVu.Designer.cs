@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
-            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtTenDichVu = new System.Windows.Forms.TextBox();
@@ -51,6 +47,10 @@
             this.grbDanhSach = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.grbDanhSach.SuspendLayout();
@@ -63,42 +63,15 @@
             this.dgvDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaDV,
             this.TenDv,
-            this.SoLuong,
+            this.DonViTinh,
             this.Gia});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
             this.dgvDanhSach.Name = "dgvDanhSach";
-            this.dgvDanhSach.Size = new System.Drawing.Size(551, 195);
+            this.dgvDanhSach.Size = new System.Drawing.Size(569, 195);
             this.dgvDanhSach.TabIndex = 0;
-            // 
-            // MaDV
-            // 
-            this.MaDV.DataPropertyName = "MaDV";
-            this.MaDV.HeaderText = "Mã DV";
-            this.MaDV.Name = "MaDV";
-            this.MaDV.ReadOnly = true;
-            // 
-            // TenDv
-            // 
-            this.TenDv.DataPropertyName = "TenDv";
-            this.TenDv.HeaderText = "Tên dịch vụ";
-            this.TenDv.Name = "TenDv";
-            this.TenDv.ReadOnly = true;
-            this.TenDv.Width = 220;
-            // 
-            // SoLuong
-            // 
-            this.SoLuong.DataPropertyName = "SoLuong";
-            this.SoLuong.HeaderText = "Số lượng";
-            this.SoLuong.Name = "SoLuong";
-            this.SoLuong.ReadOnly = true;
-            // 
-            // Gia
-            // 
-            this.Gia.DataPropertyName = "Gia";
-            this.Gia.HeaderText = "Giá";
-            this.Gia.Name = "Gia";
-            this.Gia.ReadOnly = true;
+            this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
+            this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
             // 
             // txtGia
             // 
@@ -144,9 +117,9 @@
             this.label3.Location = new System.Drawing.Point(23, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 15);
+            this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Số Lượng";
+            this.label3.Text = "Đơn vị tính";
             // 
             // btnLuu
             // 
@@ -257,7 +230,7 @@
             this.grbDanhSach.Controls.Add(this.dgvDanhSach);
             this.grbDanhSach.Location = new System.Drawing.Point(14, 252);
             this.grbDanhSach.Name = "grbDanhSach";
-            this.grbDanhSach.Size = new System.Drawing.Size(557, 215);
+            this.grbDanhSach.Size = new System.Drawing.Size(575, 215);
             this.grbDanhSach.TabIndex = 5;
             this.grbDanhSach.TabStop = false;
             this.grbDanhSach.Text = "Danh Sách Sản Phẩm";
@@ -292,11 +265,40 @@
             this.label5.Text = "Quản Lý Dịch Vụ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // MaDV
+            // 
+            this.MaDV.DataPropertyName = "MaDV";
+            this.MaDV.HeaderText = "Mã DV";
+            this.MaDV.Name = "MaDV";
+            this.MaDV.ReadOnly = true;
+            // 
+            // TenDv
+            // 
+            this.TenDv.DataPropertyName = "TenDv";
+            this.TenDv.HeaderText = "Tên dịch vụ";
+            this.TenDv.Name = "TenDv";
+            this.TenDv.ReadOnly = true;
+            this.TenDv.Width = 220;
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn vị tính";
+            this.DonViTinh.Name = "DonViTinh";
+            this.DonViTinh.ReadOnly = true;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
+            // 
             // frmDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 476);
+            this.ClientSize = new System.Drawing.Size(600, 476);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grbDanhSach);
@@ -334,10 +336,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grbDanhSach;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
-        private System.Windows.Forms.Label label5;
     }
 }
