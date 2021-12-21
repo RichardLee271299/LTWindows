@@ -33,5 +33,15 @@ namespace _17_PhuongDong_12_HienDuy
            da.Fill(ds);
            return ds;
        }
+        public int CapNhatDuLieu(string sql)
+        {
+            SqlCommand cmd =new SqlCommand();
+            cmd.CommandText = sql;
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = con;
+            return cmd.ExecuteNonQuery();
+
+            
+        }
     }
 }

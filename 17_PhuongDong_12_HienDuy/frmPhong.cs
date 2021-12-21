@@ -29,8 +29,13 @@ namespace _17_PhuongDong_12_HienDuy
           {
               txtMaPhong.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
               txtGiaPhong.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
-              int TinhTrang = (int)d.Tables[0].Rows[vt]["TinhTrang"];
-              cboTinhTrang.SelectedIndex = TinhTrang;
+              string TinhTrang = d.Tables[0].Rows[vt]["Tình Trạng"].ToString();
+              if(TinhTrang.ToLower() == "hoạt động")
+              {
+                  cboTinhTrang.SelectedIndex = 0;
+              }
+              else
+                  cboTinhTrang.SelectedIndex = 1;
               string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();
               if(LoaiPhong.ToLower()=="thường")
                   cboLoaiPhong.SelectedIndex = 0;
@@ -59,7 +64,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(true);
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select Phong.MaPhong,Gia,LoaiPhong,TinhTrang from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong ", dgvDanhSach);
+            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Hoạt động' else N'Ngừng hoạt động' end  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach);
       
         }
         private void btnThem_Click(object sender, EventArgs e)
