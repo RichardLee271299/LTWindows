@@ -28,8 +28,8 @@ namespace _17_PhuongDong_12_HienDuy
         {
 
             txtMaDichVu.Text = d.Tables[0].Rows[vt]["MaDV"].ToString();
-            txtTenDichVu.Text = d.Tables[0].Rows[vt]["MaDV"].ToString();
-            txtSoLuong.Text = d.Tables[0].Rows[vt]["DonViTinh"].ToString();
+            txtTenDichVu.Text = d.Tables[0].Rows[vt]["TenDV"].ToString();
+            txtDonViTinh.Text = d.Tables[0].Rows[vt]["DonViTinh"].ToString();
             txtGia.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
         }
         void XuLy_Textbox(Boolean t)
@@ -37,7 +37,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaDichVu.ReadOnly = t;
             txtTenDichVu.ReadOnly = t;
             txtGia.ReadOnly = t;
-            txtSoLuong.ReadOnly = t;
+            txtDonViTinh.ReadOnly = t;
         }
         void XuLy_ChucNang(Boolean t)
         {
@@ -46,7 +46,7 @@ namespace _17_PhuongDong_12_HienDuy
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
         }
-
+        int flag = 0;
         private void frmDichVu_Load(object sender, EventArgs e)
         {
             XuLy_ChucNang(true);
@@ -58,6 +58,7 @@ namespace _17_PhuongDong_12_HienDuy
         {
             XuLy_Textbox(false);
             XuLy_ChucNang(false);
+            flag = 1;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -65,17 +66,43 @@ namespace _17_PhuongDong_12_HienDuy
             XuLy_Textbox(false);
             XuLy_ChucNang(false);
             txtMaDichVu.ReadOnly = true;
+            flag = 2;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             XuLy_ChucNang(false);
+            flag = 3;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             XuLy_ChucNang(true);
             XuLy_Textbox(true);
+            string sql= "";
+            if (flag == 1)
+            { 
+                sql = "insert into DichVu values('" + txtMaDichVu.Text + "',N'" + txtTenDichVu.Text + "',N'" + txtDonViTinh.Text + "'," + txtGia.Text + ")";
+               
+            }   
+            else if (flag == 2)
+            {
+                sql = "update DichVu set MaDV = '" + txtMaDichVu.Text + "', TenDV = N'" + txtTenDichVu.Text + "',DonViTinh = N'" + txtDonViTinh.Text + "' where MaDV = '" + txtMaDichVu.Text + "'";
+               
+            }
+            else
+            {
+                sql = "delete from DichVu where MaDV = '" + txtMaDichVu.Text + "'";
+                
+            }
+            if (c.CapNhatDuLieu(sql) != 0)
+            {
+                MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                frmDichVu_Load(sender, e);
+            }
+               
+            
+            flag = 0;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -93,6 +120,17 @@ namespace _17_PhuongDong_12_HienDuy
         {
             int vt = dgvDanhSach.CurrentCell.RowIndex;
             HienThiTextBox(ds, vt);
+        }
+
+        private void frmDichVu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           // if(flag == 1)
+                // ban có muốn thoát không
+          //  else if(flag == 2)
+                //ban co muon luu khong
+            // else
+            //ban co muon xoa khong
+            //flag = 0;
         }
     }
 }

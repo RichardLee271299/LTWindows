@@ -29,8 +29,12 @@
         private void InitializeComponent()
         {
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
+            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtGia = new System.Windows.Forms.TextBox();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenDichVu = new System.Windows.Forms.TextBox();
             this.txtMaDichVu = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,10 +51,6 @@
             this.grbDanhSach = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.grbDanhSach.SuspendLayout();
@@ -68,10 +68,40 @@
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
             this.dgvDanhSach.Name = "dgvDanhSach";
+            this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSach.Size = new System.Drawing.Size(569, 195);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
+            // 
+            // MaDV
+            // 
+            this.MaDV.DataPropertyName = "MaDV";
+            this.MaDV.HeaderText = "Mã DV";
+            this.MaDV.Name = "MaDV";
+            this.MaDV.ReadOnly = true;
+            // 
+            // TenDv
+            // 
+            this.TenDv.DataPropertyName = "TenDv";
+            this.TenDv.HeaderText = "Tên dịch vụ";
+            this.TenDv.Name = "TenDv";
+            this.TenDv.ReadOnly = true;
+            this.TenDv.Width = 220;
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn vị tính";
+            this.DonViTinh.Name = "DonViTinh";
+            this.DonViTinh.ReadOnly = true;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
             // 
             // txtGia
             // 
@@ -80,12 +110,12 @@
             this.txtGia.Size = new System.Drawing.Size(160, 21);
             this.txtGia.TabIndex = 3;
             // 
-            // txtSoLuong
+            // txtDonViTinh
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(110, 92);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(160, 21);
-            this.txtSoLuong.TabIndex = 2;
+            this.txtDonViTinh.Location = new System.Drawing.Point(110, 92);
+            this.txtDonViTinh.Name = "txtDonViTinh";
+            this.txtDonViTinh.Size = new System.Drawing.Size(160, 21);
+            this.txtDonViTinh.TabIndex = 2;
             // 
             // txtTenDichVu
             // 
@@ -238,7 +268,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtGia);
-            this.groupBox1.Controls.Add(this.txtSoLuong);
+            this.groupBox1.Controls.Add(this.txtDonViTinh);
             this.groupBox1.Controls.Add(this.txtTenDichVu);
             this.groupBox1.Controls.Add(this.txtMaDichVu);
             this.groupBox1.Controls.Add(this.label4);
@@ -265,35 +295,6 @@
             this.label5.Text = "Quản Lý Dịch Vụ";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // MaDV
-            // 
-            this.MaDV.DataPropertyName = "MaDV";
-            this.MaDV.HeaderText = "Mã DV";
-            this.MaDV.Name = "MaDV";
-            this.MaDV.ReadOnly = true;
-            // 
-            // TenDv
-            // 
-            this.TenDv.DataPropertyName = "TenDv";
-            this.TenDv.HeaderText = "Tên dịch vụ";
-            this.TenDv.Name = "TenDv";
-            this.TenDv.ReadOnly = true;
-            this.TenDv.Width = 220;
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.DataPropertyName = "DonViTinh";
-            this.DonViTinh.HeaderText = "Đơn vị tính";
-            this.DonViTinh.Name = "DonViTinh";
-            this.DonViTinh.ReadOnly = true;
-            // 
-            // Gia
-            // 
-            this.Gia.DataPropertyName = "Gia";
-            this.Gia.HeaderText = "Giá";
-            this.Gia.Name = "Gia";
-            this.Gia.ReadOnly = true;
-            // 
             // frmDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -306,6 +307,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDichVu";
             this.Text = "frmdichvu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDichVu_FormClosing);
             this.Load += new System.EventHandler(this.frmDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -320,7 +322,7 @@
 
         private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.TextBox txtGia;
-        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtDonViTinh;
         private System.Windows.Forms.TextBox txtTenDichVu;
         private System.Windows.Forms.TextBox txtMaDichVu;
         private System.Windows.Forms.Label label4;

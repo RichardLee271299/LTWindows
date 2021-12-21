@@ -46,12 +46,11 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.grpDanhSachPhong = new System.Windows.Forms.GroupBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grpLoaiPhong.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpDanhSachPhong.SuspendLayout();
@@ -80,8 +79,8 @@
             // 
             this.cboTinhTrang.FormattingEnabled = true;
             this.cboTinhTrang.Items.AddRange(new object[] {
-            "Trống ",
-            "Đã Thuê"});
+            "Hoạt động",
+            "Ngừng hoạt động"});
             this.cboTinhTrang.Location = new System.Drawing.Point(92, 135);
             this.cboTinhTrang.Name = "cboTinhTrang";
             this.cboTinhTrang.Size = new System.Drawing.Size(148, 23);
@@ -256,8 +255,7 @@
             this.dgvDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.LoaiPhong,
-            this.TinhTrang});
+            this.LoaiPhong});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
             this.dgvDanhSach.MultiSelect = false;
@@ -268,6 +266,17 @@
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiPhong_CellContentClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(179, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(215, 26);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "QUẢN LÝ PHÒNG";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -291,23 +300,6 @@
             this.LoaiPhong.Name = "LoaiPhong";
             this.LoaiPhong.ReadOnly = true;
             this.LoaiPhong.Width = 150;
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.DataPropertyName = "TinhTrang";
-            this.TinhTrang.HeaderText = "Tình Trạng";
-            this.TinhTrang.Name = "TinhTrang";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(179, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(215, 26);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "QUẢN LÝ PHÒNG";
             // 
             // frmPhong
             // 
@@ -357,6 +349,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiPhong;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn TinhTrang;
     }
 }
