@@ -34,7 +34,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaKH.Text = d.Tables[0].Rows[vt]["MaKH"].ToString();
             txtMaPhong.Text = d.Tables[0].Rows[vt]["MaPH"].ToString();
             string GioiTinh = d.Tables[0].Rows[vt]["GioiTinh"].ToString();
-            if (GioiTinh.ToLower() == "Nam")
+            if (GioiTinh.ToLower() == "nam")
                 cbmGioiTinh.SelectedIndex = 0;
             else
                 cbmGioiTinh.SelectedIndex = 1;
@@ -84,17 +84,17 @@ namespace _17_PhuongDong_12_HienDuy
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into khachHang values('" + txtMaKH.Text + "',N'" + txtHoTen.Text + "',N'" + txtSoCMND.Text + "'," + txtNgayDen.Text + "," + cbmGioiTinh.Text + "," + txtSoDienThoai.Text + "," + txtDiaChi.Text + "," + txtMaPhong.Text + ")";
+                sql = "insert into KhachHang values ('" + txtMaKH.Text +"','" +txtMaPhong.Text+"',N'"+ txtHoTen.Text + "', '" + txtSoDienThoai.Text +"', '" + txtSoCMND.Text+"',N'" +txtDiaChi.Text+"',N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"','" +txtNgayDen.Text+"')";
 
             }
             else if (flag == 2)
             {
-                sql = "update KhachHang set MaKH = '" + txtMaKH.Text + "', HoTen = N'" + txtHoTen.Text + "'GioiTinh = N'" + cbmGioiTinh.Text + "' where MaKH = '" + txtMaKH.Text + "'";
+                sql = "update KhachHang set MaKH = '" + txtMaKH.Text +"', MaPH = '" + txtMaPhong.Text + "', HoTen = N'" + txtHoTen.Text + "', SDT = '" + txtSoDienThoai.Text +"', CMND = '"+ txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"', NgayDen = '"+ txtNgayDen.Text +"' where MaKH = '"+ txtMaKH.Text +"'";
 
             }
             else
             {
-                sql = "delete from KhachHang where MaDV = '" + txtMaKH.Text + "'";
+                sql = "delete from KhachHang where MaKH = '" + txtMaKH.Text + "'";
 
             }
             if (c.CapNhatDuLieu(sql) != 0)
@@ -109,9 +109,10 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            Xuly_Textbox(true);
+            Xuly_Textbox(false);
             Xuly_Chucnang(false);
-            txtMaKH.ReadOnly = false;
+            txtMaKH.ReadOnly = true;
+            txtNgayDen.ReadOnly = true;
             flag = 2;
         }
 
