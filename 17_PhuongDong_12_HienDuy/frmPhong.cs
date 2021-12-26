@@ -72,12 +72,37 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             cboTinhTrang.SelectedIndex = 0;
+            flag = 1;
         }
-
+        int flag = 0;
         private void btnLuu_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            string sql = "";
+            if (flag == 1)
+            {
+                sql = "insert into Phong values('" + txtMaPhong.Text + "',N'" + cboLoaiPhong.Text + "',N'" + txtGiaPhong.Text + "'," + cboTinhTrang.Text + ")";
+
+            }
+            else if (flag == 2)
+            {
+                sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', LoaiPhong = N'" + cboLoaiPhong.Text + "',TinhTrang = N'" + cboTinhTrang.Text + "' where MaPhong = '" + txtMaPhong.Text + "'";
+
+            }
+            else
+            {
+                sql = "delete from Phong where MaPhong = '" + txtMaPhong.Text + "'";
+
+            }
+            if (c.CapNhatDuLieu(sql) != 0)
+            {
+                MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                frmPhong_Load(sender, e);
+            }
+
+
+            flag = 0;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -85,6 +110,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(false);
             txtGiaPhong.ReadOnly = false;
+            flag = 2;
            
         }
 
@@ -109,6 +135,12 @@ namespace _17_PhuongDong_12_HienDuy
             int vt = dgvDanhSach.CurrentCell.RowIndex;
             HienThiTextBox(ds, vt);
 
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(false);
+            flag = 3;
         }
     }
 }

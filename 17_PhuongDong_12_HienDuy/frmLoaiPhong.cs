@@ -28,8 +28,8 @@ namespace _17_PhuongDong_12_HienDuy
         void HienThiTextBox(DataSet d, int vt)
         {
             txtMaPH.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
-            string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();
             txtGiaPhong.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
+            string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();            
             if (LoaiPhong.ToLower() == "thường")
                 cmbLoaiPhong.SelectedIndex = 0;
             else
@@ -54,19 +54,45 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
+            flag = 1;
         }
-
+        int flag = 0;
         private void btnLuu_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            string sql = "";
+            if (flag == 1)
+            {
+                sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + cmbLoaiPhong.Text + "'," + txtGiaPhong.Text + ")";
+
+            }
+            else if (flag == 2)
+            {
+                sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + cmbLoaiPhong.Text + "', Gia='" + txtGiaPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
+
+            }
+            else
+            {
+                sql = "delete from LoaiPhong where MaPhong = '" + txtMaPH.Text + "'";
+
+            }
+            if (c.CapNhatDuLieu(sql) != 0)
+            {
+                MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                frmLoaiPhong_Load(sender, e);
+            }
+
+
+            flag = 0;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(false);
-            txtMaPH.ReadOnly = false;   
+            txtMaPH.ReadOnly = false;
+            flag = 2;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -86,6 +112,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             int vt = dgvDanhSach.CurrentCell.RowIndex;
             HienThiTextBox(ds, vt);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(false);
+            flag = 3;
         }
     }
 }

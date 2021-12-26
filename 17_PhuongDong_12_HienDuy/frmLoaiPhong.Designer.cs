@@ -30,9 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbLoaiPhong = new System.Windows.Forms.ComboBox();
-            this.txtGiaPhong = new System.Windows.Forms.TextBox();
             this.txtMaPH = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -47,6 +45,8 @@
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtGiaPhong = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,28 +78,12 @@
             this.cmbLoaiPhong.Size = new System.Drawing.Size(154, 25);
             this.cmbLoaiPhong.TabIndex = 2;
             // 
-            // txtGiaPhong
-            // 
-            this.txtGiaPhong.Location = new System.Drawing.Point(115, 117);
-            this.txtGiaPhong.Name = "txtGiaPhong";
-            this.txtGiaPhong.Size = new System.Drawing.Size(154, 25);
-            this.txtGiaPhong.TabIndex = 1;
-            // 
             // txtMaPH
             // 
             this.txtMaPH.Location = new System.Drawing.Point(115, 31);
             this.txtMaPH.Name = "txtMaPH";
             this.txtMaPH.Size = new System.Drawing.Size(154, 25);
             this.txtMaPH.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Giá Phòng";
             // 
             // label2
             // 
@@ -169,6 +153,7 @@
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnHuy
             // 
@@ -254,6 +239,22 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "QUẢN LÝ LOẠI PHÒNG";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Giá Phòng";
+            // 
+            // txtGiaPhong
+            // 
+            this.txtGiaPhong.Location = new System.Drawing.Point(115, 117);
+            this.txtGiaPhong.Name = "txtGiaPhong";
+            this.txtGiaPhong.Size = new System.Drawing.Size(154, 25);
+            this.txtGiaPhong.TabIndex = 1;
+            // 
             // frmLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -281,9 +282,7 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cmbLoaiPhong;
-        private System.Windows.Forms.TextBox txtGiaPhong;
         private System.Windows.Forms.TextBox txtMaPH;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -298,5 +297,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiPhong;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtGiaPhong;
+        private System.Windows.Forms.Label label3;
     }
 }

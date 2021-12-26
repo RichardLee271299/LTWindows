@@ -32,6 +32,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtSoLuong.Text = d.Tables[0].Rows[vt]["SoLuongTon"].ToString();
             txtGiaNhap.Text = d.Tables[0].Rows[vt]["GiaNhap"].ToString();
         }
+        int flag = 0;
         private void frmSanPham_Load(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
@@ -63,12 +64,37 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
+            flag = 1;
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            string sql = "";
+            if (flag == 1)
+            {
+                sql = "insert into SanPham values('" + txtMaSP.Text + "',N'" + txtTenSP.Text + "',N'" + txtSoLuong.Text + "'," + txtGiaNhap.Text + "," + txtGiaBan.Text + ")";
+
+            }
+            else if (flag == 2)
+            {
+                sql = "update SanPham set MaSP = '" + txtMaSP.Text + "', TenSP = N'" + txtTenSP.Text + "',SoLuongTon = N'" + txtSoLuong.Text + "' where MaSP = '" + txtMaSP.Text + "'";
+
+            }
+            else
+            {
+                sql = "delete from SanPham where MaSP = '" + txtMaSP.Text + "'";
+
+            }
+            if (c.CapNhatDuLieu(sql) != 0)
+            {
+                MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                frmSanPham_Load(sender, e);
+            }
+
+
+            flag = 0;
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -78,6 +104,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtTenSP.ReadOnly = false;
             txtGiaNhap.ReadOnly = false;
             txtGiaBan.ReadOnly = false;
+            flag = 2;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -90,6 +117,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             int vt = dgvDanhSach.CurrentCell.RowIndex;
             HienThiTextBox(ds, vt);
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(false);
+            flag = 3;
         }
     }
 }
