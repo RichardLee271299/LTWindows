@@ -66,10 +66,10 @@
             this.DonViTinh,
             this.Gia});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
+            this.dgvDanhSach.Location = new System.Drawing.Point(3, 21);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSach.Size = new System.Drawing.Size(569, 195);
+            this.dgvDanhSach.Size = new System.Drawing.Size(569, 191);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
@@ -107,28 +107,28 @@
             // 
             this.txtGia.Location = new System.Drawing.Point(110, 129);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(160, 21);
+            this.txtGia.Size = new System.Drawing.Size(160, 25);
             this.txtGia.TabIndex = 3;
             // 
             // txtDonViTinh
             // 
             this.txtDonViTinh.Location = new System.Drawing.Point(110, 92);
             this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Size = new System.Drawing.Size(160, 21);
+            this.txtDonViTinh.Size = new System.Drawing.Size(160, 25);
             this.txtDonViTinh.TabIndex = 2;
             // 
             // txtTenDichVu
             // 
             this.txtTenDichVu.Location = new System.Drawing.Point(110, 56);
             this.txtTenDichVu.Name = "txtTenDichVu";
-            this.txtTenDichVu.Size = new System.Drawing.Size(160, 21);
+            this.txtTenDichVu.Size = new System.Drawing.Size(160, 25);
             this.txtTenDichVu.TabIndex = 1;
             // 
             // txtMaDichVu
             // 
             this.txtMaDichVu.Location = new System.Drawing.Point(110, 21);
             this.txtMaDichVu.Name = "txtMaDichVu";
-            this.txtMaDichVu.Size = new System.Drawing.Size(160, 21);
+            this.txtMaDichVu.Size = new System.Drawing.Size(160, 25);
             this.txtMaDichVu.TabIndex = 0;
             // 
             // label4
@@ -137,7 +137,7 @@
             this.label4.Location = new System.Drawing.Point(23, 131);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(24, 15);
+            this.label4.Size = new System.Drawing.Size(28, 17);
             this.label4.TabIndex = 0;
             this.label4.Text = "Giá";
             // 
@@ -147,7 +147,7 @@
             this.label3.Location = new System.Drawing.Point(23, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 15);
+            this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "Đơn vị tính";
             // 
@@ -157,7 +157,7 @@
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(88, 26);
-            this.btnLuu.TabIndex = 0;
+            this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "&Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -168,7 +168,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(88, 26);
-            this.btnSua.TabIndex = 0;
+            this.btnSua.TabIndex = 1;
             this.btnSua.Text = "&Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -179,7 +179,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(88, 26);
-            this.btnXoa.TabIndex = 0;
+            this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -201,7 +201,7 @@
             this.label2.Location = new System.Drawing.Point(23, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 15);
+            this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên DV";
             // 
@@ -212,7 +212,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(88, 26);
-            this.btnThoat.TabIndex = 0;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Th&oát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
@@ -240,7 +240,7 @@
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(88, 26);
-            this.btnHuy.TabIndex = 0;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "&Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -251,7 +251,7 @@
             this.label1.Location = new System.Drawing.Point(23, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 15);
+            this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã DV";
             // 
@@ -297,7 +297,7 @@
             // 
             // frmDichVu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 476);
             this.Controls.Add(this.label5);

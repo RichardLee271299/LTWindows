@@ -30,7 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cmbLoaiPhong = new System.Windows.Forms.ComboBox();
+            this.txtGiaPhong = new System.Windows.Forms.TextBox();
             this.txtMaPH = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -45,8 +47,6 @@
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtGiaPhong = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,12 +78,28 @@
             this.cmbLoaiPhong.Size = new System.Drawing.Size(154, 25);
             this.cmbLoaiPhong.TabIndex = 2;
             // 
+            // txtGiaPhong
+            // 
+            this.txtGiaPhong.Location = new System.Drawing.Point(115, 117);
+            this.txtGiaPhong.Name = "txtGiaPhong";
+            this.txtGiaPhong.Size = new System.Drawing.Size(154, 25);
+            this.txtGiaPhong.TabIndex = 3;
+            // 
             // txtMaPH
             // 
             this.txtMaPH.Location = new System.Drawing.Point(115, 31);
             this.txtMaPH.Name = "txtMaPH";
             this.txtMaPH.Size = new System.Drawing.Size(154, 25);
             this.txtMaPH.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(22, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Giá Phòng";
             // 
             // label2
             // 
@@ -127,7 +143,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(88, 26);
-            this.btnThoat.TabIndex = 0;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Th&oát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
@@ -150,7 +166,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(88, 26);
-            this.btnXoa.TabIndex = 0;
+            this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -161,7 +177,7 @@
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(88, 26);
-            this.btnHuy.TabIndex = 0;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "&Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnLuu_Click);
@@ -173,7 +189,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(88, 26);
-            this.btnSua.TabIndex = 0;
+            this.btnSua.TabIndex = 1;
             this.btnSua.Text = "&Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -185,7 +201,7 @@
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(88, 26);
-            this.btnLuu.TabIndex = 0;
+            this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "&Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -238,22 +254,6 @@
             this.label6.Size = new System.Drawing.Size(355, 35);
             this.label6.TabIndex = 5;
             this.label6.Text = "QUẢN LÝ LOẠI PHÒNG";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 121);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Giá Phòng";
-            // 
-            // txtGiaPhong
-            // 
-            this.txtGiaPhong.Location = new System.Drawing.Point(115, 117);
-            this.txtGiaPhong.Name = "txtGiaPhong";
-            this.txtGiaPhong.Size = new System.Drawing.Size(154, 25);
-            this.txtGiaPhong.TabIndex = 1;
             // 
             // frmLoaiPhong
             // 
