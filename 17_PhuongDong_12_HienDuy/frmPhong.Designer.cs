@@ -46,11 +46,11 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.grpDanhSachPhong = new System.Windows.Forms.GroupBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label6 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.grpLoaiPhong.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpDanhSachPhong.SuspendLayout();
@@ -84,7 +84,7 @@
             this.cboTinhTrang.Location = new System.Drawing.Point(92, 135);
             this.cboTinhTrang.Name = "cboTinhTrang";
             this.cboTinhTrang.Size = new System.Drawing.Size(148, 25);
-            this.cboTinhTrang.TabIndex = 3;
+            this.cboTinhTrang.TabIndex = 4;
             this.cboTinhTrang.SelectedIndexChanged += new System.EventHandler(this.cboTinhTrang_SelectedIndexChanged);
             // 
             // cboLoaiPhong
@@ -103,7 +103,7 @@
             this.txtGiaPhong.Location = new System.Drawing.Point(92, 100);
             this.txtGiaPhong.Name = "txtGiaPhong";
             this.txtGiaPhong.Size = new System.Drawing.Size(148, 25);
-            this.txtGiaPhong.TabIndex = 1;
+            this.txtGiaPhong.TabIndex = 3;
             // 
             // txtMaPhong
             // 
@@ -176,7 +176,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(88, 26);
-            this.btnThoat.TabIndex = 0;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Th&oát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
@@ -199,7 +199,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(88, 26);
-            this.btnXoa.TabIndex = 0;
+            this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -210,7 +210,7 @@
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(88, 26);
-            this.btnHuy.TabIndex = 0;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "&Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -222,7 +222,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(88, 26);
-            this.btnSua.TabIndex = 0;
+            this.btnSua.TabIndex = 1;
             this.btnSua.Text = "&Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -234,7 +234,7 @@
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(88, 26);
-            this.btnLuu.TabIndex = 0;
+            this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "&Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -268,17 +268,6 @@
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiPhong_CellContentClick);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(179, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(271, 35);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "QUẢN LÝ PHÒNG";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "MaPhong";
@@ -301,6 +290,17 @@
             this.LoaiPhong.Name = "LoaiPhong";
             this.LoaiPhong.ReadOnly = true;
             this.LoaiPhong.Width = 150;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(179, 18);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(271, 35);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "QUẢN LÝ PHÒNG";
             // 
             // frmPhong
             // 

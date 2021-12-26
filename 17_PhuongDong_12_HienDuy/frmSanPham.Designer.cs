@@ -190,7 +190,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(88, 26);
-            this.btnThoat.TabIndex = 0;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Th&oát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
@@ -200,7 +200,7 @@
             this.btnHuy.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(88, 26);
-            this.btnHuy.TabIndex = 0;
+            this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "&Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -211,7 +211,7 @@
             this.btnLuu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(88, 26);
-            this.btnLuu.TabIndex = 0;
+            this.btnLuu.TabIndex = 3;
             this.btnLuu.Text = "&Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -222,7 +222,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(88, 26);
-            this.btnSua.TabIndex = 0;
+            this.btnSua.TabIndex = 1;
             this.btnSua.Text = "&Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -233,7 +233,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(88, 26);
-            this.btnXoa.TabIndex = 0;
+            this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "&Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
