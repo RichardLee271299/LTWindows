@@ -59,9 +59,21 @@ namespace _17_PhuongDong_12_HienDuy
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
         }
-
+        string phatSinhMa(DataSet d, string kytu)
+        {
+            string ma = "";
+            int sodong = d.Tables[0].Rows.Count;
+            sodong++;
+            if (sodong < 10)
+                ma = kytu + "0" + sodong.ToString();
+            else
+                ma = kytu + sodong.ToString();
+            return ma;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            txtMaSP.ReadOnly = true;
+            txtMaSP.Text = phatSinhMa(ds, "A");
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             flag = 1;

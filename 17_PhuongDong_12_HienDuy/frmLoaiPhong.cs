@@ -49,11 +49,23 @@ namespace _17_PhuongDong_12_HienDuy
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
         }
-
+        string Phatsinhma(DataSet d, string kytudb)
+        {
+            string maps = "";
+            int sodong = ds.Tables[0].Rows.Count;
+            sodong = sodong + 1;
+            if (sodong < 10)
+                maps = kytudb + "0" + sodong.ToString();
+            else
+                maps = kytudb + sodong.ToString();
+            return maps;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
+            txtMaPH.ReadOnly = true;
+            txtMaPH.Text=Phatsinhma(ds, "L");
             flag = 1;
         }
         int flag = 0;
@@ -64,12 +76,12 @@ namespace _17_PhuongDong_12_HienDuy
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + cmbLoaiPhong.Text + "'," + txtGiaPhong.Text + ")";
+                sql = "insert into LoaiPhong values('" + txtMaPH.Text + "','" + cmbLoaiPhong.Items[cmbLoaiPhong.SelectedIndex] + "'," + txtGiaPhong.Text + ")";
 
             }
             else if (flag == 2)
             {
-                sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + cmbLoaiPhong.Text + "', Gia='" + txtGiaPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
+                sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + cmbLoaiPhong.Items[cmbLoaiPhong.SelectedIndex] + "', Gia='" + txtGiaPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
 
             }
             else

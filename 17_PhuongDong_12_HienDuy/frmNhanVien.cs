@@ -57,32 +57,17 @@ namespace _17_PhuongDong_12_HienDuy
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
         }
-
-        private void btnThem_Click(object sender, EventArgs e)
+        string phatSinhMa(DataSet d, string kytu)
         {
-            Xuly_Textbox(false);
-            Xuly_Chucnang(false);
+            string ma = "";
+            int sodong = d.Tables[0].Rows.Count;
+            sodong++;
+            if (sodong < 10)
+                ma = kytu + "0" + sodong.ToString();
+            else
+                ma = kytu + sodong.ToString();
+            return ma;
         }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            Xuly_Textbox(true);
-            Xuly_Chucnang(true);
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            Xuly_Textbox(true);
-            Xuly_Chucnang(false);
-            txtMaNv.ReadOnly = false;
-        }
-
-        private void btnHuy_Click(object sender, EventArgs e)
-        {
-            Xuly_Textbox(true);
-            Xuly_Chucnang(true);
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -99,6 +84,39 @@ namespace _17_PhuongDong_12_HienDuy
         {
             int vt = dgvDanhSachNhanVien.CurrentCell.RowIndex;
             HienThiTextBox(ds, vt);
+        }
+
+        private void btnThem_Click_1(object sender, EventArgs e)
+        {
+            txtMaNv.Text = phatSinhMa(ds, "K").ToString();
+            txtMaNv.ReadOnly = true;
+            Xuly_Textbox(false);
+            Xuly_Chucnang(false);
+        }
+
+        private void btnLuu_Click_1(object sender, EventArgs e)
+        {
+            Xuly_Textbox(true);
+            Xuly_Chucnang(true);
+        }
+
+        private void btnSua_Click_1(object sender, EventArgs e)
+        {
+            Xuly_Textbox(true);
+            Xuly_Chucnang(false);
+            txtMaNv.ReadOnly = false;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(false);
+            //flag = 3;
+        }
+
+        private void btnHuy_Click_1(object sender, EventArgs e)
+        {
+            Xuly_Textbox(true);
+            Xuly_Chucnang(true);
         }
     }
 }

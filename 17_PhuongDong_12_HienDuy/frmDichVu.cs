@@ -53,12 +53,24 @@ namespace _17_PhuongDong_12_HienDuy
             XuLy_Textbox(true);
             HienThiDuLieu("select * from DichVu", dgvDanhSach);
         }
-
+        string Phatsinhma(DataSet d, string kytudb)
+        {
+            string maps = "";
+            int sodong = ds.Tables[0].Rows.Count;
+            sodong = sodong + 1;
+            if (sodong < 10)
+                maps = kytudb + "0" + sodong.ToString();
+            else
+                maps = kytudb + sodong.ToString();
+            return maps;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
      
             XuLy_Textbox(false);
             XuLy_ChucNang(false);
+            txtMaDichVu.ReadOnly = true;
+            txtMaDichVu.Text = Phatsinhma(ds, "DV");
             flag = 1;
         }
 
