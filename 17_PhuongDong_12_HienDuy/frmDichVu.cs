@@ -56,6 +56,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+     
             XuLy_Textbox(false);
             XuLy_ChucNang(false);
             flag = 1;
