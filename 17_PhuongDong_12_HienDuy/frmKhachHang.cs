@@ -30,7 +30,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtDiaChi.Text = d.Tables[0].Rows[vt]["DiaChi"].ToString();
             txtSoCMND.Text = d.Tables[0].Rows[vt]["CMND"].ToString();
             txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();
-            txtNgayDen.Text = d.Tables[0].Rows[vt]["NgayDen"].ToString();
+            dtpNgayDen.Value =(DateTime)d.Tables[0].Rows[vt]["NgayDen"];
             txtMaKH.Text = d.Tables[0].Rows[vt]["MaKH"].ToString();
             string MaPhong = d.Tables[0].Rows[vt]["MaPH"].ToString();
             switch(MaPhong.ToLower())
@@ -66,7 +66,6 @@ namespace _17_PhuongDong_12_HienDuy
         {
             txtMaKH.ReadOnly = t;
             txtHoTen.ReadOnly = t;
-            txtNgayDen.ReadOnly = t;
             txtSoCMND.ReadOnly = t;
             txtSoDienThoai.ReadOnly = t;
             txtDiaChi.ReadOnly = t;
@@ -91,17 +90,29 @@ namespace _17_PhuongDong_12_HienDuy
         {
             txtDiaChi.Clear();
             txtHoTen.Clear();
-            txtMaKH.Clear();
             txtSoCMND.Clear();
             txtSoDienThoai.Clear();
             cbmGioiTinh.SelectedIndex = 0;
             cboMaPhong.SelectedIndex = 0;
-            txtNgayDen.Clear();
+        }
+        string phatSinhMa (DataSet d, string kytu)
+        {
+            string ma = "";
+            int sodong = d.Tables[0].Rows.Count;
+            sodong++;
+            if (sodong < 10)
+                ma = kytu + "0" + sodong.ToString();
+            else
+                ma = kytu + sodong.ToString();
+            return ma;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            
+            txtMaKH.Text = phatSinhMa(ds, "K").ToString();
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
+            txtMaKH.ReadOnly = true;
             clearTextBox();
             flag = 1;
         }
@@ -113,12 +124,12 @@ namespace _17_PhuongDong_12_HienDuy
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into KhachHang values ('" + txtMaKH.Text +"','" +cboMaPhong.Items[cboMaPhong.SelectedIndex]+"',N'"+ txtHoTen.Text + "', '" + txtSoDienThoai.Text +"', '" + txtSoCMND.Text+"',N'" +txtDiaChi.Text+"',N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"','" +txtNgayDen.Text+"')";
+                sql = "insert into KhachHang values ('" + txtMaKH.Text +"','" +cboMaPhong.Items[cboMaPhong.SelectedIndex]+"',N'"+ txtHoTen.Text + "','"+ dtpNgaySinh.Text +"','" + txtSoDienThoai.Text +"', '" + txtSoCMND.Text+"',N'" +txtDiaChi.Text+"',N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"','" + dtpNgayDen.Text+"')";
 
             }
             else if (flag == 2)
             {
-                sql = "update KhachHang set MaKH = '" + txtMaKH.Text + "', MaPH = '" + cboMaPhong.Items[cboMaPhong.SelectedIndex] + "', HoTen = N'" + txtHoTen.Text + "', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', NgayDen = '" + txtNgayDen.Text + "' where MaKH = '" + txtMaKH.Text + "'";
+                sql = "update KhachHang set MaKH = '" + txtMaKH.Text + "', MaPH = '" + cboMaPhong.Items[cboMaPhong.SelectedIndex] + "', HoTen = N'" + txtHoTen.Text + "', NgaySinh = '"+dtpNgaySinh.Text+"', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', NgayDen = '" + dtpNgayDen.Text + "' where MaKH = '" + txtMaKH.Text + "'";
 
             }
             else
@@ -141,7 +152,6 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtMaKH.ReadOnly = true;
-            txtNgayDen.ReadOnly = true;
             flag = 2;
         }
 
