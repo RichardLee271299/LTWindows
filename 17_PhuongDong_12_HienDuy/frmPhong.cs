@@ -67,11 +67,24 @@ namespace _17_PhuongDong_12_HienDuy
             HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Hoạt động' else N'Ngừng hoạt động' end  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach);
       
         }
+        string phatSinhMa(DataSet d, string kytu)
+        {
+            string ma = "";
+            int sodong = d.Tables[0].Rows.Count;
+            sodong++;
+            if (sodong < 10)
+                ma = kytu + "0" + sodong.ToString();
+            else
+                ma = kytu + sodong.ToString();
+            return ma;
+        }
         private void btnThem_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             cboTinhTrang.SelectedIndex = 0;
+            txtMaPhong.ReadOnly = true;
+            txtMaPhong.Text = phatSinhMa(ds, "P");
             flag = 1;
         }
         int flag = 0;
