@@ -65,7 +65,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtMaPH.ReadOnly = true;
-            txtMaPH.Text=Phatsinhma(ds, "L");
+            txtMaPH.Text=Phatsinhma(ds, "LP");
             flag = 1;
         }
         int flag = 0;

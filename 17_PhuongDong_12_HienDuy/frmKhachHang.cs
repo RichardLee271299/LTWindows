@@ -13,6 +13,7 @@ namespace _17_PhuongDong_12_HienDuy
     public partial class frmKhachHang : Form
     {
         DataSet ds = new DataSet();
+        DataSet dsMaphong = new DataSet();
         public frmKhachHang()
         {
             InitializeComponent();
@@ -84,7 +85,10 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select * from KhachHang", dgvDanhSachKhachHang);        
+            HienThiDuLieu("select * from KhachHang", dgvDanhSachKhachHang);
+            dsMaphong = c.LayDuLieu("select Phong.MaPhong,LoaiPhong from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong");
+            HienThiComboBox(ref dsMaphong, "MaPhong", "LoaiPhong",cboMaPhong);
+
         }
         void clearTextBox()
         {
@@ -116,7 +120,13 @@ namespace _17_PhuongDong_12_HienDuy
             clearTextBox();
             flag = 1;
         }
-
+        void HienThiComboBox(ref DataSet ds , string ten, string ma, ComboBox c)
+        {
+            c.DataSource = ds.Tables[0];
+            c.DisplayMember = ten;
+            c.ValueMember = ma;
+            c.SelectedIndex = 0;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(true);

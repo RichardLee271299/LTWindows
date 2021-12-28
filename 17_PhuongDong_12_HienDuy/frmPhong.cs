@@ -18,7 +18,8 @@ namespace _17_PhuongDong_12_HienDuy
         }
         clsQuanLyKhachSan c = new clsQuanLyKhachSan();
         DataSet ds = new DataSet();
-          void HienThiDuLieu(String sql,DataGridView dgs)
+        DataSet dsLoaiPhong = new DataSet(); 
+          void HienThiDuLieu(String sql,DataGridView dgs, ref DataSet ds)
         {
             ds = c.LayDuLieu(sql);
             dgs.DataSource = ds.Tables[0];
@@ -64,8 +65,10 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(true);
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Hoạt động' else N'Ngừng hoạt động' end  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach);
-      
+            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
+            dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
+            HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
+          
         }
         string phatSinhMa(DataSet d, string kytu)
         {
@@ -84,23 +87,39 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(false);
             cboTinhTrang.SelectedIndex = 0;
             txtMaPhong.ReadOnly = true;
-            txtMaPhong.Text = phatSinhMa(ds, "P");
+            txtMaPhong.Text = phatSinhMa(ds, "PH");
             flag = 1;
         }
         int flag = 0;
+        void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
+        {
+            c.DataSource = ds.Tables[0];
+            c.DisplayMember = ten;
+            c.ValueMember = ma;
+            c.SelectedIndex = 0;
+        }
         private void btnLuu_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            int tinhtrang;
+            if ((string)cboTinhTrang.Items[cboTinhTrang.SelectedIndex] == "Trống")
+                tinhtrang = 0;
+            else
+                tinhtrang = 1;
+
+          
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into Phong values('" + txtMaPhong.Text + "',N'" + cboLoaiPhong.Text + "',N'" + txtGiaPhong.Text + "'," + cboTinhTrang.Text + ")";
+
+                sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue + "'," + txtGiaPhong.Text + "," + tinhtrang + ")";
+
 
             }
             else if (flag == 2)
             {
-                sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', LoaiPhong = N'" + cboLoaiPhong.Text + "',TinhTrang = N'" + cboTinhTrang.Text + "' where MaPhong = '" + txtMaPhong.Text + "'";
+                sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + " where MaPhong = '" + txtMaPhong.Text + "'";
 
             }
             else
@@ -154,6 +173,11 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Chucnang(false);
             flag = 3;
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

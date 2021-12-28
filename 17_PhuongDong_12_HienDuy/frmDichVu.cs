@@ -94,13 +94,13 @@ namespace _17_PhuongDong_12_HienDuy
             XuLy_Textbox(true);
             string sql= "";
             if (flag == 1)
-            { 
+            {
                 sql = "insert into DichVu values('" + txtMaDichVu.Text + "',N'" + txtTenDichVu.Text + "',N'" + txtDonViTinh.Text + "'," + txtGia.Text + ")";
                
             }   
             else if (flag == 2)
             {
-                sql = "update DichVu set MaDV = '" + txtMaDichVu.Text + "', TenDV = N'" + txtTenDichVu.Text + "',DonViTinh = N'" + txtDonViTinh.Text + "' where MaDV = '" + txtMaDichVu.Text + "'";
+                sql = "update DichVu set MaDV = '" + txtMaDichVu.Text + "', TenDV = N'" + txtTenDichVu.Text + "',DonViTinh = N'" + txtDonViTinh.Text + "',Gia ='" + txtGia.Text +"' where MaDV = '" + txtMaDichVu.Text + "'";
                
             }
             else
@@ -144,6 +144,11 @@ namespace _17_PhuongDong_12_HienDuy
             // else
             //ban co muon xoa khong
             //flag = 0;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
