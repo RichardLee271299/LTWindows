@@ -38,6 +38,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             HienThiDuLieu("select * from SanPham", dgvDanhSach);
+            HienThiTextBox(ds, 0);
         }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -72,10 +73,11 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            txtMaSP.ReadOnly = true;
+            clearTextBox();
             txtMaSP.Text = phatSinhMa(ds, "A");
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
+            txtMaSP.ReadOnly = true;
             flag = 1;
         }
 
@@ -109,9 +111,16 @@ namespace _17_PhuongDong_12_HienDuy
             flag = 0;
         }
 
+        void clearTextBox()
+        {
+            txtTenSP.Clear();
+            txtGiaBan.Clear();
+            txtGiaNhap.Clear();
+            txtSoLuong.Clear();
+        }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            Xuly_Textbox(true);
+            Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtTenSP.ReadOnly = false;
             txtGiaNhap.ReadOnly = false;

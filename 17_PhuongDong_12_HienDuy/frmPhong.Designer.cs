@@ -94,6 +94,7 @@
             this.cboLoaiPhong.Name = "cboLoaiPhong";
             this.cboLoaiPhong.Size = new System.Drawing.Size(148, 23);
             this.cboLoaiPhong.TabIndex = 2;
+            this.cboLoaiPhong.SelectedIndexChanged += new System.EventHandler(this.cboLoaiPhong_SelectedIndexChanged);
             // 
             // txtGiaPhong
             // 

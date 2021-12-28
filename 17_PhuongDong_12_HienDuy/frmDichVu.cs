@@ -52,6 +52,7 @@ namespace _17_PhuongDong_12_HienDuy
             XuLy_ChucNang(true);
             XuLy_Textbox(true);
             HienThiDuLieu("select * from DichVu", dgvDanhSach);
+            HienThiTextBox(ds, 0);
         }
         string Phatsinhma(DataSet d, string kytudb)
         {

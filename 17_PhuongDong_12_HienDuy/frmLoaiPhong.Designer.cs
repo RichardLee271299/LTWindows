@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbLoaiPhong = new System.Windows.Forms.ComboBox();
+            this.cboLoaiPhong = new System.Windows.Forms.ComboBox();
             this.txtGiaPhong = new System.Windows.Forms.TextBox();
             this.txtMaPH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,9 +44,10 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbLoaiPhong);
+            this.groupBox1.Controls.Add(this.cboLoaiPhong);
             this.groupBox1.Controls.Add(this.txtGiaPhong);
             this.groupBox1.Controls.Add(this.txtMaPH);
             this.groupBox1.Controls.Add(this.label3);
@@ -67,13 +68,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // cmbLoaiPhong
+            // cboLoaiPhong
             // 
-            this.cmbLoaiPhong.FormattingEnabled = true;
-            this.cmbLoaiPhong.Location = new System.Drawing.Point(115, 74);
-            this.cmbLoaiPhong.Name = "cmbLoaiPhong";
-            this.cmbLoaiPhong.Size = new System.Drawing.Size(154, 23);
-            this.cmbLoaiPhong.TabIndex = 2;
+            this.cboLoaiPhong.FormattingEnabled = true;
+            this.cboLoaiPhong.Items.AddRange(new object[] {
+            "Thường",
+            "Vip",
+            "Phòng đôi"});
+            this.cboLoaiPhong.Location = new System.Drawing.Point(115, 74);
+            this.cboLoaiPhong.Name = "cboLoaiPhong";
+            this.cboLoaiPhong.Size = new System.Drawing.Size(154, 23);
+            this.cboLoaiPhong.TabIndex = 2;
+            this.cboLoaiPhong.SelectedIndexChanged += new System.EventHandler(this.cboLoaiPhong_SelectedIndexChanged);
             // 
             // txtGiaPhong
             // 
@@ -177,7 +183,7 @@
             this.btnHuy.TabIndex = 4;
             this.btnHuy.Text = "&Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
-            this.btnHuy.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnSua
             // 
@@ -217,7 +223,8 @@
             this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaPhong,
-            this.LoaiPhong});
+            this.LoaiPhong,
+            this.Gia});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
             this.dgvDanhSach.Name = "dgvDanhSach";
@@ -226,6 +233,17 @@
             this.dgvDanhSach.Size = new System.Drawing.Size(536, 174);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(146, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(282, 26);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "QUẢN LÝ LOẠI PHÒNG";
             // 
             // MaPhong
             // 
@@ -241,16 +259,12 @@
             this.LoaiPhong.Name = "LoaiPhong";
             this.LoaiPhong.ReadOnly = true;
             // 
-            // label6
+            // Gia
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(146, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(282, 26);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "QUẢN LÝ LOẠI PHÒNG";
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
             // 
             // frmLoaiPhong
             // 
@@ -278,7 +292,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbLoaiPhong;
+        private System.Windows.Forms.ComboBox cboLoaiPhong;
         private System.Windows.Forms.TextBox txtMaPH;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -291,10 +305,11 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvDanhSach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiPhong;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtGiaPhong;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
     }
 }

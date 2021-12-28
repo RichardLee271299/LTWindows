@@ -40,9 +40,10 @@ namespace _17_PhuongDong_12_HienDuy
               string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();
               if(LoaiPhong.ToLower()=="thường")
                   cboLoaiPhong.SelectedIndex = 0;
-              else
+              else if (LoaiPhong.ToLower() == "vip")
                   cboLoaiPhong.SelectedIndex = 1;
-
+              else
+                  cboLoaiPhong.SelectedIndex = 2;
           }
        
         void Xuly_Textbox(Boolean t)
@@ -65,10 +66,10 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(true);
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
+            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,LoaiPhong.Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
-          
+            HienThiTextBox(ds, 0);
         }
         string phatSinhMa(DataSet d, string kytu)
         {
@@ -88,6 +89,7 @@ namespace _17_PhuongDong_12_HienDuy
             cboTinhTrang.SelectedIndex = 0;
             txtMaPhong.ReadOnly = true;
             txtMaPhong.Text = phatSinhMa(ds, "PH");
+            txtGiaPhong.ReadOnly = true;
             flag = 1;
         }
         int flag = 0;
@@ -113,7 +115,7 @@ namespace _17_PhuongDong_12_HienDuy
             if (flag == 1)
             {
 
-                sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue + "'," + txtGiaPhong.Text + "," + tinhtrang + ")";
+                sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue +  "'," + tinhtrang + ")";
 
 
             }
@@ -178,6 +180,16 @@ namespace _17_PhuongDong_12_HienDuy
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Thường")
+                txtGiaPhong.Text = "120000";
+            else if (cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Vip")
+                txtGiaPhong.Text = "240000";
+            else
+                txtGiaPhong.Text = "460000";
         }
     }
 }
