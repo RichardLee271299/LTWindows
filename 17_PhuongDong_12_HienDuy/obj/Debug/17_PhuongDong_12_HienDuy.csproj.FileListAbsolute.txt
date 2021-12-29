@@ -34,3 +34,21 @@ E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_
 E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
 E:\C#\17_PhuongDong_12_HienDuy\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
 C:\Users\Duy\Desktop\New folder\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.pdb
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csprojResolveAssemblyReference.cache
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDichVu.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmGiaoDienChinh.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmKhachHang.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmLoaiPhong.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmNhanVien.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmPhong.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmSanPham.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemKH.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemPhong.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemSanPham.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.Properties.Resources.resources
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache

@@ -138,7 +138,10 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void frmDichVu_FormClosing(object sender, FormClosingEventArgs e)
         {
-           // if(flag == 1)
+            DialogResult kq = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.No)
+                e.Cancel = true;
+            //if(flag == 1)
                 // ban có muốn thoát không
           //  else if(flag == 2)
                 //ban co muon luu khong
@@ -150,6 +153,23 @@ namespace _17_PhuongDong_12_HienDuy
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTenDichVu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
