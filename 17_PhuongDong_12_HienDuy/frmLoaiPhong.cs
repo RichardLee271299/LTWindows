@@ -143,5 +143,23 @@ namespace _17_PhuongDong_12_HienDuy
             else
                 txtGiaPhong.Text = "460000";
         }
+
+        private void txtGiaPhong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void frmLoaiPhong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult kq = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -73,5 +73,17 @@ namespace _17_PhuongDong_12_HienDuy
                 VisibleKH(true);
             }
         }
+
+        private void btnthoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmTimKiemPhong_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult kq = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.No)
+                e.Cancel = true;
+        }
     }
 }

@@ -201,6 +201,35 @@ namespace _17_PhuongDong_12_HienDuy
             flag = 3;
         }
 
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void txtSoCMND_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtSoCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult kq = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
        
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDaThue = new System.Windows.Forms.Label();
+            this.lblTrong = new System.Windows.Forms.Label();
             this.cboTimKiem = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTuKhoa = new System.Windows.Forms.TextBox();
@@ -40,8 +42,7 @@
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TinhTrang = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblTrong = new System.Windows.Forms.Label();
-            this.lblDaThue = new System.Windows.Forms.Label();
+            this.btnthoat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.grpDanhSachPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
@@ -62,6 +63,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
+            // lblDaThue
+            // 
+            this.lblDaThue.AutoSize = true;
+            this.lblDaThue.Location = new System.Drawing.Point(627, 104);
+            this.lblDaThue.Name = "lblDaThue";
+            this.lblDaThue.Size = new System.Drawing.Size(97, 17);
+            this.lblDaThue.TabIndex = 9;
+            this.lblDaThue.Text = "0 : Phòng trống";
+            // 
+            // lblTrong
+            // 
+            this.lblTrong.AutoSize = true;
+            this.lblTrong.Location = new System.Drawing.Point(627, 84);
+            this.lblTrong.Name = "lblTrong";
+            this.lblTrong.Size = new System.Drawing.Size(166, 17);
+            this.lblTrong.TabIndex = 8;
+            this.lblTrong.Text = "1 : Phòng đã có người thuê";
+            // 
             // cboTimKiem
             // 
             this.cboTimKiem.FormattingEnabled = true;
@@ -71,7 +90,7 @@
             "Tình Trạng"});
             this.cboTimKiem.Location = new System.Drawing.Point(186, 50);
             this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(230, 23);
+            this.cboTimKiem.Size = new System.Drawing.Size(230, 25);
             this.cboTimKiem.TabIndex = 6;
             this.cboTimKiem.SelectedIndexChanged += new System.EventHandler(this.cboTimKiem_SelectedIndexChanged);
             // 
@@ -80,7 +99,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.Size = new System.Drawing.Size(92, 17);
             this.label2.TabIndex = 5;
             this.label2.Text = "Tìm kiếm theo";
             // 
@@ -88,7 +107,7 @@
             // 
             this.txtTuKhoa.Location = new System.Drawing.Point(627, 51);
             this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(230, 21);
+            this.txtTuKhoa.Size = new System.Drawing.Size(230, 25);
             this.txtTuKhoa.TabIndex = 7;
             this.txtTuKhoa.TextChanged += new System.EventHandler(this.txtTuKhoa_TextChanged);
             // 
@@ -97,7 +116,7 @@
             this.lblNhapTuKhoa.AutoSize = true;
             this.lblNhapTuKhoa.Location = new System.Drawing.Point(473, 54);
             this.lblNhapTuKhoa.Name = "lblNhapTuKhoa";
-            this.lblNhapTuKhoa.Size = new System.Drawing.Size(119, 15);
+            this.lblNhapTuKhoa.Size = new System.Drawing.Size(142, 17);
             this.lblNhapTuKhoa.TabIndex = 4;
             this.lblNhapTuKhoa.Text = "Nhập từ khóa tìm kiếm";
             // 
@@ -121,10 +140,10 @@
             this.LoaiPhong,
             this.TinhTrang});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
+            this.dgvDanhSach.Location = new System.Drawing.Point(3, 21);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowTemplate.Height = 24;
-            this.dgvDanhSach.Size = new System.Drawing.Size(878, 246);
+            this.dgvDanhSach.Size = new System.Drawing.Size(878, 242);
             this.dgvDanhSach.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -165,39 +184,34 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(306, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 26);
+            this.label1.Size = new System.Drawing.Size(372, 35);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tìm Kiếm Thông Tin Phòng";
             // 
-            // lblTrong
+            // btnthoat
             // 
-            this.lblTrong.AutoSize = true;
-            this.lblTrong.Location = new System.Drawing.Point(627, 84);
-            this.lblTrong.Name = "lblTrong";
-            this.lblTrong.Size = new System.Drawing.Size(134, 15);
-            this.lblTrong.TabIndex = 8;
-            this.lblTrong.Text = "1 : Phòng đã có người thuê";
-            // 
-            // lblDaThue
-            // 
-            this.lblDaThue.AutoSize = true;
-            this.lblDaThue.Location = new System.Drawing.Point(627, 104);
-            this.lblDaThue.Name = "lblDaThue";
-            this.lblDaThue.Size = new System.Drawing.Size(80, 15);
-            this.lblDaThue.TabIndex = 9;
-            this.lblDaThue.Text = "0 : Phòng trống";
+            this.btnthoat.BackgroundImage = global::_17_PhuongDong_12_HienDuy.Properties.Resources.icon_close;
+            this.btnthoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnthoat.Location = new System.Drawing.Point(855, 18);
+            this.btnthoat.Name = "btnthoat";
+            this.btnthoat.Size = new System.Drawing.Size(38, 40);
+            this.btnthoat.TabIndex = 6;
+            this.btnthoat.UseVisualStyleBackColor = true;
+            this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // frmTimKiemPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(908, 468);
+            this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.grpDanhSachPhong);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmTimKiemPhong";
             this.Text = "frmTimKiemPhong";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTimKiemPhong_FormClosing);
             this.Load += new System.EventHandler(this.frmTimKiemPhong_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -224,5 +238,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDaThue;
         private System.Windows.Forms.Label lblTrong;
+        private System.Windows.Forms.Button btnthoat;
     }
 }
