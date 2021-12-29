@@ -31,6 +31,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtDiaChi.Text = d.Tables[0].Rows[vt]["DiaChi"].ToString();
             txtSoCMND.Text = d.Tables[0].Rows[vt]["CMND"].ToString();
             txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();
+            txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();
             dtpNgayDen.Value =(DateTime)d.Tables[0].Rows[vt]["NgayDen"];
             txtMaKH.Text = d.Tables[0].Rows[vt]["MaKH"].ToString();
             string MaPhong = d.Tables[0].Rows[vt]["MaPH"].ToString();

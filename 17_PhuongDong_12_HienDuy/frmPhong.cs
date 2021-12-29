@@ -31,12 +31,14 @@ namespace _17_PhuongDong_12_HienDuy
               txtMaPhong.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
               txtGiaPhong.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
               string TinhTrang = d.Tables[0].Rows[vt]["Tình Trạng"].ToString();
-              if(TinhTrang.ToLower() == "hoạt động")
+              if(TinhTrang.ToLower() == "trống")
               {
                   cboTinhTrang.SelectedIndex = 0;
               }
               else
+              {
                   cboTinhTrang.SelectedIndex = 1;
+              }       
               string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();
               if(LoaiPhong.ToLower()=="thường")
                   cboLoaiPhong.SelectedIndex = 0;
@@ -188,7 +190,7 @@ namespace _17_PhuongDong_12_HienDuy
                 txtGiaPhong.Text = "120000";
             else if (cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Vip")
                 txtGiaPhong.Text = "240000";
-            else
+            else if(cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Phòng đôi") 
                 txtGiaPhong.Text = "460000";
         }
     }
