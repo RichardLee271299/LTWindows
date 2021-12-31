@@ -51,10 +51,13 @@
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.picHinhPhong = new System.Windows.Forms.PictureBox();
+            this.btnLoadHinh = new System.Windows.Forms.Button();
             this.grpLoaiPhong.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpDanhSachPhong.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHinhPhong)).BeginInit();
             this.SuspendLayout();
             // 
             // grpLoaiPhong
@@ -83,7 +86,7 @@
             "Đã thuê"});
             this.cboTinhTrang.Location = new System.Drawing.Point(92, 135);
             this.cboTinhTrang.Name = "cboTinhTrang";
-            this.cboTinhTrang.Size = new System.Drawing.Size(148, 25);
+            this.cboTinhTrang.Size = new System.Drawing.Size(148, 23);
             this.cboTinhTrang.TabIndex = 4;
             this.cboTinhTrang.SelectedIndexChanged += new System.EventHandler(this.cboTinhTrang_SelectedIndexChanged);
             // 
@@ -92,7 +95,7 @@
             this.cboLoaiPhong.FormattingEnabled = true;
             this.cboLoaiPhong.Location = new System.Drawing.Point(92, 64);
             this.cboLoaiPhong.Name = "cboLoaiPhong";
-            this.cboLoaiPhong.Size = new System.Drawing.Size(148, 25);
+            this.cboLoaiPhong.Size = new System.Drawing.Size(148, 23);
             this.cboLoaiPhong.TabIndex = 2;
             this.cboLoaiPhong.SelectedIndexChanged += new System.EventHandler(this.cboLoaiPhong_SelectedIndexChanged);
             // 
@@ -100,7 +103,7 @@
             // 
             this.txtGiaPhong.Location = new System.Drawing.Point(92, 100);
             this.txtGiaPhong.Name = "txtGiaPhong";
-            this.txtGiaPhong.Size = new System.Drawing.Size(148, 25);
+            this.txtGiaPhong.Size = new System.Drawing.Size(148, 21);
             this.txtGiaPhong.TabIndex = 3;
             this.txtGiaPhong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaPhong_KeyPress);
             // 
@@ -108,7 +111,7 @@
             // 
             this.txtMaPhong.Location = new System.Drawing.Point(92, 29);
             this.txtMaPhong.Name = "txtMaPhong";
-            this.txtMaPhong.Size = new System.Drawing.Size(148, 25);
+            this.txtMaPhong.Size = new System.Drawing.Size(148, 21);
             this.txtMaPhong.TabIndex = 1;
             // 
             // label4
@@ -117,7 +120,7 @@
             this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 139);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 17);
+            this.label4.Size = new System.Drawing.Size(61, 15);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tình Trạng";
             // 
@@ -127,7 +130,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(18, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 17);
+            this.label3.Size = new System.Drawing.Size(57, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "Giá Phòng";
             // 
@@ -137,7 +140,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 17);
+            this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Loại Phòng";
             // 
@@ -147,7 +150,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(17, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Phòng";
             // 
@@ -245,7 +248,7 @@
             this.grpDanhSachPhong.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDanhSachPhong.Location = new System.Drawing.Point(13, 257);
             this.grpDanhSachPhong.Name = "grpDanhSachPhong";
-            this.grpDanhSachPhong.Size = new System.Drawing.Size(535, 230);
+            this.grpDanhSachPhong.Size = new System.Drawing.Size(773, 230);
             this.grpDanhSachPhong.TabIndex = 3;
             this.grpDanhSachPhong.TabStop = false;
             this.grpDanhSachPhong.Text = "Danh Sách Phòng";
@@ -258,12 +261,12 @@
             this.dataGridViewTextBoxColumn2,
             this.LoaiPhong});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.Location = new System.Drawing.Point(3, 21);
+            this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
             this.dgvDanhSach.MultiSelect = false;
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowTemplate.Height = 24;
             this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSach.Size = new System.Drawing.Size(529, 206);
+            this.dgvDanhSach.Size = new System.Drawing.Size(767, 210);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiPhong_CellContentClick);
@@ -298,23 +301,46 @@
             this.label6.ForeColor = System.Drawing.Color.Red;
             this.label6.Location = new System.Drawing.Point(179, 18);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(271, 35);
+            this.label6.Size = new System.Drawing.Size(215, 26);
             this.label6.TabIndex = 4;
             this.label6.Text = "QUẢN LÝ PHÒNG";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
+            // picHinhPhong
+            // 
+            this.picHinhPhong.Location = new System.Drawing.Point(582, 79);
+            this.picHinhPhong.Name = "picHinhPhong";
+            this.picHinhPhong.Size = new System.Drawing.Size(120, 112);
+            this.picHinhPhong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picHinhPhong.TabIndex = 5;
+            this.picHinhPhong.TabStop = false;
+            // 
+            // btnLoadHinh
+            // 
+            this.btnLoadHinh.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadHinh.Location = new System.Drawing.Point(749, 79);
+            this.btnLoadHinh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoadHinh.Name = "btnLoadHinh";
+            this.btnLoadHinh.Size = new System.Drawing.Size(88, 26);
+            this.btnLoadHinh.TabIndex = 1;
+            this.btnLoadHinh.Text = "Chọn hình";
+            this.btnLoadHinh.UseVisualStyleBackColor = true;
+            this.btnLoadHinh.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // frmPhong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 506);
+            this.ClientSize = new System.Drawing.Size(871, 506);
+            this.Controls.Add(this.picHinhPhong);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.grpDanhSachPhong);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.btnLoadHinh);
             this.Controls.Add(this.grpLoaiPhong);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPhong";
-            this.Text = "frmPhong";
+            this.Text = "Quản lý phòng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmPhong_FormClosing);
             this.Load += new System.EventHandler(this.frmPhong_Load);
             this.grpLoaiPhong.ResumeLayout(false);
@@ -322,6 +348,7 @@
             this.groupBox2.ResumeLayout(false);
             this.grpDanhSachPhong.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHinhPhong)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +379,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn LoaiPhong;
+        private System.Windows.Forms.PictureBox picHinhPhong;
+        private System.Windows.Forms.Button btnLoadHinh;
     }
 }

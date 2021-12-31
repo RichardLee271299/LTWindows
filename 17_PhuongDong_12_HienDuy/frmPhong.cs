@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace _17_PhuongDong_12_HienDuy
 {
@@ -40,12 +41,21 @@ namespace _17_PhuongDong_12_HienDuy
                   cboTinhTrang.SelectedIndex = 1;
               }       
               string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();
-              if(LoaiPhong.ToLower()=="thường")
-                  cboLoaiPhong.SelectedIndex = 0;
-              else if (LoaiPhong.ToLower() == "vip")
-                  cboLoaiPhong.SelectedIndex = 1;
-              else
-                  cboLoaiPhong.SelectedIndex = 2;
+              DataView dvmLoaiPhong = new DataView();
+              dvmLoaiPhong.Table = dsLoaiPhong.Tables[0];
+              cboLoaiPhong.DataSource = dvmLoaiPhong;
+              cboLoaiPhong.DisplayMember = "LoaiPhong";
+              cboLoaiPhong.ValueMember = "MaPhong";
+              dvmLoaiPhong.RowFilter = "LoaiPhong ='" + LoaiPhong + "'";
+
+              //xuly hinh anh
+              string h = d.Tables[0].Rows[vt]["Image"].ToString();
+              string filename = Path.GetFullPath("hinh") + @"\";
+              filename += h;
+              //load anh len
+              Bitmap a = new Bitmap(filename);
+              picHinhPhong.Image = a;
+              picHinhPhong.SizeMode = PictureBoxSizeMode.StretchImage;
           }
        
         void Xuly_Textbox(Boolean t)
@@ -68,7 +78,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(true);
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,LoaiPhong.Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
+            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,LoaiPhong.Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end,Image  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             HienThiTextBox(ds, 0);
@@ -93,6 +103,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaPhong.Text = phatSinhMa(ds, "PH");
             txtGiaPhong.ReadOnly = true;
             flag = 1;
+            HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
         }
         int flag = 0;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
@@ -186,12 +197,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Thường")
-                txtGiaPhong.Text = "120000";
-            else if (cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Vip")
-                txtGiaPhong.Text = "240000";
-            else if(cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Phòng đôi") 
-                txtGiaPhong.Text = "460000";
+          
         }
 
         private void txtGiaPhong_KeyPress(object sender, KeyPressEventArgs e)

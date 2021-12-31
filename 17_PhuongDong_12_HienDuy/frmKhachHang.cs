@@ -13,7 +13,6 @@ namespace _17_PhuongDong_12_HienDuy
     public partial class frmKhachHang : Form
     {
         DataSet ds = new DataSet();
-        DataSet dsMaphong = new DataSet();
         public frmKhachHang()
         {
             InitializeComponent();
@@ -34,32 +33,6 @@ namespace _17_PhuongDong_12_HienDuy
             txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();
             dtpNgayDen.Value =(DateTime)d.Tables[0].Rows[vt]["NgayDen"];
             txtMaKH.Text = d.Tables[0].Rows[vt]["MaKH"].ToString();
-            string MaPhong = d.Tables[0].Rows[vt]["MaPH"].ToString();
-            switch(MaPhong.ToLower())
-            {
-                case "ph01":
-                    cboMaPhong.SelectedIndex = 0;
-                    break;
-                case "ph02":
-                    cboMaPhong.SelectedIndex = 1;
-                    break;
-                case "ph03":
-                    cboMaPhong.SelectedIndex = 2;
-                    break;
-                case "ph04":
-                    cboMaPhong.SelectedIndex = 3;
-                    break;
-                case "ph05":
-                    cboMaPhong.SelectedIndex = 4;
-                    break;
-                case "ph06":
-                    cboMaPhong.SelectedIndex = 5;
-                    break;
-                case "ph07":
-                    cboMaPhong.SelectedIndex = 6;
-                    break;
-            }
-
             string GioiTinh = d.Tables[0].Rows[vt]["GioiTinh"].ToString();
             if (GioiTinh.ToLower() == "nam")
                 cbmGioiTinh.SelectedIndex = 0;
@@ -94,8 +67,6 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             HienThiDuLieu("select * from KhachHang", dgvDanhSachKhachHang);
-            dsMaphong = c.LayDuLieu("select Phong.MaPhong,LoaiPhong from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong");
-            HienThiComboBox(ref dsMaphong, "MaPhong", "MaPhong",cboMaPhong);
             HienThiTextBox(ds, 0);
         }
         void clearTextBox()
@@ -105,7 +76,6 @@ namespace _17_PhuongDong_12_HienDuy
             txtSoCMND.Clear();
             txtSoDienThoai.Clear();
             cbmGioiTinh.SelectedIndex = 0;
-            cboMaPhong.SelectedIndex = 0;
         }
         string phatSinhMa (DataSet d, string kytu)
         {
@@ -142,12 +112,12 @@ namespace _17_PhuongDong_12_HienDuy
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into KhachHang values ('" + txtMaKH.Text +"','" +cboMaPhong.SelectedValue+"',N'"+ txtHoTen.Text + "','"+ dtpNgaySinh.Text +"','" + txtSoDienThoai.Text +"', '" + txtSoCMND.Text+"',N'" +txtDiaChi.Text+"',N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"','" + dtpNgayDen.Text+"')";
+                sql = "insert into KhachHang values ('" + txtMaKH.Text +"',N'"+ txtHoTen.Text + "','"+ dtpNgaySinh.Text +"','" + txtSoDienThoai.Text +"', '" + txtSoCMND.Text+"',N'" +txtDiaChi.Text+"',N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"','" + dtpNgayDen.Text+"')";
 
             }
             else if (flag == 2)
             {
-                sql = "update KhachHang set MaKH = '" + txtMaKH.Text + "', MaPH = '" + cboMaPhong.SelectedValue + "', HoTen = N'" + txtHoTen.Text + "', NgaySinh = '"+dtpNgaySinh.Text+"', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', NgayDen = '" + dtpNgayDen.Text + "' where MaKH = '" + txtMaKH.Text + "'";
+                sql = "update KhachHang set MaKH = '" + txtMaKH.Text + "', HoTen = N'" + txtHoTen.Text + "', NgaySinh = '"+dtpNgaySinh.Text+"', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', NgayDen = '" + dtpNgayDen.Text + "' where MaKH = '" + txtMaKH.Text + "'";
 
             }
             else

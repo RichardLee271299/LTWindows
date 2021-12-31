@@ -66,10 +66,10 @@
             this.DonViTinh,
             this.Gia});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.Location = new System.Drawing.Point(3, 21);
+            this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSach.Size = new System.Drawing.Size(569, 191);
+            this.dgvDanhSach.Size = new System.Drawing.Size(569, 195);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
@@ -107,7 +107,7 @@
             // 
             this.txtGia.Location = new System.Drawing.Point(110, 129);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(160, 25);
+            this.txtGia.Size = new System.Drawing.Size(160, 21);
             this.txtGia.TabIndex = 3;
             this.txtGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGia_KeyPress);
             // 
@@ -115,14 +115,14 @@
             // 
             this.txtDonViTinh.Location = new System.Drawing.Point(110, 92);
             this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Size = new System.Drawing.Size(160, 25);
+            this.txtDonViTinh.Size = new System.Drawing.Size(160, 21);
             this.txtDonViTinh.TabIndex = 2;
             // 
             // txtTenDichVu
             // 
             this.txtTenDichVu.Location = new System.Drawing.Point(110, 56);
             this.txtTenDichVu.Name = "txtTenDichVu";
-            this.txtTenDichVu.Size = new System.Drawing.Size(160, 25);
+            this.txtTenDichVu.Size = new System.Drawing.Size(160, 21);
             this.txtTenDichVu.TabIndex = 1;
             this.txtTenDichVu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenDichVu_KeyPress);
             // 
@@ -130,7 +130,7 @@
             // 
             this.txtMaDichVu.Location = new System.Drawing.Point(110, 21);
             this.txtMaDichVu.Name = "txtMaDichVu";
-            this.txtMaDichVu.Size = new System.Drawing.Size(160, 25);
+            this.txtMaDichVu.Size = new System.Drawing.Size(160, 21);
             this.txtMaDichVu.TabIndex = 0;
             // 
             // label4
@@ -139,7 +139,7 @@
             this.label4.Location = new System.Drawing.Point(23, 131);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 17);
+            this.label4.Size = new System.Drawing.Size(24, 15);
             this.label4.TabIndex = 0;
             this.label4.Text = "Giá";
             // 
@@ -149,7 +149,7 @@
             this.label3.Location = new System.Drawing.Point(23, 95);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 17);
+            this.label3.Size = new System.Drawing.Size(62, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "Đơn vị tính";
             // 
@@ -203,7 +203,7 @@
             this.label2.Location = new System.Drawing.Point(23, 59);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
+            this.label2.Size = new System.Drawing.Size(46, 15);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên DV";
             // 
@@ -254,7 +254,7 @@
             this.label1.Location = new System.Drawing.Point(23, 24);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.Size = new System.Drawing.Size(44, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã DV";
             // 
@@ -301,7 +301,7 @@
             // 
             // frmDichVu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 476);
             this.Controls.Add(this.label5);
@@ -310,7 +310,7 @@
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDichVu";
-            this.Text = "frmdichvu";
+            this.Text = "Dịch vụ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDichVu_FormClosing);
             this.Load += new System.EventHandler(this.frmDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();

@@ -67,9 +67,9 @@
             this.GiaNhap,
             this.GiaBan});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.Location = new System.Drawing.Point(3, 21);
+            this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
             this.dgvDanhSach.Name = "dgvDanhSach";
-            this.dgvDanhSach.Size = new System.Drawing.Size(734, 191);
+            this.dgvDanhSach.Size = new System.Drawing.Size(734, 195);
             this.dgvDanhSach.TabIndex = 0;
             // 
             // MaSP
@@ -126,7 +126,7 @@
             // 
             this.txtTuKhoa.Location = new System.Drawing.Point(518, 44);
             this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(197, 25);
+            this.txtTuKhoa.Size = new System.Drawing.Size(197, 21);
             this.txtTuKhoa.TabIndex = 9;
             this.txtTuKhoa.TextChanged += new System.EventHandler(this.txtTuKhoa_TextChanged);
             // 
@@ -139,7 +139,7 @@
             "So lượng"});
             this.cboTimKiem.Location = new System.Drawing.Point(155, 43);
             this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(197, 25);
+            this.cboTimKiem.Size = new System.Drawing.Size(197, 23);
             this.cboTimKiem.TabIndex = 8;
             this.cboTimKiem.SelectedIndexChanged += new System.EventHandler(this.cboTimKiem_SelectedIndexChanged_1);
             // 
@@ -148,7 +148,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 17);
+            this.label2.Size = new System.Drawing.Size(77, 15);
             this.label2.TabIndex = 7;
             this.label2.Text = "Tìm kiếm theo";
             // 
@@ -157,7 +157,7 @@
             this.lblTuKhoa.AutoSize = true;
             this.lblTuKhoa.Location = new System.Drawing.Point(375, 47);
             this.lblTuKhoa.Name = "lblTuKhoa";
-            this.lblTuKhoa.Size = new System.Drawing.Size(142, 17);
+            this.lblTuKhoa.Size = new System.Drawing.Size(119, 15);
             this.lblTuKhoa.TabIndex = 6;
             this.lblTuKhoa.Text = "Nhập từ khóa tìm kiếm";
             // 
@@ -168,7 +168,7 @@
             this.label1.ForeColor = System.Drawing.Color.Red;
             this.label1.Location = new System.Drawing.Point(117, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(419, 35);
+            this.label1.Size = new System.Drawing.Size(336, 26);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tìm Kiếm Thông Tin Sản Phẩm";
             // 
@@ -185,7 +185,7 @@
             // 
             // frmTimKiemSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 441);
             this.Controls.Add(this.btnthoat);
@@ -194,7 +194,7 @@
             this.Controls.Add(this.groupBox3);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmTimKiemSanPham";
-            this.Text = "frmTimKiemSanPham";
+            this.Text = "Tìm kiếm sản phẩm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTimKiemSanPham_FormClosing);
             this.Load += new System.EventHandler(this.frmTimKiemSanPham_Load_1);
             this.groupBox3.ResumeLayout(false);
