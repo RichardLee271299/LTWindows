@@ -26,7 +26,12 @@ namespace _17_PhuongDong_12_HienDuy
             dgs.DataSource = ds.Tables[0];
         }
 
-
+        void chuyenfileanhsanganh(string filename)
+          {
+              Bitmap a = new Bitmap(filename);
+              picHinhPhong.Image = a;
+              picHinhPhong.SizeMode = PictureBoxSizeMode.StretchImage;
+          }
           void HienThiTextBox(DataSet d, int vt)
           {
               txtMaPhong.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
@@ -53,9 +58,7 @@ namespace _17_PhuongDong_12_HienDuy
               string filename = Path.GetFullPath("hinh") + @"\";
               filename += h;
               //load anh len
-              Bitmap a = new Bitmap(filename);
-              picHinhPhong.Image = a;
-              picHinhPhong.SizeMode = PictureBoxSizeMode.StretchImage;
+              chuyenfileanhsanganh(filename);
           }
        
         void Xuly_Textbox(Boolean t)
@@ -74,6 +77,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void frmPhong_Load(object sender, EventArgs e)
         {
+            btnLoadHinh.Visible = false;
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             Xuly_Textbox(true);
@@ -96,6 +100,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            btnLoadHinh.Visible = true;
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             cboTinhTrang.SelectedIndex = 0;
@@ -151,7 +156,21 @@ namespace _17_PhuongDong_12_HienDuy
 
             flag = 0;
         }
-
+        string tachchuoi(string f)
+        {
+            string kq = "";
+            string[] mangchuoi = f.Split('\\');
+            return mangchuoi[mangchuoi.Length-1];
+        }
+        private void btnLoadHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog o = new OpenFileDialog();
+            o.InitialDirectory = Path.GetFullPath("hinh") + @"\";
+            o.ShowDialog();
+            if (o.FileName.Contains("hinh"))
+            chuyenfileanhsanganh(o.FileName);
+         
+        }
         private void btnSua_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(true);

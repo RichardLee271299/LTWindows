@@ -308,7 +308,7 @@
             // 
             // picHinhPhong
             // 
-            this.picHinhPhong.Location = new System.Drawing.Point(582, 79);
+            this.picHinhPhong.Location = new System.Drawing.Point(578, 79);
             this.picHinhPhong.Name = "picHinhPhong";
             this.picHinhPhong.Size = new System.Drawing.Size(120, 112);
             this.picHinhPhong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -318,25 +318,25 @@
             // btnLoadHinh
             // 
             this.btnLoadHinh.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadHinh.Location = new System.Drawing.Point(749, 79);
+            this.btnLoadHinh.Location = new System.Drawing.Point(595, 125);
             this.btnLoadHinh.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadHinh.Name = "btnLoadHinh";
             this.btnLoadHinh.Size = new System.Drawing.Size(88, 26);
             this.btnLoadHinh.TabIndex = 1;
-            this.btnLoadHinh.Text = "Chọn hình";
+            this.btnLoadHinh.Text = "Chọn ảnh";
             this.btnLoadHinh.UseVisualStyleBackColor = true;
-            this.btnLoadHinh.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnLoadHinh.Click += new System.EventHandler(this.btnLoadHinh_Click);
             // 
             // frmPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 506);
+            this.Controls.Add(this.btnLoadHinh);
             this.Controls.Add(this.picHinhPhong);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.grpDanhSachPhong);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnLoadHinh);
             this.Controls.Add(this.grpLoaiPhong);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmPhong";
