@@ -207,9 +207,9 @@
             // 
             this.btnthoat.BackgroundImage = global::_17_PhuongDong_12_HienDuy.Properties.Resources.icon_close;
             this.btnthoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnthoat.Location = new System.Drawing.Point(855, 24);
+            this.btnthoat.Location = new System.Drawing.Point(836, 24);
             this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(38, 40);
+            this.btnthoat.Size = new System.Drawing.Size(57, 40);
             this.btnthoat.TabIndex = 3;
             this.btnthoat.UseVisualStyleBackColor = true;
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);

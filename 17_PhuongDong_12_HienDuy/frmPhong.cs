@@ -36,6 +36,8 @@ namespace _17_PhuongDong_12_HienDuy
           {
               txtMaPhong.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
               txtGiaPhong.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
+              txtKichThuoc.Text = d.Tables[0].Rows[vt]["KichThuoc"].ToString();
+              txtHinhAnh.Text = d.Tables[0].Rows[vt]["Image"].ToString();
               string TinhTrang = d.Tables[0].Rows[vt]["Tình Trạng"].ToString();
               if(TinhTrang.ToLower() == "trống")
               {
@@ -64,6 +66,8 @@ namespace _17_PhuongDong_12_HienDuy
         void Xuly_Textbox(Boolean t)
         {
             txtMaPhong.ReadOnly = t;
+            txtHinhAnh.ReadOnly = t;
+            txtKichThuoc.ReadOnly = t;
             txtGiaPhong.ReadOnly = t;
         }
          
@@ -82,7 +86,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(true);
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,LoaiPhong.Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end,Image  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
+            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end,Image,KichThuoc  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             HienThiTextBox(ds, 0);
@@ -106,9 +110,9 @@ namespace _17_PhuongDong_12_HienDuy
             cboTinhTrang.SelectedIndex = 0;
             txtMaPhong.ReadOnly = true;
             txtMaPhong.Text = phatSinhMa(ds, "PH");
-            txtGiaPhong.ReadOnly = true;
             flag = 1;
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
+            clearTextbox();
         }
         int flag = 0;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
@@ -117,6 +121,12 @@ namespace _17_PhuongDong_12_HienDuy
             c.DisplayMember = ten;
             c.ValueMember = ma;
             c.SelectedIndex = 0;
+        }
+        void clearTextbox()
+        {
+            txtHinhAnh.Clear();
+            txtKichThuoc.Clear();
+            txtGiaPhong.Clear();
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -133,13 +143,13 @@ namespace _17_PhuongDong_12_HienDuy
             if (flag == 1)
             {
 
-                sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue +  "'," + tinhtrang + ")";
+                sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue +  "'," + tinhtrang + ",'"+ txtGiaPhong.Text +"','"+ txtKichThuoc.Text+ "','"+txtHinhAnh.Text +"')";
 
 
             }
             else if (flag == 2)
             {
-                sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + " where MaPhong = '" + txtMaPhong.Text + "'";
+                sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + ",Gia = "+txtGiaPhong.Text +",KichThuoc ='"+ txtKichThuoc.Text+"',Image = '"+txtHinhAnh.Text +"' where MaPhong = '" + txtMaPhong.Text + "'";
 
             }
             else
@@ -158,7 +168,6 @@ namespace _17_PhuongDong_12_HienDuy
         }
         string tachchuoi(string f)
         {
-            string kq = "";
             string[] mangchuoi = f.Split('\\');
             return mangchuoi[mangchuoi.Length-1];
         }
@@ -168,14 +177,19 @@ namespace _17_PhuongDong_12_HienDuy
             o.InitialDirectory = Path.GetFullPath("hinh") + @"\";
             o.ShowDialog();
             if (o.FileName.Contains("hinh"))
-            chuyenfileanhsanganh(o.FileName);
+            {
+                chuyenfileanhsanganh(o.FileName);
+                txtHinhAnh.Text = tachchuoi(o.FileName);
+            }
+           
          
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
-            Xuly_Textbox(true);
+            Xuly_Textbox(false);
             Xuly_Chucnang(false);
-            txtGiaPhong.ReadOnly = false;
+            txtMaPhong.ReadOnly = true;
+            btnLoadHinh.Visible = true;
             flag = 2;
            
         }

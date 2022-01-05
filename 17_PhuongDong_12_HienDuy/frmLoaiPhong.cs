@@ -29,18 +29,14 @@ namespace _17_PhuongDong_12_HienDuy
         void HienThiTextBox(DataSet d, int vt)
         {
             txtMaPH.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
-            txtGiaPhong.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
-            string LoaiPhong = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();            
-            if (LoaiPhong.ToLower() == "thường")
-                cboLoaiPhong.SelectedIndex = 0;
-            else
-                cboLoaiPhong.SelectedIndex = 1;
+            txtLoaiPhong.Text = d.Tables[0].Rows[vt]["LoaiPhong"].ToString();
+            
 
         }
         void Xuly_Textbox(Boolean t)
         {
-            txtMaPH.ReadOnly = t;            
-            txtGiaPhong.ReadOnly = t;      
+            txtMaPH.ReadOnly = t;
+            txtLoaiPhong.ReadOnly = t;
         }
         void Xuly_Chucnang(Boolean t)
         {
@@ -66,7 +62,6 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtMaPH.ReadOnly = true;
-            txtGiaPhong.ReadOnly = true;
             txtMaPH.Text=Phatsinhma(ds, "LP");
             flag = 1;
         }
@@ -78,12 +73,12 @@ namespace _17_PhuongDong_12_HienDuy
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] + "'," + txtGiaPhong.Text + ")";
+                sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + txtLoaiPhong.Text + "')";
 
             }
             else if (flag == 2)
             {
-                sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] + "', Gia='" + txtGiaPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
+                sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + txtLoaiPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
 
             }
             else
@@ -114,12 +109,21 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
         }
+        void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
+        {
+            c.DataSource = ds.Tables[0];
+            c.DisplayMember = ten;
+            c.ValueMember = ma;
+            c.SelectedIndex = 0;
+        }
         private void frmLoaiPhong_Load(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             HienThiDuLieu("select * from LoaiPhong", dgvDanhSach);
+            dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiTextBox(ds, 0);
+
         }
 
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -136,18 +140,10 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Thường")
-                txtGiaPhong.Text = "120000";
-            else if (cboLoaiPhong.Items[cboLoaiPhong.SelectedIndex] == "Vip")
-                txtGiaPhong.Text = "240000";
-            else
-                txtGiaPhong.Text = "460000";
         }
 
         private void txtGiaPhong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
-                e.Handled = true;
         }
 
         private void frmLoaiPhong_FormClosing(object sender, FormClosingEventArgs e)
