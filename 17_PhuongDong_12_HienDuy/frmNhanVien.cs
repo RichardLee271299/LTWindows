@@ -16,6 +16,7 @@ namespace _17_PhuongDong_12_HienDuy
         {
             InitializeComponent();
         }
+        int flag = 0;
         clsQuanLyKhachSan c = new clsQuanLyKhachSan();
         DataSet ds = new DataSet();
         void HienThiDuLieu(String sql, DataGridView dgs)
@@ -29,12 +30,22 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaNv.Text = d.Tables[0].Rows[vt]["MaNV"].ToString();
             txtDiaChi.Text = d.Tables[0].Rows[vt]["DiaChi"].ToString();
             txtSoCMND.Text = d.Tables[0].Rows[vt]["CMND"].ToString();
-            txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();           
+            txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();
+            string TinhTrang = d.Tables[0].Rows[vt]["TinhTrang"].ToString();
+            if (TinhTrang.ToLower() == "Đi Làm")
+                cbmTinhTrang.SelectedIndex = 1;
+            else
+                cbmTinhTrang.SelectedIndex = 0;
+            string QuyenHan = d.Tables[0].Rows[vt]["QuyenHan"].ToString();
+            if (QuyenHan.ToLower() == "Nhân Viên")
+                cmbQuyenHan.SelectedIndex = 1;
+            else
+                cmbQuyenHan.SelectedIndex = 0;
             string GioiTinh = d.Tables[0].Rows[vt]["GioiTinh"].ToString();
             if (GioiTinh.ToLower() == "Nam")
-                cbmGioiTinh.SelectedIndex = 0;
-            else
                 cbmGioiTinh.SelectedIndex = 1;
+            else
+                cbmGioiTinh.SelectedIndex = 0;
 
         }
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -92,12 +103,38 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaNv.ReadOnly = true;
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
+            flag = 1;
         }
 
         private void btnLuu_Click_1(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            string sql = "";
+            if (flag == 1)
+            {
+                sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "',N'" + cbmTinhTrang.Items[cbmTinhTrang.SelectedIndex] + "',N'" + cmbQuyenHan.Items[cmbQuyenHan.SelectedIndex] + "','" + txtSoDienThoai.Text + "', '" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "',N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "')";
+
+            }
+            else if (flag == 2)
+            {
+                sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = N'" + cbmTinhTrang.Items[cbmTinhTrang.SelectedIndex] + "', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cmbQuyenHan.Items[cmbQuyenHan.SelectedIndex] + "' where MaNv = '" + txtMaNv.Text + "'";
+
+            }
+            else
+            {
+                sql = "delete from NhanVien where MaNv = '" + txtMaNv.Text + "'";
+
+            }
+            if (c.CapNhatDuLieu(sql) != 0)
+            {
+                MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                frmNhanVien_Load(sender, e);
+            }
+
+
+            flag = 0;
+
         }
 
         private void btnSua_Click_1(object sender, EventArgs e)
@@ -105,12 +142,13 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(false);
             txtMaNv.ReadOnly = false;
+            flag = 2;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             Xuly_Chucnang(false);
-            //flag = 3;
+            flag = 3;
         }
 
         private void btnHuy_Click_1(object sender, EventArgs e)
