@@ -64,6 +64,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaPH.ReadOnly = true;
             txtMaPH.Text=Phatsinhma(ds, "LP");
             flag = 1;
+            txtLoaiPhong.Clear();
         }
         int flag = 0;
         private void btnLuu_Click(object sender, EventArgs e)
@@ -106,6 +107,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
         }

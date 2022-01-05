@@ -198,6 +198,7 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            btnLoadHinh.Visible = false;
         }
 
         private void dgvLoaiPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)

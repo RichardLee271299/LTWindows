@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmNhanVien : Form
@@ -33,19 +32,19 @@ namespace _17_PhuongDong_12_HienDuy
             txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();
             string TinhTrang = d.Tables[0].Rows[vt]["TinhTrang"].ToString();
             if (TinhTrang.ToLower() == "Đi Làm")
-                cbmTinhTrang.SelectedIndex = 1;
+                cboTinhTrang.SelectedIndex = 1;
             else
-                cbmTinhTrang.SelectedIndex = 0;
+                cboTinhTrang.SelectedIndex = 0;
             string QuyenHan = d.Tables[0].Rows[vt]["QuyenHan"].ToString();
             if (QuyenHan.ToLower() == "Nhân Viên")
-                cmbQuyenHan.SelectedIndex = 1;
+                cboQuyenHan.SelectedIndex = 1;
             else
-                cmbQuyenHan.SelectedIndex = 0;
+                cboQuyenHan.SelectedIndex = 0;
             string GioiTinh = d.Tables[0].Rows[vt]["GioiTinh"].ToString();
             if (GioiTinh.ToLower() == "Nam")
-                cbmGioiTinh.SelectedIndex = 1;
+                cboGioiTinh.SelectedIndex = 1;
             else
-                cbmGioiTinh.SelectedIndex = 0;
+                cboGioiTinh.SelectedIndex = 0;
 
         }
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -79,6 +78,8 @@ namespace _17_PhuongDong_12_HienDuy
                 ma = kytu + sodong.ToString();
             return ma;
         }
+
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -99,7 +100,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            txtMaNv.Text = phatSinhMa(ds, "K").ToString();
+            txtMaNv.Text = phatSinhMa(ds, "NV").ToString();
             txtMaNv.ReadOnly = true;
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
@@ -110,15 +111,20 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            int tinhtrang;
+            if ((string)cboTinhTrang.Items[cboTinhTrang.SelectedIndex] == "Hoạt động")
+                tinhtrang = 1;
+            else
+                tinhtrang = 0;
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "',N'" + cbmTinhTrang.Items[cbmTinhTrang.SelectedIndex] + "',N'" + cmbQuyenHan.Items[cmbQuyenHan.SelectedIndex] + "','" + txtSoDienThoai.Text + "', '" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "',N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "')";
+                sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "','"+ txtSoCMND.Text +"',N'"+ txtDiaChi.Text + "','"+ txtSoDienThoai.Text +"',"+ tinhtrang + ",N'"+ cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "',N'" +cboQuyenHan.Items[cboQuyenHan.SelectedIndex] +"')";
 
             }
             else if (flag == 2)
             {
-                sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = N'" + cbmTinhTrang.Items[cbmTinhTrang.SelectedIndex] + "', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cmbQuyenHan.Items[cmbQuyenHan.SelectedIndex] + "' where MaNv = '" + txtMaNv.Text + "'";
+                sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = " + tinhtrang + ", SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "' where MaNv = '" + txtMaNv.Text + "'";
 
             }
             else
