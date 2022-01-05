@@ -200,6 +200,12 @@ namespace _17_PhuongDong_12_HienDuy
             this.Close();
         }
 
+        private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
        
     }
 }
