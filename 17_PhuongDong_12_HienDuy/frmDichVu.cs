@@ -111,11 +111,12 @@ namespace _17_PhuongDong_12_HienDuy
             else if (flag == 2)
             {
                 sql = "update DichVu set MaDV = '" + txtMaDichVu.Text + "', TenDV = N'" + txtTenDichVu.Text + "',DonViTinh = N'" + txtDonViTinh.Text + "',Gia ='" + txtGia.Text +"' where MaDV = '" + txtMaDichVu.Text + "'";
-                MessageBox.Show("Bạn có muốn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBox.Show("Bạn có muốn sửa dịch vụ vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else
             {
-                sql = "delete from DichVu where MaDV = '" + txtMaDichVu.Text + "'";                
+                sql = "delete from DichVu where MaDV = '" + txtMaDichVu.Text + "'";
+                MessageBox.Show("Bạn có muốn xóa dịch vụ vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 
             }
             if (c.CapNhatDuLieu(sql) != 0)
@@ -133,7 +134,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             XuLy_ChucNang(true);
             XuLy_Textbox(true);
-            MessageBox.Show("Bạn có muốn hủy?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (flag == 1)
+            { MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 2)
+            { MessageBox.Show("Bạn có muốn hủy sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 3)
+            { MessageBox.Show("Bạn có muốn hủy xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
         }
 
         private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -51,3 +51,4 @@ C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12
 C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache
 C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
 C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
+C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csprojResolveAssemblyReference.cache
