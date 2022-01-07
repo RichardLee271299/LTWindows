@@ -79,6 +79,13 @@ namespace _17_PhuongDong_12_HienDuy
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void mnuDatPhong_Click(object sender, EventArgs e)
+        {
+            frmDatPhong frm = new frmDatPhong();
+            frm.MdiParent = this;
+            frm.Show();
+        }
         
     }
 }
