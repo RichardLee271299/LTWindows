@@ -70,3 +70,5 @@ C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_Ph
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemSanPham.resources
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.Properties.Resources.resources
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache
+C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\Guna.UI2.dll
+C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmHoaDon.resources

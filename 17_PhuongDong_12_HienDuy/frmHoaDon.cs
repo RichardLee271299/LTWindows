@@ -16,5 +16,10 @@ namespace _17_PhuongDong_12_HienDuy
         {
             InitializeComponent();
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
