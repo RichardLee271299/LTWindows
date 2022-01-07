@@ -81,17 +81,17 @@ namespace _17_PhuongDong_12_HienDuy
             if (flag == 1)
             {
                 sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + txtLoaiPhong.Text + "')";
-
+                MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else if (flag == 2)
             {
                 sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + txtLoaiPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
-
+                MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else
             {
                 sql = "delete from LoaiPhong where MaPhong = '" + txtMaPH.Text + "'";
-
+                MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             if (c.CapNhatDuLieu(sql) != 0)
             {
@@ -116,6 +116,12 @@ namespace _17_PhuongDong_12_HienDuy
 
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            if (flag == 1)
+            { MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 2)
+            { MessageBox.Show("Bạn có muốn hủy sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 3)
+            { MessageBox.Show("Bạn có muốn hủy xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
         }
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {

@@ -89,17 +89,17 @@ namespace _17_PhuongDong_12_HienDuy
             if (flag == 1)
             {
                 sql = "insert into SanPham values('" + txtMaSP.Text + "',N'" + txtTenSP.Text + "',N'" + txtSoLuong.Text + "'," + txtGiaNhap.Text + "," + txtGiaBan.Text + ")";
-
+                MessageBox.Show("Bạn có muốn thêm sản phẩm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else if (flag == 2)
             {
                 sql = "update SanPham set MaSP = '" + txtMaSP.Text + "', TenSP = N'" + txtTenSP.Text + "',SoLuongTon = N'" + txtSoLuong.Text + "' where MaSP = '" + txtMaSP.Text + "'";
-
+                MessageBox.Show("Bạn có muốn sửa thông tin sản phẩm vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else
             {
                 sql = "delete from SanPham where MaSP = '" + txtMaSP.Text + "'";
-
+                MessageBox.Show("Bạn có muốn xóa sản phẩm vùa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             if (c.CapNhatDuLieu(sql) != 0)
             {
@@ -133,7 +133,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-
+            if (flag == 1)
+            { MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 2)
+            { MessageBox.Show("Bạn có muốn hủy sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 3)
+            { MessageBox.Show("Bạn có muốn hủy xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
         }
 
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
