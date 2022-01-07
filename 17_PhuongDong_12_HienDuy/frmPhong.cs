@@ -144,18 +144,18 @@ namespace _17_PhuongDong_12_HienDuy
             {
 
                 sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue +  "'," + tinhtrang + ",'"+ txtGiaPhong.Text +"','"+ txtKichThuoc.Text+ "','"+txtHinhAnh.Text +"')";
-
+                MessageBox.Show("Bạn có muốn hủy thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
 
             }
             else if (flag == 2)
             {
                 sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + ",Gia = "+txtGiaPhong.Text +",KichThuoc ='"+ txtKichThuoc.Text+"',Image = '"+txtHinhAnh.Text +"' where MaPhong = '" + txtMaPhong.Text + "'";
-
+                MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
             }
             else
             {
                 sql = "delete from Phong where MaPhong = '" + txtMaPhong.Text + "'";
-
+                MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
             }
             if (c.CapNhatDuLieu(sql) != 0)
             {
@@ -199,7 +199,12 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             btnLoadHinh.Visible = false;
-            MessageBox.Show("Bạn có muốn hủy?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (flag == 1)
+            { MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 2)
+            { MessageBox.Show("Bạn có muốn hủy sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 3)
+            { MessageBox.Show("Bạn có muốn hủy xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
         }
 
         private void dgvLoaiPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)

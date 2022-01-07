@@ -145,17 +145,17 @@ namespace _17_PhuongDong_12_HienDuy
             if (flag == 1)
             {
                 sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "','" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "','" + txtSoDienThoai.Text + "'," + tinhtrang + ",N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "',N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',N'" + txtHinhAnh.Text + "')";
-
+                MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else if (flag == 2)
             {
                 sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = " + tinhtrang + ", SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] +"',Image='"+ txtHinhAnh.Text + "' where MaNv = '" + txtMaNv.Text + "'";
-
+                MessageBox.Show("Bạn có muốn sửa thông tin nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else
             {
                 sql = "delete from NhanVien where MaNv = '" + txtMaNv.Text + "'";
-
+                MessageBox.Show("Bạn có muốn xóa nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             if (c.CapNhatDuLieu(sql) != 0)
             {
@@ -187,7 +187,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            MessageBox.Show("Bạn có muốn hủy?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (flag == 1)
+            { MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 2)
+            { MessageBox.Show("Bạn có muốn hủy sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 3)
+            { MessageBox.Show("Bạn có muốn hủy xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
         }
         string tachchuoi(string f)
         {

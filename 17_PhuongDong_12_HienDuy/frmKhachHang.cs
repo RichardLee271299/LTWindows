@@ -113,17 +113,17 @@ namespace _17_PhuongDong_12_HienDuy
             if (flag == 1)
             {
                 sql = "insert into KhachHang values ('" + txtMaKH.Text +"',N'"+ txtHoTen.Text + "','"+ dtpNgaySinh.Text +"','" + txtSoDienThoai.Text +"', '" + txtSoCMND.Text+"',N'" +txtDiaChi.Text+"',N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"','" + dtpNgayDen.Text+"')";
-
+                MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else if (flag == 2)
             {
                 sql = "update KhachHang set MaKH = '" + txtMaKH.Text + "', HoTen = N'" + txtHoTen.Text + "', NgaySinh = '"+dtpNgaySinh.Text+"', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', NgayDen = '" + dtpNgayDen.Text + "' where MaKH = '" + txtMaKH.Text + "'";
-
+                MessageBox.Show("Bạn có muốn sửa thông tin khách hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             else
             {
                 sql = "delete from KhachHang where MaKH = '" + txtMaKH.Text + "'";
-
+                MessageBox.Show("Bạn có muốn xóa thông tin khách hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
             if (c.CapNhatDuLieu(sql) != 0)
             {
@@ -147,6 +147,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            if (flag == 1)
+            { MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 2)
+            { MessageBox.Show("Bạn có muốn hủy sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 3)
+            { MessageBox.Show("Bạn có muốn hủy xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
         }
 
         private void label9_Click(object sender, EventArgs e)
