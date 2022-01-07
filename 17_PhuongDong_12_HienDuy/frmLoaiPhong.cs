@@ -38,6 +38,11 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaPH.ReadOnly = t;
             txtLoaiPhong.ReadOnly = t;
         }
+        void clearTextBox()
+        {
+            txtMaPH.Clear();
+            txtLoaiPhong.Clear();           
+        }
         void Xuly_Chucnang(Boolean t)
         {
             btnThem.Enabled = t;
@@ -62,9 +67,11 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtMaPH.ReadOnly = true;
+            clearTextBox();
             txtMaPH.Text=Phatsinhma(ds, "LP");
             flag = 1;
             txtLoaiPhong.Clear();
+            MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
         int flag = 0;
         private void btnLuu_Click(object sender, EventArgs e)
@@ -103,6 +110,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(false);
             txtMaPH.ReadOnly = false;
             flag = 2;
+            MessageBox.Show("Bạn có muốn sữa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -110,6 +118,7 @@ namespace _17_PhuongDong_12_HienDuy
 
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            MessageBox.Show("Bạn có muốn Hủy?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {

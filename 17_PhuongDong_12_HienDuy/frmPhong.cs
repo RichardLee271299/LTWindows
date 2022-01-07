@@ -113,6 +113,7 @@ namespace _17_PhuongDong_12_HienDuy
             flag = 1;
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             clearTextbox();
+            MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
         int flag = 0;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
@@ -191,6 +192,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaPhong.ReadOnly = true;
             btnLoadHinh.Visible = true;
             flag = 2;
+            MessageBox.Show("Bạn có muốn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
            
         }
 
@@ -199,6 +201,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             btnLoadHinh.Visible = false;
+            MessageBox.Show("Bạn có muốn hủy?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void dgvLoaiPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -222,6 +225,7 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Chucnang(false);
             flag = 3;
+            MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void label6_Click(object sender, EventArgs e)

@@ -126,12 +126,14 @@ namespace _17_PhuongDong_12_HienDuy
             txtGiaNhap.ReadOnly = false;
             txtGiaBan.ReadOnly = false;
             flag = 2;
+            MessageBox.Show("Bạn có muốn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            MessageBox.Show("Bạn có muốn hủy?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -144,6 +146,7 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Chucnang(false);
             flag = 3;
+            MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
