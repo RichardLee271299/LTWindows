@@ -81,7 +81,6 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaDichVu.ReadOnly = true;
             txtMaDichVu.Text = Phatsinhma(ds, "DV");
             flag = 1;
-            MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -90,14 +89,12 @@ namespace _17_PhuongDong_12_HienDuy
             XuLy_ChucNang(false);
             txtMaDichVu.ReadOnly = true;
             flag = 2;
-            MessageBox.Show("Bạn có muốn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             XuLy_ChucNang(false);
             flag = 3;
-            MessageBox.Show("Bạn có muốn xóa dịch vụ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnLuu_Click(object sender, EventArgs e)

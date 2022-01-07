@@ -174,7 +174,6 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(false);
             txtMaNv.ReadOnly = false;
             flag = 2;
-            MessageBox.Show("Bạn có muốn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
