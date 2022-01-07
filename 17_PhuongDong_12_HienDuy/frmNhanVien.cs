@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmNhanVien : Form
@@ -23,6 +24,12 @@ namespace _17_PhuongDong_12_HienDuy
             ds = c.LayDuLieu(sql);
             dgs.DataSource = ds.Tables[0];
         }
+        void chuyenfileanhsanganh(string filename)
+        {
+            Bitmap a = new Bitmap(filename);
+            picHinhPhong.Image = a;
+            picHinhPhong.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
         void HienThiTextBox(DataSet d, int vt)
         {
             txtHoTen.Text = d.Tables[0].Rows[vt]["HoTen"].ToString();
@@ -30,6 +37,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtDiaChi.Text = d.Tables[0].Rows[vt]["DiaChi"].ToString();
             txtSoCMND.Text = d.Tables[0].Rows[vt]["CMND"].ToString();
             txtSoDienThoai.Text = d.Tables[0].Rows[vt]["SDT"].ToString();
+            txtHinhAnh.Text = d.Tables[0].Rows[vt]["Image"].ToString();
             string TinhTrang = d.Tables[0].Rows[vt]["TinhTrang"].ToString();
             if (TinhTrang.ToLower() == "Đi Làm")
                 cboTinhTrang.SelectedIndex = 1;
@@ -45,6 +53,12 @@ namespace _17_PhuongDong_12_HienDuy
                 cboGioiTinh.SelectedIndex = 1;
             else
                 cboGioiTinh.SelectedIndex = 0;
+            //xuly hinh anh
+            string h = d.Tables[0].Rows[vt]["Image"].ToString();
+            string filename = Path.GetFullPath("hinh") + @"\";
+            filename += h;
+            //load anh len
+            chuyenfileanhsanganh(filename);
 
         }
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -53,11 +67,21 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void Xuly_Textbox(Boolean t)
         {
-            txtMaNv.ReadOnly = t;
+            txtMaNv.ReadOnly = !t;
             txtHoTen.ReadOnly = t;
             txtSoCMND.ReadOnly = t;
             txtSoDienThoai.ReadOnly = t;
             txtDiaChi.ReadOnly = t;
+        }
+        void clearTextBox()
+        {
+            txtDiaChi.Clear();
+            txtHoTen.Clear();
+            txtSoCMND.Clear();
+            txtSoDienThoai.Clear();
+            cboGioiTinh.SelectedIndex = 0;
+            cboTinhTrang.SelectedIndex = 0;
+            cboQuyenHan.SelectedIndex = 0;
         }
         void Xuly_Chucnang(Boolean t)
         {
@@ -104,6 +128,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtMaNv.ReadOnly = true;
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
+            clearTextBox();
             flag = 1;
         }
 
@@ -119,12 +144,12 @@ namespace _17_PhuongDong_12_HienDuy
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "','"+ txtSoCMND.Text +"',N'"+ txtDiaChi.Text + "','"+ txtSoDienThoai.Text +"',"+ tinhtrang + ",N'"+ cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "',N'" +cboQuyenHan.Items[cboQuyenHan.SelectedIndex] +"')";
+                sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "','" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "','" + txtSoDienThoai.Text + "'," + tinhtrang + ",N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "',N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',N'" + txtHinhAnh.Text + "')";
 
             }
             else if (flag == 2)
             {
-                sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = " + tinhtrang + ", SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "' where MaNv = '" + txtMaNv.Text + "'";
+                sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = " + tinhtrang + ", SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] +"',Image='"+ txtHinhAnh.Text + "' where MaNv = '" + txtMaNv.Text + "'";
 
             }
             else
@@ -149,18 +174,68 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(false);
             txtMaNv.ReadOnly = false;
             flag = 2;
+            MessageBox.Show("Bạn có muốn sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
             Xuly_Chucnang(false);
             flag = 3;
+            MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnHuy_Click_1(object sender, EventArgs e)
         {
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
+            MessageBox.Show("Bạn có muốn hủy?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        }
+        string tachchuoi(string f)
+        {
+            string[] mangchuoi = f.Split('\\');
+            return mangchuoi[mangchuoi.Length - 1];
+        }
+        private void btnLoadHinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog o = new OpenFileDialog();
+            o.InitialDirectory = Path.GetFullPath("hinh") + @"\";
+            o.ShowDialog();
+            if (o.FileName.Contains("hinh"))
+            {
+                chuyenfileanhsanganh(o.FileName);
+                txtHinhAnh.Text = tachchuoi(o.FileName);
+            }        
+           
+        }
+
+        private void frmNhanVien_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult kq = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void txtSoCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
+        }
+
+        private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+                e.Handled = true;
         }
     }
 }
