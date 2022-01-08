@@ -15,69 +15,79 @@ namespace _17_PhuongDong_12_HienDuy
         public frmGiaoDienChinh()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
-
         private void mnuNhapSanPham_Click(object sender, EventArgs e)
         {
             frmSanPham frm = new frmSanPham();
-            frm.MdiParent = this;
             frm.Show();
         }
 
         private void mnuNhapLoaiSanPham_Click(object sender, EventArgs e)
         {
             frmLoaiPhong frm = new frmLoaiPhong();
-            frm.MdiParent = this;
             frm.Show();
         }
 
         private void nhậpDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmDichVu frm = new frmDichVu();
-            frm.MdiParent = this;
             frm.Show();
         }
 
         private void quảnLýKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmKhachHang frm = new frmKhachHang();
-            frm.MdiParent = this;
             frm.Show();
         }
 
         private void mnuTimKiemKhacHang_Click(object sender, EventArgs e)
         {
             frmTimKiemKH frm = new frmTimKiemKH();
-            frm.MdiParent = this;
             frm.Show();
         }
 
         private void mnuTimKiemPhong_Click(object sender, EventArgs e)
         {
             frmTimKiemPhong frm = new frmTimKiemPhong();
-            frm.MdiParent = this;
             frm.Show();
         }
 
         private void mnuTimKiemSanPham_Click(object sender, EventArgs e)
         {
             frmTimKiemSanPham frm = new frmTimKiemSanPham();
-            frm.MdiParent = this;
             frm.Show();
         }
 
         private void mnuQuanLyPhong_Click(object sender, EventArgs e)
         {
             frmPhong frm = new frmPhong();
-            frm.MdiParent = this;
             frm.Show();
         }
 
         private void mnuQuanLyNhanVien_Click(object sender, EventArgs e)
         {
             frmNhanVien frm = new frmNhanVien();
-            frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void QuanLyHoaDonDichVuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHoaDon frm = new frmHoaDon(this);
+            this.Hide(); //ẩn form1
+            frm.Show(); //sử dụng Show thôi
+             
+        }
+
+        private void đặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDatPhong frm = new frmDatPhong();
+            frm.Show();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         
     }

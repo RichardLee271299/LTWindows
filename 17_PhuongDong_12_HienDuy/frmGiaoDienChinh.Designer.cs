@@ -37,10 +37,12 @@
             this.quảnLýKháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QuanLyHoaDonDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
+            this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemKhacHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemSanPham = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnThoat = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,7 +67,8 @@
             this.nhậpDịchVụToolStripMenuItem,
             this.quảnLýKháchHàngToolStripMenuItem,
             this.QuanLyHoaDonDichVuToolStripMenuItem,
-            this.mnuQuanLyNhanVien});
+            this.mnuQuanLyNhanVien,
+            this.đặtPhòngToolStripMenuItem});
             this.QuanLyToolStripMenuItem.Name = "QuanLyToolStripMenuItem";
             this.QuanLyToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.QuanLyToolStripMenuItem.Text = "Quản lý";
@@ -74,7 +77,7 @@
             // 
             this.mnuNhapLoaiSanPham.Name = "mnuNhapLoaiSanPham";
             this.mnuNhapLoaiSanPham.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D1)));
-            this.mnuNhapLoaiSanPham.Size = new System.Drawing.Size(256, 22);
+            this.mnuNhapLoaiSanPham.Size = new System.Drawing.Size(237, 22);
             this.mnuNhapLoaiSanPham.Text = "1. Quản Lý Loại Phòng";
             this.mnuNhapLoaiSanPham.Click += new System.EventHandler(this.mnuNhapLoaiSanPham_Click);
             // 
@@ -82,7 +85,7 @@
             // 
             this.mnuQuanLyPhong.Name = "mnuQuanLyPhong";
             this.mnuQuanLyPhong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D2)));
-            this.mnuQuanLyPhong.Size = new System.Drawing.Size(256, 22);
+            this.mnuQuanLyPhong.Size = new System.Drawing.Size(237, 22);
             this.mnuQuanLyPhong.Text = "2. Quản Lý Phòng";
             this.mnuQuanLyPhong.Click += new System.EventHandler(this.mnuQuanLyPhong_Click);
             // 
@@ -90,7 +93,7 @@
             // 
             this.mnuNhapSanPham.Name = "mnuNhapSanPham";
             this.mnuNhapSanPham.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D3)));
-            this.mnuNhapSanPham.Size = new System.Drawing.Size(256, 22);
+            this.mnuNhapSanPham.Size = new System.Drawing.Size(237, 22);
             this.mnuNhapSanPham.Text = "3.  Quản Lý Sản Phẩm";
             this.mnuNhapSanPham.Click += new System.EventHandler(this.mnuNhapSanPham_Click);
             // 
@@ -98,7 +101,7 @@
             // 
             this.nhậpDịchVụToolStripMenuItem.Name = "nhậpDịchVụToolStripMenuItem";
             this.nhậpDịchVụToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D4)));
-            this.nhậpDịchVụToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.nhậpDịchVụToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.nhậpDịchVụToolStripMenuItem.Text = "4. Quản Lý Dịch Vụ";
             this.nhậpDịchVụToolStripMenuItem.Click += new System.EventHandler(this.nhậpDịchVụToolStripMenuItem_Click);
             // 
@@ -106,7 +109,7 @@
             // 
             this.quảnLýKháchHàngToolStripMenuItem.Name = "quảnLýKháchHàngToolStripMenuItem";
             this.quảnLýKháchHàngToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D5)));
-            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
+            this.quảnLýKháchHàngToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.quảnLýKháchHàngToolStripMenuItem.Text = "5. Quản Lý Khách Hàng";
             this.quảnLýKháchHàngToolStripMenuItem.Click += new System.EventHandler(this.quảnLýKháchHàngToolStripMenuItem_Click);
             // 
@@ -114,16 +117,25 @@
             // 
             this.QuanLyHoaDonDichVuToolStripMenuItem.Name = "QuanLyHoaDonDichVuToolStripMenuItem";
             this.QuanLyHoaDonDichVuToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D6)));
-            this.QuanLyHoaDonDichVuToolStripMenuItem.Size = new System.Drawing.Size(256, 22);
-            this.QuanLyHoaDonDichVuToolStripMenuItem.Text = "6. Quản lý hóa đơn dịch vụ";
+            this.QuanLyHoaDonDichVuToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.QuanLyHoaDonDichVuToolStripMenuItem.Text = "6. Quản lý hóa đơn";
+            this.QuanLyHoaDonDichVuToolStripMenuItem.Click += new System.EventHandler(this.QuanLyHoaDonDichVuToolStripMenuItem_Click);
             // 
             // mnuQuanLyNhanVien
             // 
             this.mnuQuanLyNhanVien.Name = "mnuQuanLyNhanVien";
             this.mnuQuanLyNhanVien.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D7)));
-            this.mnuQuanLyNhanVien.Size = new System.Drawing.Size(256, 22);
+            this.mnuQuanLyNhanVien.Size = new System.Drawing.Size(237, 22);
             this.mnuQuanLyNhanVien.Text = "7. Quản lý nhân viên";
             this.mnuQuanLyNhanVien.Click += new System.EventHandler(this.mnuQuanLyNhanVien_Click);
+            // 
+            // đặtPhòngToolStripMenuItem
+            // 
+            this.đặtPhòngToolStripMenuItem.Name = "đặtPhòngToolStripMenuItem";
+            this.đặtPhòngToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D8)));
+            this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
+            this.đặtPhòngToolStripMenuItem.Text = "8. Đặt phòng";
+            this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
             // 
             // tìmKiếmToolStripMenuItem
             // 
@@ -156,18 +168,27 @@
             this.mnuTimKiemSanPham.Text = "Tìm kiếm sản phẩm";
             this.mnuTimKiemSanPham.Click += new System.EventHandler(this.mnuTimKiemSanPham_Click);
             // 
+            // btnThoat
+            // 
+            this.btnThoat.Location = new System.Drawing.Point(436, 46);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 2;
+            this.btnThoat.Text = "button1";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // frmGiaoDienChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(538, 369);
+            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.menuStrip2);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.IsMdiContainer = true;
             this.Name = "frmGiaoDienChinh";
             this.Text = "Trang chủ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -190,5 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuTimKiemSanPham;
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLyPhong;
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLyNhanVien;
+        private System.Windows.Forms.ToolStripMenuItem đặtPhòngToolStripMenuItem;
+        private System.Windows.Forms.Button btnThoat;
     }
 }
