@@ -61,8 +61,9 @@ namespace _17_PhuongDong_12_HienDuy
               filename += h;
               //load anh len
               chuyenfileanhsanganh(filename);
+              
           }
-       
+      
         void Xuly_Textbox(Boolean t)
         {
             txtMaPhong.ReadOnly = t;

@@ -12,11 +12,13 @@ namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmHoaDon : Form
     {
-        public frmHoaDon()
+        public frmHoaDon(frmGiaoDienChinh frm)
         {
             InitializeComponent();
+            frm1 = frm;
+            this.CenterToScreen();
         }
-
+        frmGiaoDienChinh frm1;
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
@@ -29,6 +31,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void frmHoaDon_FormClosing(object sender, FormClosingEventArgs e)
         {
+            frm1.Show();
         }
     }
 }
