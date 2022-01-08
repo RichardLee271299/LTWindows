@@ -26,5 +26,10 @@ namespace _17_PhuongDong_12_HienDuy
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
