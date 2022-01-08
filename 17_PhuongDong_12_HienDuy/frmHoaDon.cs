@@ -21,5 +21,14 @@ namespace _17_PhuongDong_12_HienDuy
         {
 
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmHoaDon_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
     }
 }

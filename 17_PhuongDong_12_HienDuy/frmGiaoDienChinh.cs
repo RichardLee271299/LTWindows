@@ -16,7 +16,6 @@ namespace _17_PhuongDong_12_HienDuy
         {
             InitializeComponent();
         }
-
         private void mnuNhapSanPham_Click(object sender, EventArgs e)
         {
             frmSanPham frm = new frmSanPham();
@@ -78,6 +77,26 @@ namespace _17_PhuongDong_12_HienDuy
             frmNhanVien frm = new frmNhanVien();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void QuanLyHoaDonDichVuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmHoaDon frm = new frmHoaDon();
+            frm.Show();
+            this.Close();
+             
+        }
+
+        private void đặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDatPhong frm = new frmDatPhong();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         
     }
