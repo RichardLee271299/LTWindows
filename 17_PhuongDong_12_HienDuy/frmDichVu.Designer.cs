@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvDanhSach = new System.Windows.Forms.DataGridView();
-            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtTenDichVu = new System.Windows.Forms.TextBox();
@@ -48,65 +43,19 @@
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.grbDanhSach = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
+            this.dgvDanhSach = new System.Windows.Forms.DataGridView();
+            this.MaDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grbDanhSach = new System.Windows.Forms.GroupBox();
             this.groupBox2.SuspendLayout();
-            this.grbDanhSach.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
+            this.grbDanhSach.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvDanhSach
-            // 
-            this.dgvDanhSach.BackgroundColor = System.Drawing.Color.Silver;
-            this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaDV,
-            this.TenDv,
-            this.DonViTinh,
-            this.Gia});
-            this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvDanhSach.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvDanhSach.Location = new System.Drawing.Point(3, 26);
-            this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dgvDanhSach.Name = "dgvDanhSach";
-            this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSach.Size = new System.Drawing.Size(729, 370);
-            this.dgvDanhSach.TabIndex = 0;
-            this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
-            this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
-            // 
-            // MaDV
-            // 
-            this.MaDV.DataPropertyName = "MaDV";
-            this.MaDV.HeaderText = "Mã DV";
-            this.MaDV.Name = "MaDV";
-            this.MaDV.ReadOnly = true;
-            // 
-            // TenDv
-            // 
-            this.TenDv.DataPropertyName = "TenDv";
-            this.TenDv.HeaderText = "Tên dịch vụ";
-            this.TenDv.Name = "TenDv";
-            this.TenDv.ReadOnly = true;
-            this.TenDv.Width = 240;
-            // 
-            // DonViTinh
-            // 
-            this.DonViTinh.DataPropertyName = "DonViTinh";
-            this.DonViTinh.HeaderText = "Đơn vị tính";
-            this.DonViTinh.Name = "DonViTinh";
-            this.DonViTinh.ReadOnly = true;
-            this.DonViTinh.Width = 145;
-            // 
-            // Gia
-            // 
-            this.Gia.DataPropertyName = "Gia";
-            this.Gia.HeaderText = "Giá";
-            this.Gia.Name = "Gia";
-            this.Gia.ReadOnly = true;
-            this.Gia.Width = 200;
             // 
             // txtGia
             // 
@@ -193,10 +142,11 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox2.Size = new System.Drawing.Size(324, 357);
+            this.groupBox2.Size = new System.Drawing.Size(324, 258);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // btnThoat
             // 
@@ -207,7 +157,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.HoverState.Parent = this.btnThoat;
-            this.btnThoat.Location = new System.Drawing.Point(192, 282);
+            this.btnThoat.Location = new System.Drawing.Point(175, 191);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.ShadowDecoration.Parent = this.btnThoat;
             this.btnThoat.Size = new System.Drawing.Size(99, 33);
@@ -224,7 +174,7 @@
             this.btnLuu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.HoverState.Parent = this.btnLuu;
-            this.btnLuu.Location = new System.Drawing.Point(192, 188);
+            this.btnLuu.Location = new System.Drawing.Point(175, 124);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.ShadowDecoration.Parent = this.btnLuu;
             this.btnLuu.Size = new System.Drawing.Size(99, 33);
@@ -241,7 +191,7 @@
             this.btnHuy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.Parent = this.btnHuy;
-            this.btnHuy.Location = new System.Drawing.Point(31, 282);
+            this.btnHuy.Location = new System.Drawing.Point(49, 191);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.ShadowDecoration.Parent = this.btnHuy;
             this.btnHuy.Size = new System.Drawing.Size(99, 33);
@@ -258,7 +208,7 @@
             this.btnSua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(192, 94);
+            this.btnSua.Location = new System.Drawing.Point(175, 62);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
             this.btnSua.Size = new System.Drawing.Size(99, 33);
@@ -275,7 +225,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(30, 188);
+            this.btnXoa.Location = new System.Drawing.Point(48, 124);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
             this.btnXoa.Size = new System.Drawing.Size(99, 33);
@@ -292,7 +242,7 @@
             this.btnThem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(31, 94);
+            this.btnThem.Location = new System.Drawing.Point(49, 62);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
             this.btnThem.Size = new System.Drawing.Size(99, 33);
@@ -310,21 +260,6 @@
             this.label1.Size = new System.Drawing.Size(57, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã DV";
-            // 
-            // grbDanhSach
-            // 
-            this.grbDanhSach.BackColor = System.Drawing.Color.White;
-            this.grbDanhSach.Controls.Add(this.dgvDanhSach);
-            this.grbDanhSach.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.grbDanhSach.ForeColor = System.Drawing.Color.ForestGreen;
-            this.grbDanhSach.Location = new System.Drawing.Point(346, 61);
-            this.grbDanhSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDanhSach.Name = "grbDanhSach";
-            this.grbDanhSach.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDanhSach.Size = new System.Drawing.Size(735, 549);
-            this.grbDanhSach.TabIndex = 5;
-            this.grbDanhSach.TabStop = false;
-            this.grbDanhSach.Text = "Danh Sách Sản Phẩm";
             // 
             // groupBox1
             // 
@@ -359,11 +294,77 @@
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // dgvDanhSach
+            // 
+            this.dgvDanhSach.BackgroundColor = System.Drawing.Color.Silver;
+            this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDV,
+            this.TenDv,
+            this.DonViTinh,
+            this.Gia});
+            this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvDanhSach.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dgvDanhSach.Location = new System.Drawing.Point(3, 26);
+            this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvDanhSach.Name = "dgvDanhSach";
+            this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDanhSach.Size = new System.Drawing.Size(729, 424);
+            this.dgvDanhSach.TabIndex = 0;
+            this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
+            this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
+            // 
+            // MaDV
+            // 
+            this.MaDV.DataPropertyName = "MaDV";
+            this.MaDV.HeaderText = "Mã DV";
+            this.MaDV.Name = "MaDV";
+            this.MaDV.ReadOnly = true;
+            // 
+            // TenDv
+            // 
+            this.TenDv.DataPropertyName = "TenDv";
+            this.TenDv.HeaderText = "Tên dịch vụ";
+            this.TenDv.Name = "TenDv";
+            this.TenDv.ReadOnly = true;
+            this.TenDv.Width = 240;
+            // 
+            // DonViTinh
+            // 
+            this.DonViTinh.DataPropertyName = "DonViTinh";
+            this.DonViTinh.HeaderText = "Đơn vị tính";
+            this.DonViTinh.Name = "DonViTinh";
+            this.DonViTinh.ReadOnly = true;
+            this.DonViTinh.Width = 145;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
+            this.Gia.Width = 200;
+            // 
+            // grbDanhSach
+            // 
+            this.grbDanhSach.BackColor = System.Drawing.Color.White;
+            this.grbDanhSach.Controls.Add(this.dgvDanhSach);
+            this.grbDanhSach.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.grbDanhSach.ForeColor = System.Drawing.Color.ForestGreen;
+            this.grbDanhSach.Location = new System.Drawing.Point(346, 61);
+            this.grbDanhSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbDanhSach.Name = "grbDanhSach";
+            this.grbDanhSach.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grbDanhSach.Size = new System.Drawing.Size(735, 450);
+            this.grbDanhSach.TabIndex = 5;
+            this.grbDanhSach.TabStop = false;
+            this.grbDanhSach.Text = "Danh Sách Sản Phẩm";
+            // 
             // frmDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 623);
+            this.ClientSize = new System.Drawing.Size(1086, 520);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grbDanhSach);
@@ -372,21 +373,19 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "frmDichVu";
-            this.Text = "Dịch vụ";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDichVu_FormClosing);
             this.Load += new System.EventHandler(this.frmDichVu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.grbDanhSach.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();
+            this.grbDanhSach.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.TextBox txtDonViTinh;
         private System.Windows.Forms.TextBox txtTenDichVu;
@@ -396,7 +395,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox grbDanhSach;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button btnThem;
@@ -405,9 +403,11 @@
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDv;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
+        private System.Windows.Forms.GroupBox grbDanhSach;
     }
 }
