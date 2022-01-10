@@ -31,5 +31,15 @@ namespace _17_PhuongDong_12_HienDuy
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmDatPhong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

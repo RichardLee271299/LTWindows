@@ -45,6 +45,7 @@ namespace _17_PhuongDong_12_HienDuy
             btnSua.Enabled = t;
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
+            btnHuy.Enabled = !t;
         }
         void clearTextBox()
         {

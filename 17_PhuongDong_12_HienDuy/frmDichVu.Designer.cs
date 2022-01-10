@@ -36,12 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
-            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -51,6 +45,12 @@
             this.DonViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbDanhSach = new System.Windows.Forms.GroupBox();
+            this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
+            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
+            this.btnSua = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).BeginInit();
@@ -130,125 +130,23 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnThoat);
             this.groupBox2.Controls.Add(this.btnLuu);
-            this.groupBox2.Controls.Add(this.btnHuy);
-            this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnXoa);
+            this.groupBox2.Controls.Add(this.btnSua);
             this.groupBox2.Controls.Add(this.btnThem);
+            this.groupBox2.Controls.Add(this.btnThoat);
+            this.groupBox2.Controls.Add(this.btnHuy);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.ForestGreen;
             this.groupBox2.Location = new System.Drawing.Point(14, 253);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.groupBox2.Size = new System.Drawing.Size(324, 258);
+            this.groupBox2.Size = new System.Drawing.Size(324, 199);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BorderRadius = 9;
-            this.btnThoat.CheckedState.Parent = this.btnThoat;
-            this.btnThoat.CustomImages.Parent = this.btnThoat;
-            this.btnThoat.FillColor = System.Drawing.Color.ForestGreen;
-            this.btnThoat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.HoverState.Parent = this.btnThoat;
-            this.btnThoat.Location = new System.Drawing.Point(175, 191);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.ShadowDecoration.Parent = this.btnThoat;
-            this.btnThoat.Size = new System.Drawing.Size(99, 33);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Lưu";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.BorderRadius = 9;
-            this.btnLuu.CheckedState.Parent = this.btnLuu;
-            this.btnLuu.CustomImages.Parent = this.btnLuu;
-            this.btnLuu.FillColor = System.Drawing.Color.ForestGreen;
-            this.btnLuu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.HoverState.Parent = this.btnLuu;
-            this.btnLuu.Location = new System.Drawing.Point(175, 124);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.ShadowDecoration.Parent = this.btnLuu;
-            this.btnLuu.Size = new System.Drawing.Size(99, 33);
-            this.btnLuu.TabIndex = 6;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.BorderRadius = 9;
-            this.btnHuy.CheckedState.Parent = this.btnHuy;
-            this.btnHuy.CustomImages.Parent = this.btnHuy;
-            this.btnHuy.FillColor = System.Drawing.Color.ForestGreen;
-            this.btnHuy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.HoverState.Parent = this.btnHuy;
-            this.btnHuy.Location = new System.Drawing.Point(49, 191);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.ShadowDecoration.Parent = this.btnHuy;
-            this.btnHuy.Size = new System.Drawing.Size(99, 33);
-            this.btnHuy.TabIndex = 6;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BorderRadius = 9;
-            this.btnSua.CheckedState.Parent = this.btnSua;
-            this.btnSua.CustomImages.Parent = this.btnSua;
-            this.btnSua.FillColor = System.Drawing.Color.ForestGreen;
-            this.btnSua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(175, 62);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.ShadowDecoration.Parent = this.btnSua;
-            this.btnSua.Size = new System.Drawing.Size(99, 33);
-            this.btnSua.TabIndex = 6;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BorderRadius = 9;
-            this.btnXoa.CheckedState.Parent = this.btnXoa;
-            this.btnXoa.CustomImages.Parent = this.btnXoa;
-            this.btnXoa.FillColor = System.Drawing.Color.ForestGreen;
-            this.btnXoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(48, 124);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(99, 33);
-            this.btnXoa.TabIndex = 6;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.BorderRadius = 9;
-            this.btnThem.CheckedState.Parent = this.btnThem;
-            this.btnThem.CustomImages.Parent = this.btnThem;
-            this.btnThem.FillColor = System.Drawing.Color.ForestGreen;
-            this.btnThem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.HoverState.Parent = this.btnThem;
-            this.btnThem.Location = new System.Drawing.Point(49, 62);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.ShadowDecoration.Parent = this.btnThem;
-            this.btnThem.Size = new System.Drawing.Size(99, 33);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label1
             // 
@@ -284,9 +182,9 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label5.Location = new System.Drawing.Point(7, 9);
+            this.label5.Location = new System.Drawing.Point(-14, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(279, 38);
             this.label5.TabIndex = 6;
@@ -303,13 +201,13 @@
             this.TenDv,
             this.DonViTinh,
             this.Gia});
-            this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.dgvDanhSach.Location = new System.Drawing.Point(3, 26);
+            this.dgvDanhSach.Location = new System.Drawing.Point(3, 22);
             this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDanhSach.Size = new System.Drawing.Size(729, 424);
+            this.dgvDanhSach.Size = new System.Drawing.Size(729, 365);
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick);
@@ -349,22 +247,142 @@
             // 
             this.grbDanhSach.BackColor = System.Drawing.Color.White;
             this.grbDanhSach.Controls.Add(this.dgvDanhSach);
-            this.grbDanhSach.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.grbDanhSach.ForeColor = System.Drawing.Color.ForestGreen;
+            this.grbDanhSach.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.grbDanhSach.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.grbDanhSach.Location = new System.Drawing.Point(346, 61);
             this.grbDanhSach.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.grbDanhSach.Name = "grbDanhSach";
             this.grbDanhSach.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grbDanhSach.Size = new System.Drawing.Size(735, 450);
+            this.grbDanhSach.Size = new System.Drawing.Size(735, 391);
             this.grbDanhSach.TabIndex = 5;
             this.grbDanhSach.TabStop = false;
             this.grbDanhSach.Text = "Danh Sách Sản Phẩm";
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.AutoRoundedCorners = true;
+            this.btnLuu.BackColor = System.Drawing.Color.Transparent;
+            this.btnLuu.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnLuu.BorderRadius = 14;
+            this.btnLuu.CheckedState.Parent = this.btnLuu;
+            this.btnLuu.CustomImages.Parent = this.btnLuu;
+            this.btnLuu.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLuu.ForeColor = System.Drawing.Color.White;
+            this.btnLuu.HoverState.Parent = this.btnLuu;
+            this.btnLuu.Location = new System.Drawing.Point(175, 89);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.ShadowDecoration.Parent = this.btnLuu;
+            this.btnLuu.Size = new System.Drawing.Size(98, 31);
+            this.btnLuu.TabIndex = 10;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.AutoRoundedCorners = true;
+            this.btnXoa.BackColor = System.Drawing.Color.Transparent;
+            this.btnXoa.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnXoa.BorderRadius = 14;
+            this.btnXoa.CheckedState.Parent = this.btnXoa;
+            this.btnXoa.CustomImages.Parent = this.btnXoa;
+            this.btnXoa.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXoa.ForeColor = System.Drawing.Color.White;
+            this.btnXoa.HoverState.Parent = this.btnXoa;
+            this.btnXoa.Location = new System.Drawing.Point(175, 45);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
+            this.btnXoa.Size = new System.Drawing.Size(98, 31);
+            this.btnXoa.TabIndex = 11;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.AutoRoundedCorners = true;
+            this.btnSua.BackColor = System.Drawing.Color.Transparent;
+            this.btnSua.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnSua.BorderRadius = 14;
+            this.btnSua.CheckedState.Parent = this.btnSua;
+            this.btnSua.CustomImages.Parent = this.btnSua;
+            this.btnSua.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnSua.ForeColor = System.Drawing.Color.White;
+            this.btnSua.HoverState.Parent = this.btnSua;
+            this.btnSua.Location = new System.Drawing.Point(49, 89);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.ShadowDecoration.Parent = this.btnSua;
+            this.btnSua.Size = new System.Drawing.Size(98, 31);
+            this.btnSua.TabIndex = 12;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.AutoRoundedCorners = true;
+            this.btnThem.BackColor = System.Drawing.Color.Transparent;
+            this.btnThem.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnThem.BorderRadius = 14;
+            this.btnThem.CheckedState.Parent = this.btnThem;
+            this.btnThem.CustomImages.Parent = this.btnThem;
+            this.btnThem.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThem.ForeColor = System.Drawing.Color.White;
+            this.btnThem.HoverState.Parent = this.btnThem;
+            this.btnThem.Location = new System.Drawing.Point(48, 45);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.ShadowDecoration.Parent = this.btnThem;
+            this.btnThem.Size = new System.Drawing.Size(98, 31);
+            this.btnThem.TabIndex = 13;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AutoRoundedCorners = true;
+            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnThoat.BorderRadius = 14;
+            this.btnThoat.CheckedState.Parent = this.btnThoat;
+            this.btnThoat.CustomImages.Parent = this.btnThoat;
+            this.btnThoat.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.HoverState.Parent = this.btnThoat;
+            this.btnThoat.Location = new System.Drawing.Point(175, 136);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ShadowDecoration.Parent = this.btnThoat;
+            this.btnThoat.Size = new System.Drawing.Size(98, 31);
+            this.btnThoat.TabIndex = 14;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.AutoRoundedCorners = true;
+            this.btnHuy.BackColor = System.Drawing.Color.Transparent;
+            this.btnHuy.BorderColor = System.Drawing.Color.ForestGreen;
+            this.btnHuy.BorderRadius = 14;
+            this.btnHuy.CheckedState.Parent = this.btnHuy;
+            this.btnHuy.CustomImages.Parent = this.btnHuy;
+            this.btnHuy.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
+            this.btnHuy.HoverState.Parent = this.btnHuy;
+            this.btnHuy.Location = new System.Drawing.Point(48, 136);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.ShadowDecoration.Parent = this.btnHuy;
+            this.btnHuy.Size = new System.Drawing.Size(98, 31);
+            this.btnHuy.TabIndex = 15;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // frmDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1086, 520);
+            this.ClientSize = new System.Drawing.Size(1086, 463);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.grbDanhSach);
@@ -397,17 +415,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2Button btnThem;
-        private Guna.UI2.WinForms.Guna2Button btnThoat;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
-        private Guna.UI2.WinForms.Guna2Button btnHuy;
-        private Guna.UI2.WinForms.Guna2Button btnSua;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
         private System.Windows.Forms.DataGridView dgvDanhSach;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDv;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
         private System.Windows.Forms.GroupBox grbDanhSach;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2Button btnSua;
+        private Guna.UI2.WinForms.Guna2Button btnThem;
+        private Guna.UI2.WinForms.Guna2Button btnThoat;
+        private Guna.UI2.WinForms.Guna2Button btnHuy;
     }
 }
