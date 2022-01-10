@@ -89,21 +89,35 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(true);
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end,Image,KichThuoc,MoTa  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
+            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end,Image,KichThuoc,MoTa  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong ORDER BY MaPhong ASC", dgvDanhSach, ref ds);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             HienThiTextBox(ds, 0);
         }
         string phatSinhMa(DataSet d, string kytu)
         {
-            string ma = "";
+            int max=0;
             int sodong = d.Tables[0].Rows.Count;
-            sodong++;
+            for(int i = 0; i< sodong-1;i++)
+            {
+                string row1 = d.Tables[0].Rows[i]["MaPhong"].ToString();
+                int newrow1 = Convert.ToInt32(row1.Substring(2, 2));
+                string row2 = d.Tables[0].Rows[i+1]["MaPhong"].ToString();
+                int newrow2 = Convert.ToInt32(row2.Substring(2, 2));
+                if (newrow1 < newrow2)
+                    max = newrow2;
+                else
+                    max = newrow1;
+              
+            }
+            string ma = "";
+            sodong = max + 1;
             if (sodong < 10)
                 ma = kytu + "0" + sodong.ToString();
             else
                 ma = kytu + sodong.ToString();
             return ma;
+           
         }
         private void btnThem_Click(object sender, EventArgs e)
         {

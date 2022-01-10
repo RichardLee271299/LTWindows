@@ -23,7 +23,7 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet ds = new DataSet();
         DataSet dsLoaiPhong = new DataSet();
         DataSet dsPhong = new DataSet();
-        DataSet dsGia = new DataSet();
+        DataSet dsMoTa = new DataSet();
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
             c.DataSource = ds.Tables[0];
@@ -90,8 +90,8 @@ namespace _17_PhuongDong_12_HienDuy
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             dsPhong = c.LayDuLieu("select * from Phong where TinhTrang = 0");
             HienThiComboBox(dsPhong, "MaPhong", "MaPhong", cboMaPhong);
-            cboMaPhong.SelectedIndex = 0;
             hienthigia();
+            hienthimota();
          
 
         }
@@ -107,8 +107,8 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void hienthimota()
         {
-             dsGia = c.LayDuLieu("select MoTa from Phong where MaPhong='" + cboMaPhong.SelectedValue + "'");
-            rtbMoTa.Text = dsGia.Tables[0].Rows[0]["MoTa"].ToString();
+            //dsMoTa = c.LayDuLieu("select MoTa from Phong where MaPhong ='" + cboMaPhong.SelectedValue + "'");
+           // rtbMoTa.Text = dsMoTa.Tables[0].Rows[0]["MoTa"].ToString();
         }
         private void cboMaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
