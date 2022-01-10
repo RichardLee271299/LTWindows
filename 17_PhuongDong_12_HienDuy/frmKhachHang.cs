@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmKhachHang : Form
     {
+      
+
+
+
+
         DataSet ds = new DataSet();
         public frmKhachHang()
         {

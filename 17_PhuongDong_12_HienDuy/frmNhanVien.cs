@@ -111,6 +111,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
+            btnLoadHinh.Visible = false;
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             HienThiDuLieu("select * from NhanVien", dgvDanhSachNhanVien);
@@ -130,6 +131,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(false);
             clearTextBox();
             flag = 1;
+            btnLoadHinh.Visible = true;
         }
 
         private void btnLuu_Click_1(object sender, EventArgs e)
@@ -174,6 +176,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(false);
             txtMaNv.ReadOnly = false;
             flag = 2;
+            btnLoadHinh.Visible = true;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -185,6 +188,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void btnHuy_Click_1(object sender, EventArgs e)
         {
+            btnLoadHinh.Visible = false;
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             if (flag == 1)
