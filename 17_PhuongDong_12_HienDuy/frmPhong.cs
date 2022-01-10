@@ -19,7 +19,8 @@ namespace _17_PhuongDong_12_HienDuy
         }
         clsQuanLyKhachSan c = new clsQuanLyKhachSan();
         DataSet ds = new DataSet();
-        DataSet dsLoaiPhong = new DataSet(); 
+        DataSet dsLoaiPhong = new DataSet();
+
           void HienThiDuLieu(String sql,DataGridView dgs, ref DataSet ds)
         {
             ds = c.LayDuLieu(sql);
@@ -37,6 +38,7 @@ namespace _17_PhuongDong_12_HienDuy
               txtMaPhong.Text = d.Tables[0].Rows[vt]["MaPhong"].ToString();
               txtGiaPhong.Text = d.Tables[0].Rows[vt]["Gia"].ToString();
               txtKichThuoc.Text = d.Tables[0].Rows[vt]["KichThuoc"].ToString();
+              rtbMoTa.Text = d.Tables[0].Rows[vt]["MoTa"].ToString();
               txtHinhAnh.Text = d.Tables[0].Rows[vt]["Image"].ToString();
               string TinhTrang = d.Tables[0].Rows[vt]["Tình Trạng"].ToString();
               if(TinhTrang.ToLower() == "trống")
@@ -87,7 +89,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(true);
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
-            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end,Image,KichThuoc  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
+            HienThiDuLieu("select Phong.MaPhong,LoaiPhong,Gia,N'Tình Trạng' = case when TinhTrang='1' then N'Đã thuê' else N'Trống' end,Image,KichThuoc,MoTa  from Phong inner join LoaiPhong on Phong.MaLoai = LoaiPhong.MaPhong", dgvDanhSach,ref ds);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             HienThiTextBox(ds, 0);
@@ -128,6 +130,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtHinhAnh.Clear();
             txtKichThuoc.Clear();
             txtGiaPhong.Clear();
+            rtbMoTa.Clear();
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -144,13 +147,13 @@ namespace _17_PhuongDong_12_HienDuy
             if (flag == 1)
             {
 
-                sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue +  "'," + tinhtrang + ",'"+ txtGiaPhong.Text +"','"+ txtKichThuoc.Text+ "','"+txtHinhAnh.Text +"')";
+                sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue +  "'," + tinhtrang + ",'"+ txtGiaPhong.Text +"','"+ txtKichThuoc.Text+ "','"+txtHinhAnh.Text +"',N'"+rtbMoTa.Text+"')";
                 MessageBox.Show("Bạn có muốn hủy thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
 
             }
             else if (flag == 2)
             {
-                sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + ",Gia = "+txtGiaPhong.Text +",KichThuoc ='"+ txtKichThuoc.Text+"',Image = '"+txtHinhAnh.Text +"' where MaPhong = '" + txtMaPhong.Text + "'";
+                sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + ",Gia = "+txtGiaPhong.Text +",KichThuoc ='"+ txtKichThuoc.Text+"',Image = '"+txtHinhAnh.Text +"',MoTa = N'"+rtbMoTa.Text+"' where MaPhong = '" + txtMaPhong.Text + "'";
                 MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
             }
             else

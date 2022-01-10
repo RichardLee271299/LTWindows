@@ -38,12 +38,12 @@
             this.QuanLyHoaDonDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuSuDungDichVu = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemKhacHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.mnuSuDungDichVu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,6 +139,14 @@
             this.đặtPhòngToolStripMenuItem.Text = "8. Đặt phòng";
             this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
             // 
+            // mnuSuDungDichVu
+            // 
+            this.mnuSuDungDichVu.Name = "mnuSuDungDichVu";
+            this.mnuSuDungDichVu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
+            this.mnuSuDungDichVu.Size = new System.Drawing.Size(237, 22);
+            this.mnuSuDungDichVu.Text = "9.Sử dụng dịch vụ";
+            this.mnuSuDungDichVu.Click += new System.EventHandler(this.mnuSuDungDichVu_Click);
+            // 
             // tìmKiếmToolStripMenuItem
             // 
             this.tìmKiếmToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -180,14 +188,6 @@
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // mnuSuDungDichVu
-            // 
-            this.mnuSuDungDichVu.Name = "mnuSuDungDichVu";
-            this.mnuSuDungDichVu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
-            this.mnuSuDungDichVu.Size = new System.Drawing.Size(237, 22);
-            this.mnuSuDungDichVu.Text = "9.Sử dụng dịch vụ";
-            this.mnuSuDungDichVu.Click += new System.EventHandler(this.mnuSuDungDichVu_Click);
-            // 
             // frmGiaoDienChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -199,6 +199,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Name = "frmGiaoDienChinh";
             this.Text = "Trang chủ";
+            this.Load += new System.EventHandler(this.frmGiaoDienChinh_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);

@@ -81,7 +81,8 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void đặtPhòngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDatPhong frm = new frmDatPhong();
+            frmDatPhong frm = new frmDatPhong(this);
+            this.Hide(); //ẩn form1
             frm.Show();
         }
 
@@ -94,6 +95,11 @@ namespace _17_PhuongDong_12_HienDuy
         {
             frmSuDungDichVu frm = new frmSuDungDichVu();
             frm.Show();
+        }
+
+        private void frmGiaoDienChinh_Load(object sender, EventArgs e)
+        {
+
         }
         
     }

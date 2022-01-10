@@ -56,11 +56,8 @@
             this.txtSoCMND = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cboLoaiPhongg = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.txt = new System.Windows.Forms.TextBox();
+            this.cboMaPhong = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
@@ -69,6 +66,9 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chkNhanPhong = new Guna.UI2.WinForms.Guna2CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.rtbMoTa = new System.Windows.Forms.RichTextBox();
+            this.cboGia = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -114,46 +114,48 @@
             // 
             // txtSoDem
             // 
-            this.txtSoDem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSoDem.Location = new System.Drawing.Point(35, 122);
             this.txtSoDem.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDem.Name = "txtSoDem";
-            this.txtSoDem.Size = new System.Drawing.Size(214, 26);
+            this.txtSoDem.Size = new System.Drawing.Size(210, 22);
             this.txtSoDem.TabIndex = 11;
             // 
             // dtpNgayTra
             // 
-            this.dtpNgayTra.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayTra.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpNgayTra.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayTra.Location = new System.Drawing.Point(291, 122);
             this.dtpNgayTra.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpNgayTra.MaxDate = new System.DateTime(2021, 12, 27, 0, 0, 0, 0);
+            this.dtpNgayTra.MaxDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             this.dtpNgayTra.Name = "dtpNgayTra";
-            this.dtpNgayTra.Size = new System.Drawing.Size(214, 26);
+            this.dtpNgayTra.Size = new System.Drawing.Size(214, 22);
             this.dtpNgayTra.TabIndex = 10;
             this.dtpNgayTra.Value = new System.DateTime(2021, 12, 27, 0, 0, 0, 0);
+            this.dtpNgayTra.ValueChanged += new System.EventHandler(this.dtpNgayTra_ValueChanged);
             // 
             // dtpNgayDen
             // 
             this.dtpNgayDen.CalendarMonthBackground = System.Drawing.Color.White;
-            this.dtpNgayDen.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpNgayDen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayDen.Location = new System.Drawing.Point(291, 60);
             this.dtpNgayDen.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpNgayDen.MaxDate = new System.DateTime(2021, 12, 27, 0, 0, 0, 0);
+            this.dtpNgayDen.MaxDate = new System.DateTime(2025, 1, 1, 0, 0, 0, 0);
             this.dtpNgayDen.Name = "dtpNgayDen";
-            this.dtpNgayDen.Size = new System.Drawing.Size(214, 26);
+            this.dtpNgayDen.Size = new System.Drawing.Size(214, 22);
             this.dtpNgayDen.TabIndex = 10;
             this.dtpNgayDen.Value = new System.DateTime(2021, 12, 27, 0, 0, 0, 0);
+            this.dtpNgayDen.ValueChanged += new System.EventHandler(this.dtpNgayDen_ValueChanged);
             // 
             // cboLoaiPhong
             // 
-            this.cboLoaiPhong.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboLoaiPhong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboLoaiPhong.FormattingEnabled = true;
             this.cboLoaiPhong.Location = new System.Drawing.Point(35, 60);
             this.cboLoaiPhong.Margin = new System.Windows.Forms.Padding(4);
             this.cboLoaiPhong.Name = "cboLoaiPhong";
-            this.cboLoaiPhong.Size = new System.Drawing.Size(210, 26);
+            this.cboLoaiPhong.Size = new System.Drawing.Size(210, 24);
             this.cboLoaiPhong.TabIndex = 1;
             // 
             // label4
@@ -223,17 +225,17 @@
             // 
             // txtCmnd
             // 
-            this.txtCmnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCmnd.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtCmnd.Location = new System.Drawing.Point(35, 81);
             this.txtCmnd.Margin = new System.Windows.Forms.Padding(4);
             this.txtCmnd.Name = "txtCmnd";
-            this.txtCmnd.Size = new System.Drawing.Size(198, 26);
+            this.txtCmnd.Size = new System.Drawing.Size(198, 22);
             this.txtCmnd.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label5.Location = new System.Drawing.Point(35, 45);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
@@ -287,13 +289,13 @@
             // 
             // dtpNgaySinh
             // 
-            this.dtpNgaySinh.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgaySinh.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgaySinh.Location = new System.Drawing.Point(35, 182);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgaySinh.MaxDate = new System.DateTime(2021, 12, 27, 0, 0, 0, 0);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(197, 23);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(197, 22);
             this.dtpNgaySinh.TabIndex = 23;
             this.dtpNgaySinh.Value = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
             // 
@@ -335,7 +337,7 @@
             // 
             // cbmGioiTinh
             // 
-            this.cbmGioiTinh.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmGioiTinh.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cbmGioiTinh.FormattingEnabled = true;
             this.cbmGioiTinh.Items.AddRange(new object[] {
             "Nam",
@@ -360,11 +362,11 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChi.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDiaChi.Location = new System.Drawing.Point(295, 182);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(195, 23);
+            this.txtDiaChi.Size = new System.Drawing.Size(195, 22);
             this.txtDiaChi.TabIndex = 22;
             // 
             // label7
@@ -381,12 +383,12 @@
             // 
             // txtSoDienThoai
             // 
-            this.txtSoDienThoai.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDienThoai.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSoDienThoai.Location = new System.Drawing.Point(295, 115);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDienThoai.MaxLength = 10;
             this.txtSoDienThoai.Name = "txtSoDienThoai";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(195, 23);
+            this.txtSoDienThoai.Size = new System.Drawing.Size(195, 22);
             this.txtSoDienThoai.TabIndex = 21;
             // 
             // label6
@@ -403,30 +405,30 @@
             // 
             // txtSoCMND
             // 
-            this.txtSoCMND.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoCMND.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSoCMND.Location = new System.Drawing.Point(35, 115);
             this.txtSoCMND.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoCMND.MaxLength = 10;
             this.txtSoCMND.Name = "txtSoCMND";
-            this.txtSoCMND.Size = new System.Drawing.Size(197, 23);
+            this.txtSoCMND.Size = new System.Drawing.Size(197, 22);
             this.txtSoCMND.TabIndex = 19;
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoTen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtHoTen.Location = new System.Drawing.Point(35, 53);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(197, 23);
+            this.txtHoTen.Size = new System.Drawing.Size(197, 22);
             this.txtHoTen.TabIndex = 18;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.cboLoaiPhongg);
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.txt);
-            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.rtbMoTa);
+            this.groupBox4.Controls.Add(this.cboGia);
+            this.groupBox4.Controls.Add(this.cboMaPhong);
             this.groupBox4.Controls.Add(this.label14);
+            this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.ForestGreen;
@@ -437,62 +439,34 @@
             this.groupBox4.Size = new System.Drawing.Size(294, 260);
             this.groupBox4.TabIndex = 12;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thông tin loại phòng";
+            this.groupBox4.Text = "Thông tin phòng";
             // 
-            // cboLoaiPhongg
+            // cboMaPhong
             // 
-            this.cboLoaiPhongg.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboLoaiPhongg.FormattingEnabled = true;
-            this.cboLoaiPhongg.Location = new System.Drawing.Point(43, 140);
-            this.cboLoaiPhongg.Name = "cboLoaiPhongg";
-            this.cboLoaiPhongg.Size = new System.Drawing.Size(221, 26);
-            this.cboLoaiPhongg.TabIndex = 1;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(43, 210);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(221, 26);
-            this.textBox4.TabIndex = 0;
-            // 
-            // txt
-            // 
-            this.txt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt.Location = new System.Drawing.Point(43, 70);
-            this.txt.Margin = new System.Windows.Forms.Padding(4);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(221, 26);
-            this.txt.TabIndex = 0;
+            this.cboMaPhong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboMaPhong.FormattingEnabled = true;
+            this.cboMaPhong.Location = new System.Drawing.Point(34, 58);
+            this.cboMaPhong.Name = "cboMaPhong";
+            this.cboMaPhong.Size = new System.Drawing.Size(221, 24);
+            this.cboMaPhong.TabIndex = 1;
+            this.cboMaPhong.SelectedIndexChanged += new System.EventHandler(this.cboMaPhong_SelectedIndexChanged);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(34, 179);
+            this.label16.Location = new System.Drawing.Point(34, 90);
             this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(33, 18);
+            this.label16.Size = new System.Drawing.Size(82, 18);
             this.label16.TabIndex = 0;
-            this.label16.Text = "Giá";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(34, 109);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(90, 18);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Loại phòng:";
+            this.label16.Text = "Giá Phòng";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(34, 39);
+            this.label13.Location = new System.Drawing.Point(34, 33);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(79, 18);
@@ -608,6 +582,35 @@
             this.chkNhanPhong.UncheckedState.BorderThickness = 0;
             this.chkNhanPhong.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(34, 146);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 18);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Mô tả";
+            // 
+            // rtbMoTa
+            // 
+            this.rtbMoTa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rtbMoTa.Location = new System.Drawing.Point(32, 173);
+            this.rtbMoTa.Name = "rtbMoTa";
+            this.rtbMoTa.Size = new System.Drawing.Size(223, 71);
+            this.rtbMoTa.TabIndex = 2;
+            this.rtbMoTa.Text = "";
+            // 
+            // cboGia
+            // 
+            this.cboGia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboGia.FormattingEnabled = true;
+            this.cboGia.Location = new System.Drawing.Point(32, 119);
+            this.cboGia.Name = "cboGia";
+            this.cboGia.Size = new System.Drawing.Size(221, 24);
+            this.cboGia.TabIndex = 1;
+            // 
             // frmDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -625,6 +628,7 @@
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDatPhong";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDatPhong_FormClosing);
             this.Load += new System.EventHandler(this.frmDatPhong_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -671,10 +675,7 @@
         private System.Windows.Forms.TextBox txtSoCMND;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox5;
         private Guna.UI2.WinForms.Guna2Button btnThoat;
@@ -683,7 +684,10 @@
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox cboLoaiPhongg;
         private Guna.UI2.WinForms.Guna2CheckBox chkNhanPhong;
+        private System.Windows.Forms.ComboBox cboMaPhong;
+        private System.Windows.Forms.RichTextBox rtbMoTa;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox cboGia;
     }
 }

@@ -33,5 +33,10 @@ namespace _17_PhuongDong_12_HienDuy
         {
             frm1.Show();
         }
+
+        private void frmHoaDon_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
