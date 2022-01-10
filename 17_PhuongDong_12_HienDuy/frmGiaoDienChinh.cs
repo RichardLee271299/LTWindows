@@ -89,6 +89,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             this.Close();
         }
+
+        private void mnuSuDungDichVu_Click(object sender, EventArgs e)
+        {
+            frmSuDungDichVu frm = new frmSuDungDichVu();
+            frm.Show();
+        }
         
     }
 }

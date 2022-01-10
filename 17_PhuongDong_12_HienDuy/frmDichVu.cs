@@ -189,5 +189,10 @@ namespace _17_PhuongDong_12_HienDuy
         {
             this.Close();
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
