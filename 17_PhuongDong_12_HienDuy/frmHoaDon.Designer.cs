@@ -324,25 +324,26 @@
             this.btnTimKiem.Size = new System.Drawing.Size(177, 29);
             this.btnTimKiem.TabIndex = 3;
             this.btnTimKiem.Text = "Tìm kiếm";
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // cboTimKiem
             // 
-            this.cboTimKiem.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboTimKiem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboTimKiem.FormattingEnabled = true;
             this.cboTimKiem.Items.AddRange(new object[] {
-            "Mã hóa đơn",
-            "Tên khách hàng"});
+            "SĐT",
+            "Họ Tên"});
             this.cboTimKiem.Location = new System.Drawing.Point(258, 39);
             this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(174, 26);
+            this.cboTimKiem.Size = new System.Drawing.Size(174, 24);
             this.cboTimKiem.TabIndex = 2;
             // 
             // txtNhapTuKhoa
             // 
-            this.txtNhapTuKhoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtNhapTuKhoa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtNhapTuKhoa.Location = new System.Drawing.Point(23, 81);
             this.txtNhapTuKhoa.Name = "txtNhapTuKhoa";
-            this.txtNhapTuKhoa.Size = new System.Drawing.Size(177, 26);
+            this.txtNhapTuKhoa.Size = new System.Drawing.Size(177, 22);
             this.txtNhapTuKhoa.TabIndex = 1;
             // 
             // label11
@@ -447,6 +448,7 @@
             this.btnThem.Size = new System.Drawing.Size(93, 29);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnThoat
             // 

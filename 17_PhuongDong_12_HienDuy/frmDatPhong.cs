@@ -24,12 +24,13 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet dsLoaiPhong = new DataSet();
         DataSet dsPhong = new DataSet();
         DataSet dsMoTa = new DataSet();
+        Boolean t = false;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
             c.DataSource = ds.Tables[0];
             c.DisplayMember = ten;
             c.ValueMember = ma;
-            c.SelectedIndex = 0;
+            c.SelectedIndex = -1;
         }
 
         void Xuly_Textbox(Boolean t)
@@ -73,16 +74,7 @@ namespace _17_PhuongDong_12_HienDuy
                txtSoDem.Text = TongSoNgay.ToString();
            }
         }
-        void hienthigia()
-        {
-            string Phong = cboMaPhong.SelectedValue.ToString();
-            DataView dvmPhong = new DataView();
-            dvmPhong.Table = dsPhong.Tables[0];
-            cboGia.DataSource = dvmPhong;
-            cboGia.DisplayMember = "Gia";
-            cboGia.ValueMember = "Gia";
-            dvmPhong.RowFilter = "MaPhong ='" + cboMaPhong.SelectedValue + "'";
-        }
+       
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
             Xuly_Textbox(false);
@@ -90,12 +82,18 @@ namespace _17_PhuongDong_12_HienDuy
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             dsPhong = c.LayDuLieu("select * from Phong where TinhTrang = 0");
             HienThiComboBox(dsPhong, "MaPhong", "MaPhong", cboMaPhong);
-            hienthigia();
-            hienthimota();
+            t = true;
          
 
         }
 
+        void hienthimota()
+        {
+            string sql = "select Gia,MoTa from Phong where MaPhong ='" + cboMaPhong.SelectedValue.ToString() + "'";
+           dsMoTa = c.LayDuLieu(sql);
+            rtbMoTa.Text = dsMoTa.Tables[0].Rows[0]["MoTa"].ToString();
+            lblGiaPhong.Text = dsMoTa.Tables[0].Rows[0]["Gia"].ToString();
+        }
         private void dtpNgayDen_ValueChanged(object sender, EventArgs e)
         {
             tinhngay();
@@ -105,20 +103,22 @@ namespace _17_PhuongDong_12_HienDuy
         {
             tinhngay();
         }
-        void hienthimota()
-        {
-            //dsMoTa = c.LayDuLieu("select MoTa from Phong where MaPhong ='" + cboMaPhong.SelectedValue + "'");
-           // rtbMoTa.Text = dsMoTa.Tables[0].Rows[0]["MoTa"].ToString();
-        }
+      
         private void cboMaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            hienthigia();
-            hienthimota();
+            if(t)
+            if(cboMaPhong.SelectedIndex != -1)
+                 hienthimota();
         }
 
         private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm1.Show();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

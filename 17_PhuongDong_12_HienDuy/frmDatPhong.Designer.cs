@@ -56,7 +56,9 @@
             this.txtSoCMND = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rtbMoTa = new System.Windows.Forms.RichTextBox();
             this.cboMaPhong = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -66,9 +68,7 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.chkNhanPhong = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.rtbMoTa = new System.Windows.Forms.RichTextBox();
-            this.cboGia = new System.Windows.Forms.ComboBox();
+            this.lblGiaPhong = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -424,8 +424,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.lblGiaPhong);
             this.groupBox4.Controls.Add(this.rtbMoTa);
-            this.groupBox4.Controls.Add(this.cboGia);
             this.groupBox4.Controls.Add(this.cboMaPhong);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.label16);
@@ -441,6 +441,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Thông tin phòng";
             // 
+            // rtbMoTa
+            // 
+            this.rtbMoTa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.rtbMoTa.Location = new System.Drawing.Point(32, 173);
+            this.rtbMoTa.Name = "rtbMoTa";
+            this.rtbMoTa.Size = new System.Drawing.Size(223, 71);
+            this.rtbMoTa.TabIndex = 2;
+            this.rtbMoTa.Text = "";
+            // 
             // cboMaPhong
             // 
             this.cboMaPhong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -450,6 +459,17 @@
             this.cboMaPhong.Size = new System.Drawing.Size(221, 24);
             this.cboMaPhong.TabIndex = 1;
             this.cboMaPhong.SelectedIndexChanged += new System.EventHandler(this.cboMaPhong_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(34, 146);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 18);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Mô tả";
             // 
             // label16
             // 
@@ -582,34 +602,16 @@
             this.chkNhanPhong.UncheckedState.BorderThickness = 0;
             this.chkNhanPhong.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
-            // label14
+            // lblGiaPhong
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(34, 146);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 18);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Mô tả";
-            // 
-            // rtbMoTa
-            // 
-            this.rtbMoTa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.rtbMoTa.Location = new System.Drawing.Point(32, 173);
-            this.rtbMoTa.Name = "rtbMoTa";
-            this.rtbMoTa.Size = new System.Drawing.Size(223, 71);
-            this.rtbMoTa.TabIndex = 2;
-            this.rtbMoTa.Text = "";
-            // 
-            // cboGia
-            // 
-            this.cboGia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cboGia.FormattingEnabled = true;
-            this.cboGia.Location = new System.Drawing.Point(32, 119);
-            this.cboGia.Name = "cboGia";
-            this.cboGia.Size = new System.Drawing.Size(221, 24);
-            this.cboGia.TabIndex = 1;
+            this.lblGiaPhong.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblGiaPhong.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblGiaPhong.ForeColor = System.Drawing.Color.Black;
+            this.lblGiaPhong.Location = new System.Drawing.Point(36, 117);
+            this.lblGiaPhong.Name = "lblGiaPhong";
+            this.lblGiaPhong.Size = new System.Drawing.Size(218, 26);
+            this.lblGiaPhong.TabIndex = 3;
+            this.lblGiaPhong.Click += new System.EventHandler(this.label15_Click);
             // 
             // frmDatPhong
             // 
@@ -688,6 +690,6 @@
         private System.Windows.Forms.ComboBox cboMaPhong;
         private System.Windows.Forms.RichTextBox rtbMoTa;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cboGia;
+        private System.Windows.Forms.Label lblGiaPhong;
     }
 }
