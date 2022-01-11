@@ -24,7 +24,9 @@ namespace _17_PhuongDong_12_HienDuy
             InitializeComponent();
         }
         clsQuanLyKhachSan c = new clsQuanLyKhachSan();
-
+        public string HT, GT, CM, DC , DT ,KH;
+        public DateTime NS;
+        
         void HienThiDuLieu(String sql, DataGridView dgs)
         {
              ds = c.LayDuLieu(sql);
@@ -97,7 +99,7 @@ namespace _17_PhuongDong_12_HienDuy
         private void btnThem_Click(object sender, EventArgs e)
         {
             
-            txtMaKH.Text = phatSinhMa(ds, "K").ToString();
+            txtMaKH.Text = phatSinhMa(ds, "KH").ToString();
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtMaKH.ReadOnly = true;
@@ -133,6 +135,14 @@ namespace _17_PhuongDong_12_HienDuy
             }
             if (c.CapNhatDuLieu(sql) != 0)
             {
+                KH = txtMaKH.Text;
+                HT = txtHoTen.Text;
+                DC = txtDiaChi.Text;
+                NS = dtpNgaySinh.Value;
+                GT = cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex].ToString();
+                CM = txtSoCMND.Text;
+                DT = txtSoDienThoai.Text;
+
                 MessageBox.Show("Cập nhật thành công!", "Thông báo");
                 frmKhachHang_Load(sender, e);
             }

@@ -162,7 +162,7 @@ namespace _17_PhuongDong_12_HienDuy
             {
 
                 sql = "insert into Phong values('" + txtMaPhong.Text+ "','" + cboLoaiPhong.SelectedValue +  "'," + tinhtrang + ",'"+ txtGiaPhong.Text +"','"+ txtKichThuoc.Text+ "','"+txtHinhAnh.Text +"',N'"+rtbMoTa.Text+"')";
-                MessageBox.Show("Bạn có muốn hủy thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+                MessageBox.Show("Bạn có muốn thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
 
             }
             else if (flag == 2)

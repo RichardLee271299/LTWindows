@@ -209,6 +209,7 @@
             this.Controls.Add(this.grpDanhSachPhong);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmTimKiemPhong";
             this.Text = "Tìm kiếm phòng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTimKiemPhong_FormClosing);

@@ -193,6 +193,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmTimKiemSanPham";
             this.Text = "Tìm kiếm sản phẩm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTimKiemSanPham_FormClosing);

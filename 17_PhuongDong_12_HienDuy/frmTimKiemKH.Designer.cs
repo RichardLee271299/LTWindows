@@ -224,6 +224,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmTimKiemKH";
             this.Text = "Tìm kiếm khách hàng";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTimKiemKH_FormClosing);
