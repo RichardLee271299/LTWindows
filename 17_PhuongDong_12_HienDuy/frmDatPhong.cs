@@ -24,6 +24,7 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet dsLoaiPhong = new DataSet();
         DataSet dsPhong = new DataSet();
         DataSet dsMoTa = new DataSet();
+        DataSet dsKhachHang = new DataSet();
         Boolean t = false;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
@@ -119,6 +120,31 @@ namespace _17_PhuongDong_12_HienDuy
         private void label15_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if(txtCmnd.Text != "")
+            {
+                 string sql = "select * from KhachHang where CMND ='" + txtCmnd.Text +"'";
+                 dsKhachHang = c.LayDuLieu(sql);
+                 if (dsKhachHang.Tables[0].Rows.Count != 0)
+                 {
+                     txtHoTen.Text = dsKhachHang.Tables[0].Rows[0]["HoTen"].ToString();
+                     txtSoCMND.Text = dsKhachHang.Tables[0].Rows[0]["CMND"].ToString();
+                     txtSoDienThoai.Text = dsKhachHang.Tables[0].Rows[0]["SDT"].ToString();
+                     txtDiaChi.Text = dsKhachHang.Tables[0].Rows[0]["DiaChi"].ToString();
+                     dtpNgaySinh.Value = (DateTime)dsKhachHang.Tables[0].Rows[0]["NgaySinh"];
+
+                     //commbobox
+                     HienThiComboBox(dsKhachHang, "GioiTinh", "GioiTinh", cboGioiTinh);
+                     cboGioiTinh.SelectedIndex = 0;
+
+                 }
+                 else
+                     MessageBox.Show("Khách hàng không tồn tại!", "Thông Báo");
+            }
+           
         }
     }
 }
