@@ -50,15 +50,18 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dgvDanhSach);
-            this.groupBox3.Location = new System.Drawing.Point(19, 216);
+            this.groupBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.groupBox3.Location = new System.Drawing.Point(19, 230);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(740, 215);
+            this.groupBox3.Size = new System.Drawing.Size(740, 229);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Kết quả";
             // 
             // dgvDanhSach
             // 
+            this.dgvDanhSach.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             this.dgvDanhSach.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSach.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaSP,
@@ -67,9 +70,9 @@
             this.GiaNhap,
             this.GiaBan});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.Location = new System.Drawing.Point(3, 17);
+            this.dgvDanhSach.Location = new System.Drawing.Point(3, 18);
             this.dgvDanhSach.Name = "dgvDanhSach";
-            this.dgvDanhSach.Size = new System.Drawing.Size(734, 195);
+            this.dgvDanhSach.Size = new System.Drawing.Size(734, 208);
             this.dgvDanhSach.TabIndex = 0;
             // 
             // MaSP
@@ -115,60 +118,70 @@
             this.groupBox1.Controls.Add(this.cboTimKiem);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblTuKhoa);
-            this.groupBox1.Location = new System.Drawing.Point(19, 73);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Teal;
+            this.groupBox1.Location = new System.Drawing.Point(19, 78);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(740, 124);
+            this.groupBox1.Size = new System.Drawing.Size(740, 132);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm";
             // 
             // txtTuKhoa
             // 
-            this.txtTuKhoa.Location = new System.Drawing.Point(518, 44);
+            this.txtTuKhoa.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuKhoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.txtTuKhoa.Location = new System.Drawing.Point(528, 63);
             this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(197, 21);
+            this.txtTuKhoa.Size = new System.Drawing.Size(197, 25);
             this.txtTuKhoa.TabIndex = 9;
             this.txtTuKhoa.TextChanged += new System.EventHandler(this.txtTuKhoa_TextChanged);
             // 
             // cboTimKiem
             // 
+            this.cboTimKiem.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTimKiem.FormattingEnabled = true;
             this.cboTimKiem.Items.AddRange(new object[] {
             "Mã sản phẩm",
             "Tên sản phẩm",
             "So lượng"});
-            this.cboTimKiem.Location = new System.Drawing.Point(155, 43);
+            this.cboTimKiem.Location = new System.Drawing.Point(139, 62);
             this.cboTimKiem.Name = "cboTimKiem";
-            this.cboTimKiem.Size = new System.Drawing.Size(197, 23);
+            this.cboTimKiem.Size = new System.Drawing.Size(197, 25);
             this.cboTimKiem.TabIndex = 8;
             this.cboTimKiem.SelectedIndexChanged += new System.EventHandler(this.cboTimKiem_SelectedIndexChanged_1);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 47);
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label2.Location = new System.Drawing.Point(20, 66);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 15);
+            this.label2.Size = new System.Drawing.Size(105, 18);
             this.label2.TabIndex = 7;
             this.label2.Text = "Tìm kiếm theo";
             // 
             // lblTuKhoa
             // 
             this.lblTuKhoa.AutoSize = true;
-            this.lblTuKhoa.Location = new System.Drawing.Point(375, 47);
+            this.lblTuKhoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTuKhoa.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblTuKhoa.Location = new System.Drawing.Point(350, 66);
             this.lblTuKhoa.Name = "lblTuKhoa";
-            this.lblTuKhoa.Size = new System.Drawing.Size(119, 15);
+            this.lblTuKhoa.Size = new System.Drawing.Size(164, 18);
             this.lblTuKhoa.TabIndex = 6;
             this.lblTuKhoa.Text = "Nhập từ khóa tìm kiếm";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(117, 18);
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Teal;
+            this.label1.Location = new System.Drawing.Point(117, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 26);
+            this.label1.Size = new System.Drawing.Size(389, 32);
             this.label1.TabIndex = 5;
             this.label1.Text = "Tìm Kiếm Thông Tin Sản Phẩm";
             // 
@@ -176,23 +189,23 @@
             // 
             this.btnthoat.BackgroundImage = global::_17_PhuongDong_12_HienDuy.Properties.Resources.icon_close;
             this.btnthoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnthoat.Location = new System.Drawing.Point(718, 27);
+            this.btnthoat.Location = new System.Drawing.Point(718, 29);
             this.btnthoat.Name = "btnthoat";
-            this.btnthoat.Size = new System.Drawing.Size(38, 40);
+            this.btnthoat.Size = new System.Drawing.Size(38, 43);
             this.btnthoat.TabIndex = 7;
             this.btnthoat.UseVisualStyleBackColor = true;
             this.btnthoat.Click += new System.EventHandler(this.btnthoat_Click);
             // 
             // frmTimKiemSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 441);
+            this.ClientSize = new System.Drawing.Size(779, 470);
             this.Controls.Add(this.btnthoat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
-            this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmTimKiemSanPham";
             this.Text = "Tìm kiếm sản phẩm";

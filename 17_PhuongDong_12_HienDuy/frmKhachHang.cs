@@ -54,7 +54,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void Xuly_Textbox(Boolean t)
         {
-            txtMaKH.ReadOnly = t;
+            txtMaKH.ReadOnly = t;            
             txtHoTen.ReadOnly = t;
             txtSoCMND.ReadOnly = t;
             txtSoDienThoai.ReadOnly = t;
@@ -195,8 +195,11 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập Số vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtSoCMND_KeyDown(object sender, KeyEventArgs e)
@@ -207,7 +210,10 @@ namespace _17_PhuongDong_12_HienDuy
         private void txtSoCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void frmKhachHang_FormClosing(object sender, FormClosingEventArgs e)
@@ -225,7 +231,10 @@ namespace _17_PhuongDong_12_HienDuy
         private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
        
