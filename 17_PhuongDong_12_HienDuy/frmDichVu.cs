@@ -62,16 +62,40 @@ namespace _17_PhuongDong_12_HienDuy
             HienThiDuLieu("select * from DichVu", dgvDanhSach);
             HienThiTextBox(ds, 0);
         }
-        string Phatsinhma(DataSet d, string kytudb)
+        string phatSinhMa(DataSet d, string kytu)
         {
-            string maps = "";
-            int sodong = ds.Tables[0].Rows.Count;
-            sodong = sodong + 1;
-            if (sodong < 10)
-                maps = kytudb + "0" + sodong.ToString();
+            int max = 0;
+            int sodong = d.Tables[0].Rows.Count;
+            if (sodong < 0)
+            {
+                return kytu + "01";
+            }
+            else if (sodong < 2)
+            {
+                return kytu + "02";
+            }
             else
-                maps = kytudb + sodong.ToString();
-            return maps;
+            {
+                for (int i = 0; i < sodong - 1; i++)
+                {
+                    string row1 = d.Tables[0].Rows[i]["MaDv"].ToString();
+                    int newrow1 = Convert.ToInt32(row1.Substring(2, 2));
+                    string row2 = d.Tables[0].Rows[i + 1]["MaDv"].ToString();
+                    int newrow2 = Convert.ToInt32(row2.Substring(2, 2));
+                    if (newrow1 < newrow2)
+                        max = newrow2;
+                    else
+                        max = newrow1;
+
+                }
+                string ma = "";
+                sodong = max + 1;
+                if (sodong < 10)
+                    ma = kytu + "0" + sodong.ToString();
+                else
+                    ma = kytu + sodong.ToString();
+                return ma;
+            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -80,7 +104,7 @@ namespace _17_PhuongDong_12_HienDuy
             clearTextBox();
             XuLy_ChucNang(false);
             txtMaDichVu.ReadOnly = true;
-            txtMaDichVu.Text = Phatsinhma(ds, "DV");
+            txtMaDichVu.Text = phatSinhMa(ds, "DV");
             flag = 1;
         }
 
@@ -104,30 +128,37 @@ namespace _17_PhuongDong_12_HienDuy
             XuLy_ChucNang(true);
             XuLy_Textbox(true);
             string sql= "";
-            if (flag == 1)
+            if (txtMaDichVu.Text == "" || txtTenDichVu.Text == "" || txtDonViTinh.Text == "" || txtGia.Text == "")
             {
-                sql = "insert into DichVu values('" + txtMaDichVu.Text + "',N'" + txtTenDichVu.Text + "',N'" + txtDonViTinh.Text + "'," + txtGia.Text + ")";
-                MessageBox.Show("Bạn có muốn lưu dịch vụ vừa thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            }   
-            else if (flag == 2)
-            {
-                sql = "update DichVu set MaDV = '" + txtMaDichVu.Text + "', TenDV = N'" + txtTenDichVu.Text + "',DonViTinh = N'" + txtDonViTinh.Text + "',Gia ='" + txtGia.Text +"' where MaDV = '" + txtMaDichVu.Text + "'";
-                MessageBox.Show("Bạn có muốn sửa dịch vụ vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
             }
             else
             {
-                sql = "delete from DichVu where MaDV = '" + txtMaDichVu.Text + "'";
-                MessageBox.Show("Bạn có muốn xóa dịch vụ vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                
+                if (flag == 1)
+                {
+                    sql = "insert into DichVu values('" + txtMaDichVu.Text + "',N'" + txtTenDichVu.Text + "',N'" + txtDonViTinh.Text + "'," + txtGia.Text + ")";
+                    MessageBox.Show("Bạn có muốn lưu dịch vụ vừa thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+                else if (flag == 2)
+                {
+                    sql = "update DichVu set MaDV = '" + txtMaDichVu.Text + "', TenDV = N'" + txtTenDichVu.Text + "',DonViTinh = N'" + txtDonViTinh.Text + "',Gia ='" + txtGia.Text + "' where MaDV = '" + txtMaDichVu.Text + "'";
+                    MessageBox.Show("Bạn có muốn sửa dịch vụ vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    sql = "delete from DichVu where MaDV = '" + txtMaDichVu.Text + "'";
+                    MessageBox.Show("Bạn có muốn xóa dịch vụ vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                }
+                if (c.CapNhatDuLieu(sql) != 0)
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                    frmDichVu_Load(sender, e);
+                }
+
+
+                flag = 0;
             }
-            if (c.CapNhatDuLieu(sql) != 0)
-            {
-                MessageBox.Show("Cập nhật thành công!", "Thông báo");
-                frmDichVu_Load(sender, e);
-            }
-               
-            
-            flag = 0;
             
         }
 
