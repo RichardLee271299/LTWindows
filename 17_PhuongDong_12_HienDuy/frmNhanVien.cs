@@ -93,14 +93,38 @@ namespace _17_PhuongDong_12_HienDuy
         }
         string phatSinhMa(DataSet d, string kytu)
         {
-            string ma = "";
+            int max = 0;
             int sodong = d.Tables[0].Rows.Count;
-            sodong++;
-            if (sodong < 10)
-                ma = kytu + "0" + sodong.ToString();
+            if (sodong < 0)
+            {
+                return kytu + "01";
+            }
+            else if (sodong < 2)
+            {
+                return kytu + "02";
+            }
             else
-                ma = kytu + sodong.ToString();
-            return ma;
+            {
+                for (int i = 0; i < sodong - 1; i++)
+                {
+                    string row1 = d.Tables[0].Rows[i]["MaNV"].ToString();
+                    int newrow1 = Convert.ToInt32(row1.Substring(2, 2));
+                    string row2 = d.Tables[0].Rows[i + 1]["MaNV"].ToString();
+                    int newrow2 = Convert.ToInt32(row2.Substring(2, 2));
+                    if (newrow1 < newrow2)
+                        max = newrow2;
+                    else
+                        max = newrow1;
+
+                }
+                string ma = "";
+                sodong = max + 1;
+                if (sodong < 10)
+                    ma = kytu + "0" + sodong.ToString();
+                else
+                    ma = kytu + sodong.ToString();
+                return ma;
+            }
         }
 
 
@@ -127,7 +151,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void btnThem_Click_1(object sender, EventArgs e)
         {
-            txtMaNv.Text = phatSinhMa(ds, "NV").ToString();
+            txtMaNv.Text = phatSinhMa(ds, "NV");
             txtMaNv.ReadOnly = true;
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
@@ -141,34 +165,41 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             int tinhtrang;
-            if ((string)cboTinhTrang.Items[cboTinhTrang.SelectedIndex] == "Hoạt động")
-                tinhtrang = 1;
-            else
-                tinhtrang = 0;
-            string sql = "";
-            if (flag == 1)
+            if (txtDiaChi.Text == "" || txtHinhAnh.Text == "" || txtHoTen.Text == "" || txtMaNv.Text == "" || txtSoCMND.Text == "" || txtSoDienThoai.Text == "" || cboGioiTinh.SelectedIndex == -1 || cboQuyenHan.SelectedIndex == -1 || cboTinhTrang.SelectedIndex == -1)
             {
-                sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "','" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "','" + txtSoDienThoai.Text + "'," + tinhtrang + ",N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "',N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',N'" + txtHinhAnh.Text + "')";
-                MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            }
-            else if (flag == 2)
-            {
-                sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = " + tinhtrang + ", SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] +"',Image='"+ txtHinhAnh.Text + "' where MaNv = '" + txtMaNv.Text + "'";
-                MessageBox.Show("Bạn có muốn sửa thông tin nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
             }
             else
             {
-                sql = "delete from NhanVien where MaNv = '" + txtMaNv.Text + "'";
-                MessageBox.Show("Bạn có muốn xóa nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            }
-            if (c.CapNhatDuLieu(sql) != 0)
-            {
-                MessageBox.Show("Cập nhật thành công!", "Thông báo");
-                frmNhanVien_Load(sender, e);
-            }
+                if ((string)cboTinhTrang.Items[cboTinhTrang.SelectedIndex] == "Hoạt động")
+                    tinhtrang = 1;
+                else
+                    tinhtrang = 0;
+                string sql = "";
+                if (flag == 1)
+                {
+                    sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "','" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "','" + txtSoDienThoai.Text + "'," + tinhtrang + ",N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "',N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',N'" + txtHinhAnh.Text + "')";
+                    MessageBox.Show("Bạn có thêm thông tin nhân viên vừa nhập?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+                else if (flag == 2)
+                {
+                    sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = " + tinhtrang + ", SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',Image='" + txtHinhAnh.Text + "' where MaNv = '" + txtMaNv.Text + "'";
+                    MessageBox.Show("Bạn có muốn sửa thông tin nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    sql = "delete from NhanVien where MaNv = '" + txtMaNv.Text + "'";
+                    MessageBox.Show("Bạn có muốn xóa nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+                if (c.CapNhatDuLieu(sql) != 0)
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                    frmNhanVien_Load(sender, e);
+                }
 
 
-            flag = 0;
+                flag = 0;
+            }
 
         }
 

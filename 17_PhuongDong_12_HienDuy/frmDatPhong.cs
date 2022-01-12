@@ -208,9 +208,7 @@ namespace _17_PhuongDong_12_HienDuy
                 else
                     ma = kytu + sodong.ToString();
                 return ma;
-            }
-            
-
+            }       
         }
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
