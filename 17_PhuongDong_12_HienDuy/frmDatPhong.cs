@@ -280,11 +280,6 @@ namespace _17_PhuongDong_12_HienDuy
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void chkNhanPhong_CheckedChanged(object sender, EventArgs e)
         {
             string sql = "update Phong set TinhTrang = 1 where MaPhong = '" + cboMaPhong.SelectedValue.ToString() + "'";
@@ -313,6 +308,11 @@ namespace _17_PhuongDong_12_HienDuy
             hienthitextbox(ds, vt);
 
         
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
