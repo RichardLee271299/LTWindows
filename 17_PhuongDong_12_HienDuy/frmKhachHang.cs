@@ -85,21 +85,45 @@ namespace _17_PhuongDong_12_HienDuy
             txtSoDienThoai.Clear();
             cbmGioiTinh.SelectedIndex = 0;
         }
-        string phatSinhMa (DataSet d, string kytu)
+        string phatSinhMa(DataSet d, string kytu)
         {
-            string ma = "";
+            int max = 0;
             int sodong = d.Tables[0].Rows.Count;
-            sodong++;
-            if (sodong < 10)
-                ma = kytu + "0" + sodong.ToString();
+            if (sodong < 0)
+            {
+                return kytu + "01";
+            }
+            else if (sodong < 2)
+            {
+                return kytu + "02";
+            }
             else
-                ma = kytu + sodong.ToString();
-            return ma;
+            {
+                for (int i = 0; i < sodong - 1; i++)
+                {
+                    string row1 = d.Tables[0].Rows[i]["MaKH"].ToString();
+                    int newrow1 = Convert.ToInt32(row1.Substring(2, 2));
+                    string row2 = d.Tables[0].Rows[i + 1]["MaKH"].ToString();
+                    int newrow2 = Convert.ToInt32(row2.Substring(2, 2));
+                    if (newrow1 < newrow2)
+                        max = newrow2;
+                    else
+                        max = newrow1;
+
+                }
+                string ma = "";
+                sodong = max + 1;
+                if (sodong < 10)
+                    ma = kytu + "0" + sodong.ToString();
+                else
+                    ma = kytu + sodong.ToString();
+                return ma;
+            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             
-            txtMaKH.Text = phatSinhMa(ds, "KH").ToString();
+            txtMaKH.Text = phatSinhMa(ds, "kH");
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtMaKH.ReadOnly = true;
@@ -118,6 +142,12 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             string sql = "";
+            if(txtDiaChi.Text=="" || txtHoTen.Text=="" || txtMaKH.Text=="" || txtSoCMND.Text=="" || txtSoDienThoai.Text=="" || cbmGioiTinh.SelectedIndex==-1  )
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
+            }
+            else 
+            { 
             if (flag == 1)
             {
                 sql = "insert into KhachHang values ('" + txtMaKH.Text +"',N'"+ txtHoTen.Text + "','"+ dtpNgaySinh.Text +"','" + txtSoDienThoai.Text +"', '" + txtSoCMND.Text+"',N'" +txtDiaChi.Text+"',N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"','" + dtpNgayDen.Text+"')";
@@ -149,6 +179,7 @@ namespace _17_PhuongDong_12_HienDuy
 
 
             flag = 0;
+                }
         }
 
         private void btnSua_Click(object sender, EventArgs e)

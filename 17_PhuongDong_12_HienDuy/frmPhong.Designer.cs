@@ -52,16 +52,16 @@
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.grpDanhSachPhong = new System.Windows.Forms.GroupBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
+            this.label6 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnLoadHinh = new System.Windows.Forms.Button();
+            this.picHinhPhong = new System.Windows.Forms.PictureBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LoaiPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KichThuoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Image = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnLoadHinh = new System.Windows.Forms.Button();
-            this.picHinhPhong = new System.Windows.Forms.PictureBox();
             this.grpLoaiPhong.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.grpDanhSachPhong.SuspendLayout();
@@ -416,53 +416,6 @@
             this.dgvDanhSach.TabIndex = 0;
             this.dgvDanhSach.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellClick);
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaPhong";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Phòng";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // LoaiPhong
-            // 
-            this.LoaiPhong.DataPropertyName = "LoaiPhong";
-            this.LoaiPhong.HeaderText = "Loại Phòng";
-            this.LoaiPhong.Name = "LoaiPhong";
-            this.LoaiPhong.ReadOnly = true;
-            this.LoaiPhong.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Gia";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Giá";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // KichThuoc
-            // 
-            this.KichThuoc.DataPropertyName = "KichThuoc";
-            this.KichThuoc.HeaderText = "Kích Thước";
-            this.KichThuoc.Name = "KichThuoc";
-            this.KichThuoc.ReadOnly = true;
-            this.KichThuoc.Width = 104;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô Tả";
-            this.MoTa.Name = "MoTa";
-            this.MoTa.ReadOnly = true;
-            this.MoTa.Width = 200;
-            // 
-            // Image
-            // 
-            this.Image.DataPropertyName = "Image";
-            this.Image.HeaderText = "Hình Ảnh";
-            this.Image.Name = "Image";
-            this.Image.ReadOnly = true;
-            this.Image.Width = 150;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -499,6 +452,54 @@
             this.picHinhPhong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picHinhPhong.TabIndex = 5;
             this.picHinhPhong.TabStop = false;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaPhong";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã Phòng";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // LoaiPhong
+            // 
+            this.LoaiPhong.DataPropertyName = "LoaiPhong";
+            this.LoaiPhong.HeaderText = "Loại Phòng";
+            this.LoaiPhong.Name = "LoaiPhong";
+            this.LoaiPhong.ReadOnly = true;
+            this.LoaiPhong.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Gia";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Giá";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // KichThuoc
+            // 
+            this.KichThuoc.DataPropertyName = "KichThuoc";
+            this.KichThuoc.HeaderText = "Kích Thước";
+            this.KichThuoc.Name = "KichThuoc";
+            this.KichThuoc.ReadOnly = true;
+            this.KichThuoc.Width = 150;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "Mô Tả";
+            this.MoTa.Name = "MoTa";
+            this.MoTa.ReadOnly = true;
+            this.MoTa.Width = 160;
+            // 
+            // Image
+            // 
+            this.Image.DataPropertyName = "Image";
+            this.Image.HeaderText = "Hình Ảnh";
+            this.Image.Name = "Image";
+            this.Image.ReadOnly = true;
+            this.Image.Width = 168;
             // 
             // frmPhong
             // 

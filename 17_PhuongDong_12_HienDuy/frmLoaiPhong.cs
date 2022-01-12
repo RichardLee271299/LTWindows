@@ -51,16 +51,40 @@ namespace _17_PhuongDong_12_HienDuy
             btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
         }
-        string Phatsinhma(DataSet d, string kytudb)
+        string phatSinhMa(DataSet d, string kytu)
         {
-            string maps = "";
-            int sodong = ds.Tables[0].Rows.Count;
-            sodong = sodong + 1;
-            if (sodong < 10)
-                maps = kytudb + "0" + sodong.ToString();
+            int max = 0;
+            int sodong = d.Tables[0].Rows.Count;
+            if (sodong < 0)
+            {
+                return kytu + "01";
+            }
+            else if (sodong < 2)
+            {
+                return kytu + "02";
+            }
             else
-                maps = kytudb + sodong.ToString();
-            return maps;
+            {
+                for (int i = 0; i < sodong - 1; i++)
+                {
+                    string row1 = d.Tables[0].Rows[i]["MaPhong"].ToString();
+                    int newrow1 = Convert.ToInt32(row1.Substring(2, 2));
+                    string row2 = d.Tables[0].Rows[i + 1]["MaPhong"].ToString();
+                    int newrow2 = Convert.ToInt32(row2.Substring(2, 2));
+                    if (newrow1 < newrow2)
+                        max = newrow2;
+                    else
+                        max = newrow1;
+
+                }
+                string ma = "";
+                sodong = max + 1;
+                if (sodong < 10)
+                    ma = kytu + "0" + sodong.ToString();
+                else
+                    ma = kytu + sodong.ToString();
+                return ma;
+            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -68,7 +92,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(false);
             txtMaPH.ReadOnly = true;
             clearTextBox();
-            txtMaPH.Text=Phatsinhma(ds, "LP");
+            txtMaPH.Text = phatSinhMa(ds, "LP");
             flag = 1;
             txtLoaiPhong.Clear();
         }
@@ -78,29 +102,36 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(true);
             Xuly_Chucnang(true);
             string sql = "";
-            if (flag == 1)
+            if(txtLoaiPhong.Text=="" || txtMaPH.Text=="")
             {
-                sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + txtLoaiPhong.Text + "')";
-                MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            }
-            else if (flag == 2)
-            {
-                sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + txtLoaiPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
-                MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
             }
             else
             {
-                sql = "delete from LoaiPhong where MaPhong = '" + txtMaPH.Text + "'";
-                MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            }
-            if (c.CapNhatDuLieu(sql) != 0)
-            {
-                MessageBox.Show("Cập nhật thành công!", "Thông báo");
-                frmLoaiPhong_Load(sender, e);
-            }
+                if (flag == 1)
+                {
+                    sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + txtLoaiPhong.Text + "')";
+                    MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+                else if (flag == 2)
+                {
+                    sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + txtLoaiPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
+                    MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+                else
+                {
+                    sql = "delete from LoaiPhong where MaPhong = '" + txtMaPH.Text + "'";
+                    MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
+                if (c.CapNhatDuLieu(sql) != 0)
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                    frmLoaiPhong_Load(sender, e);
+                }
 
 
-            flag = 0;
+                flag = 0;
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
