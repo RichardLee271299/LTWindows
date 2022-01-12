@@ -26,6 +26,8 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet dsMoTa = new DataSet();
         DataSet dsKhachHang = new DataSet();
         Boolean t = false;
+        Boolean trangthaicheckbox = false;
+        string maphong;
         string makhachhang;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
@@ -83,23 +85,22 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
-
+           
             Xuly_Textbox(false);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             dsPhong = c.LayDuLieu("select * from Phong where TinhTrang = 0");
             HienThiComboBox(dsPhong, "MaPhong", "MaPhong", cboMaPhong);
-            string sql = "select MaDatPhong,KhachHang.HoTen,KhachHang.GioiTinh,KhachHang.NgaySinh,KhachHang.DiaChi,LoaiPhong.LoaiPhong,MaPH,KhachHang.SDT,NgayNhan,NgayTra,N'Tình Trạng' = case when TinhTrang='1' then N'Đã nhận' else N'Chưa nhận' end,CMND from DatPhong inner join LoaiPhong on LoaiPhong.MaPhong = DatPhong.LoaiPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH";
+            string sql = "select MaDatPhong,KhachHang.HoTen,KhachHang.GioiTinh,KhachHang.NgaySinh,KhachHang.DiaChi,LoaiPhong.LoaiPhong,MaPH,KhachHang.SDT,NgayNhan,NgayTra,N'TinhTrang' = case when TinhTrang='1' then N'Đã nhận' else N'Chưa nhận' end,CMND from DatPhong inner join LoaiPhong on LoaiPhong.MaPhong = DatPhong.LoaiPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH";
             HienThiDuLieu(sql, dgvDanhSach, ref ds);
             t = true;
-            hienthitextbox(ds, 0);
 
         }
 
         void hienthimota()
         {
             string sql = "select Gia,MoTa from Phong where MaPhong ='" + cboMaPhong.SelectedValue.ToString() + "'";
-           dsMoTa = c.LayDuLieu(sql);
+            dsMoTa = c.LayDuLieu(sql);
             rtbMoTa.Text = dsMoTa.Tables[0].Rows[0]["MoTa"].ToString();
             lblGiaPhong.Text = dsMoTa.Tables[0].Rows[0]["Gia"].ToString();
         }
@@ -280,22 +281,30 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void chkNhanPhong_CheckedChanged(object sender, EventArgs e)
         {
-            string sql = "update Phong set TinhTrang = 1 where MaPhong = '" + cboMaPhong.SelectedValue.ToString() + "'";
-            if (c.CapNhatDuLieu(sql) != 0)
-            {
-                MessageBox.Show("Cập nhật thành công!", "Thông báo");
-                frmDatPhong_Load(sender, e);
-            }
+
+           if(chkNhanPhong.Checked)
+           {
+               string sql = "update Phong set TinhTrang = 1 where MaPhong = '" + maphong + "'";
+               string sql2 = "update DatPhong set TinhTrang = 1 where MaPH = '" + maphong + "'";
+               if (c.CapNhatDuLieu(sql) != 0 && c.CapNhatDuLieu(sql2) != 0)
+               {
+                   MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                   frmDatPhong_Load(sender, e);
+               }
+           }
+
         }
         void hienthitextbox(DataSet ds, int vt)
         {
+            
             txtHoTen.Text = ds.Tables[0].Rows[vt]["HoTen"].ToString();
             txtSoCMND.Text = ds.Tables[0].Rows[vt]["CMND"].ToString();
             txtSoDienThoai.Text = ds.Tables[0].Rows[vt]["SDT"].ToString();
             txtDiaChi.Text = ds.Tables[0].Rows[vt]["DiaChi"].ToString();
             string gt = ds.Tables[0].Rows[vt]["GioiTinh"].ToString();
+            maphong = ds.Tables[0].Rows[vt]["MaPH"].ToString();
             if (gt.ToLower() == "nam")
-                cboGioiTinh.SelectedIndex = 0;
+               cboGioiTinh.SelectedIndex = 0;
             else
                 cboGioiTinh.SelectedIndex = 1;
             dtpNgaySinh.Value = (DateTime)ds.Tables[0].Rows[vt]["NgaySinh"];
