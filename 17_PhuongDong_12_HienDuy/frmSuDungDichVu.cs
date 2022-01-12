@@ -19,6 +19,9 @@ namespace _17_PhuongDong_12_HienDuy
         clsQuanLyKhachSan c = new clsQuanLyKhachSan();
         DataSet ds = new DataSet();
         DataSet dsDichVu = new DataSet();
+        DataSet dsPhong = new DataSet();
+        DataSet dsGia = new DataSet();
+        Boolean t = false;
         void HienThiDuLieu(String sql, DataGridView dgs, ref DataSet ds)
         {
             ds = c.LayDuLieu(sql);
@@ -29,26 +32,23 @@ namespace _17_PhuongDong_12_HienDuy
             c.DataSource = ds.Tables[0];
             c.DisplayMember = ten;
             c.ValueMember = ma;
-            c.SelectedIndex = 0;
-        }
-        void HienThiTextBox(DataSet d, int vt)
-        {
-            string TenDv = d.Tables[0].Rows[vt]["TenDv"].ToString();
-            DataView dvmDichVu = new DataView();
-            dvmDichVu.Table = dsDichVu.Tables[0];
-            cboTenDv.DataSource = dvmDichVu;
-            cboTenDv.DisplayMember = "TenDv";
-            cboTenDv.ValueMember = "MaDv";
-            dvmDichVu.RowFilter = "TenDv ='" + TenDv + "'";
+            c.SelectedIndex = -1;
         }
 
         private void frmSuDungDichVu_Load(object sender, EventArgs e)
         {            
             dsDichVu = c.LayDuLieu("select * from DichVu");
-            HienThiComboBox(dsDichVu, "TenDv", "MaDv", cboTenDv);
-            HienThiTextBox(ds, 0);
+            HienThiComboBox(dsDichVu, "TenDv", "TenDv", cboTenDv);
+            dsPhong = c.LayDuLieu("select * from Phong");
+            HienThiComboBox(dsPhong, "MaPhong", "MaPhong", cboMaPhong);
+            t = true;
         }
-
+        void HienThiGia()
+        {
+            string sql = "select Gia from DichVu where TenDv ='" + cboTenDv.SelectedValue.ToString() + "'";
+            dsGia = c.LayDuLieu(sql);
+            lblGia.Text = dsGia.Tables[0].Rows[0]["Gia"].ToString();
+        }
         private void guna2TextBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -57,7 +57,19 @@ namespace _17_PhuongDong_12_HienDuy
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int vt = dgvDanhSach.CurrentCell.RowIndex;
-            HienThiTextBox(ds, vt);
+            
+        }
+
+        private void lblGia_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cboTenDv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (t)
+                if (cboTenDv.SelectedIndex != -1)
+                    HienThiGia();
         }
     }
 }

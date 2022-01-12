@@ -73,7 +73,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label1.ForeColor = System.Drawing.Color.Teal;
             this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(1, 0, 1, 0);
             this.label1.Name = "label1";
@@ -102,7 +102,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.groupBox1.ForeColor = System.Drawing.Color.Teal;
             this.groupBox1.Location = new System.Drawing.Point(18, 186);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(454, 299);
@@ -113,6 +113,7 @@
             // cboNhanVien
             // 
             this.cboNhanVien.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboNhanVien.FormattingEnabled = true;
             this.cboNhanVien.Location = new System.Drawing.Point(24, 162);
             this.cboNhanVien.Name = "cboNhanVien";
@@ -132,13 +133,12 @@
             // 
             // btnChiTietHoaDon
             // 
-            this.btnChiTietHoaDon.AutoRoundedCorners = true;
             this.btnChiTietHoaDon.BackColor = System.Drawing.Color.Transparent;
             this.btnChiTietHoaDon.BorderColor = System.Drawing.Color.ForestGreen;
-            this.btnChiTietHoaDon.BorderRadius = 13;
+            this.btnChiTietHoaDon.BorderRadius = 11;
             this.btnChiTietHoaDon.CheckedState.Parent = this.btnChiTietHoaDon;
             this.btnChiTietHoaDon.CustomImages.Parent = this.btnChiTietHoaDon;
-            this.btnChiTietHoaDon.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnChiTietHoaDon.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnChiTietHoaDon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnChiTietHoaDon.ForeColor = System.Drawing.Color.White;
             this.btnChiTietHoaDon.HoverState.Parent = this.btnChiTietHoaDon;
@@ -152,6 +152,7 @@
             // txtThanhTien
             // 
             this.txtThanhTien.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtThanhTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtThanhTien.Location = new System.Drawing.Point(255, 216);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(161, 22);
@@ -161,6 +162,7 @@
             // txtGiamGia
             // 
             this.txtGiamGia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtGiamGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtGiamGia.Location = new System.Drawing.Point(255, 162);
             this.txtGiamGia.Name = "txtGiamGia";
             this.txtGiamGia.Size = new System.Drawing.Size(161, 22);
@@ -170,6 +172,7 @@
             // txtMaKH
             // 
             this.txtMaKH.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaKH.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtMaKH.Location = new System.Drawing.Point(255, 56);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(161, 22);
@@ -179,6 +182,7 @@
             // txtDonGia
             // 
             this.txtDonGia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtDonGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtDonGia.Location = new System.Drawing.Point(255, 108);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(161, 22);
@@ -189,6 +193,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.DarkCyan;
             this.label6.Location = new System.Drawing.Point(255, 137);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 18);
@@ -199,6 +204,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.ForeColor = System.Drawing.Color.DarkCyan;
             this.label9.Location = new System.Drawing.Point(255, 191);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 18);
@@ -208,6 +214,7 @@
             // txtTenPhong
             // 
             this.txtTenPhong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtTenPhong.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtTenPhong.Location = new System.Drawing.Point(24, 108);
             this.txtTenPhong.Name = "txtTenPhong";
             this.txtTenPhong.Size = new System.Drawing.Size(161, 22);
@@ -227,6 +234,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label5.ForeColor = System.Drawing.Color.DarkCyan;
             this.label5.Location = new System.Drawing.Point(24, 137);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 18);
@@ -237,6 +245,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.ForeColor = System.Drawing.Color.DarkCyan;
             this.label7.Location = new System.Drawing.Point(255, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 18);
@@ -246,6 +255,7 @@
             // txtMaHD
             // 
             this.txtMaHD.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaHD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtMaHD.Location = new System.Drawing.Point(24, 56);
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Size = new System.Drawing.Size(161, 22);
@@ -255,6 +265,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label4.ForeColor = System.Drawing.Color.DarkCyan;
             this.label4.Location = new System.Drawing.Point(24, 83);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 18);
@@ -265,6 +276,7 @@
             // 
             this.MaKH.AutoSize = true;
             this.MaKH.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.MaKH.ForeColor = System.Drawing.Color.DarkCyan;
             this.MaKH.Location = new System.Drawing.Point(255, 31);
             this.MaKH.Name = "MaKH";
             this.MaKH.Size = new System.Drawing.Size(121, 18);
@@ -275,6 +287,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.DarkCyan;
             this.label3.Location = new System.Drawing.Point(24, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 18);
@@ -285,6 +298,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label2.ForeColor = System.Drawing.Color.DarkCyan;
             this.label2.Location = new System.Drawing.Point(24, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 18);
@@ -298,7 +312,7 @@
             this.groupBox2.Controls.Add(this.txtNhapTuKhoa);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox2.ForeColor = System.Drawing.Color.ForestGreen;
+            this.groupBox2.ForeColor = System.Drawing.Color.Teal;
             this.groupBox2.Location = new System.Drawing.Point(18, 55);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(454, 125);
@@ -308,13 +322,12 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.AutoRoundedCorners = true;
             this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
             this.btnTimKiem.BorderColor = System.Drawing.Color.ForestGreen;
-            this.btnTimKiem.BorderRadius = 13;
+            this.btnTimKiem.BorderRadius = 11;
             this.btnTimKiem.CheckedState.Parent = this.btnTimKiem;
             this.btnTimKiem.CustomImages.Parent = this.btnTimKiem;
-            this.btnTimKiem.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnTimKiem.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.HoverState.Parent = this.btnTimKiem;
@@ -329,6 +342,7 @@
             // cboTimKiem
             // 
             this.cboTimKiem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboTimKiem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboTimKiem.FormattingEnabled = true;
             this.cboTimKiem.Items.AddRange(new object[] {
             "SĐT",
@@ -341,6 +355,7 @@
             // txtNhapTuKhoa
             // 
             this.txtNhapTuKhoa.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtNhapTuKhoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtNhapTuKhoa.Location = new System.Drawing.Point(23, 81);
             this.txtNhapTuKhoa.Name = "txtNhapTuKhoa";
             this.txtNhapTuKhoa.Size = new System.Drawing.Size(177, 22);
@@ -350,6 +365,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.ForeColor = System.Drawing.Color.DarkCyan;
             this.label11.Location = new System.Drawing.Point(20, 43);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(109, 18);
@@ -365,7 +381,7 @@
             this.groupBox3.Controls.Add(this.btnThoat);
             this.groupBox3.Controls.Add(this.btnHuy);
             this.groupBox3.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.groupBox3.ForeColor = System.Drawing.Color.Teal;
             this.groupBox3.Location = new System.Drawing.Point(18, 485);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(454, 131);
@@ -381,7 +397,7 @@
             this.btnLuu.BorderRadius = 13;
             this.btnLuu.CheckedState.Parent = this.btnLuu;
             this.btnLuu.CustomImages.Parent = this.btnLuu;
-            this.btnLuu.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnLuu.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnLuu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.HoverState.Parent = this.btnLuu;
@@ -400,7 +416,7 @@
             this.btnXoa.BorderRadius = 13;
             this.btnXoa.CheckedState.Parent = this.btnXoa;
             this.btnXoa.CustomImages.Parent = this.btnXoa;
-            this.btnXoa.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnXoa.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
@@ -419,7 +435,7 @@
             this.btnSua.BorderRadius = 13;
             this.btnSua.CheckedState.Parent = this.btnSua;
             this.btnSua.CustomImages.Parent = this.btnSua;
-            this.btnSua.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnSua.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
@@ -438,7 +454,7 @@
             this.btnThem.BorderRadius = 13;
             this.btnThem.CheckedState.Parent = this.btnThem;
             this.btnThem.CustomImages.Parent = this.btnThem;
-            this.btnThem.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnThem.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
             this.btnThem.HoverState.Parent = this.btnThem;
@@ -458,7 +474,7 @@
             this.btnThoat.BorderRadius = 13;
             this.btnThoat.CheckedState.Parent = this.btnThoat;
             this.btnThoat.CustomImages.Parent = this.btnThoat;
-            this.btnThoat.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnThoat.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
             this.btnThoat.HoverState.Parent = this.btnThoat;
@@ -478,7 +494,7 @@
             this.btnHuy.BorderRadius = 13;
             this.btnHuy.CheckedState.Parent = this.btnHuy;
             this.btnHuy.CustomImages.Parent = this.btnHuy;
-            this.btnHuy.FillColor = System.Drawing.Color.ForestGreen;
+            this.btnHuy.FillColor = System.Drawing.Color.LightSeaGreen;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.Parent = this.btnHuy;
@@ -493,7 +509,7 @@
             // 
             this.groupBox4.Controls.Add(this.dgvDanhSach);
             this.groupBox4.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.groupBox4.ForeColor = System.Drawing.Color.ForestGreen;
+            this.groupBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.groupBox4.Location = new System.Drawing.Point(491, 55);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(576, 561);

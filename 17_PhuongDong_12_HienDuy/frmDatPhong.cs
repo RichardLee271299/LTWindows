@@ -83,6 +83,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
+
             Xuly_Textbox(false);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
@@ -121,6 +122,9 @@ namespace _17_PhuongDong_12_HienDuy
         private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm1.Show();
+            DialogResult kq = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (kq == DialogResult.No)
+                e.Cancel = true;  
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -226,6 +230,52 @@ namespace _17_PhuongDong_12_HienDuy
                     MessageBox.Show("Cập nhật thành công!", "Thông báo");
                     frmDatPhong_Load(sender, e);
                 }
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtCmnd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)               
+            {
+                e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtHoTen_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void txtSoCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
+                e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
+                e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false)
+            {
+                e.Handled = true;
+                MessageBox.Show("Bạn không được nhập Số vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

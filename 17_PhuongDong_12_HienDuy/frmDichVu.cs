@@ -176,14 +176,20 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void txtTenDichVu_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập Số vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtGia_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

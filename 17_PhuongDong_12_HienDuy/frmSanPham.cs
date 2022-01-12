@@ -155,26 +155,38 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void txtTenSP_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập Số vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtGiaNhap_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtGiaBan_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void frmSanPham_FormClosing(object sender, FormClosingEventArgs e)

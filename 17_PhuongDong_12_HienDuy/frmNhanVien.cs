@@ -230,20 +230,29 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false )
+            if (char.IsDigit(e.KeyChar) == true && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập Số vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtSoCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) == false && char.IsControl(e.KeyChar) == false)
+            {
                 e.Handled = true;
+                MessageBox.Show("Bạn không được nhập chứ vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtHoTen_TextChanged(object sender, EventArgs e)
