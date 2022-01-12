@@ -113,8 +113,10 @@ namespace _17_PhuongDong_12_HienDuy
         {
             btnLoadHinh.Visible = false;
             Xuly_Textbox(true);
+          
             Xuly_Chucnang(true);
             HienThiDuLieu("select * from NhanVien", dgvDanhSachNhanVien);
+            HienThiTextBox(ds, 0);
         }
 
         private void dgvDanhSachNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)

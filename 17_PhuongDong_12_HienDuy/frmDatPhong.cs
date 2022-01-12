@@ -89,9 +89,10 @@ namespace _17_PhuongDong_12_HienDuy
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             dsPhong = c.LayDuLieu("select * from Phong where TinhTrang = 0");
             HienThiComboBox(dsPhong, "MaPhong", "MaPhong", cboMaPhong);
-            HienThiDuLieu("select MaDatPhong,HoTen,LoaiPhong.LoaiPhong,MaPH,SDT,NgayNhan,NgayTra,N'Tình Trạng' = case when TinhTrang='1' then N'Đã nhận' else N'Chưa nhận' end from DatPhong inner join LoaiPhong on LoaiPhong.MaPhong = DatPhong.LoaiPhong", dgvDanhSach, ref ds);
+            string sql = "select MaDatPhong,KhachHang.HoTen,KhachHang.GioiTinh,KhachHang.NgaySinh,KhachHang.DiaChi,LoaiPhong.LoaiPhong,MaPH,KhachHang.SDT,NgayNhan,NgayTra,N'Tình Trạng' = case when TinhTrang='1' then N'Đã nhận' else N'Chưa nhận' end,CMND from DatPhong inner join LoaiPhong on LoaiPhong.MaPhong = DatPhong.LoaiPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH";
+            HienThiDuLieu(sql, dgvDanhSach, ref ds);
             t = true;
-         
+            hienthitextbox(ds, 0);
 
         }
 
@@ -213,7 +214,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void btnDatPhong_Click(object sender, EventArgs e)
         {
-            if(cboLoaiPhong.SelectedIndex ==-1||cboGioiTinh.SelectedIndex == -1 || cboMaPhong.SelectedIndex == -1 || txtHoTen.Text== "" || txtSoCMND.Text == "" || lblSoDem.Text == "" || txtSoDienThoai.Text=="" || txtDiaChi.Text == "" )
+            if(cboLoaiPhong.SelectedIndex ==-1||cboGioiTinh.SelectedIndex == -1 || cboMaPhong.SelectedIndex == -1 || txtHoTen.Text== "" || txtSoCMND.Text == "" || lblSoDem.Text == "" || txtSoDienThoai.Text=="" || txtDiaChi.Text == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
             }
@@ -224,7 +225,7 @@ namespace _17_PhuongDong_12_HienDuy
                      nhanphong=1;
                 else
                     nhanphong =0;
-                string sql = "insert into DatPhong values ('" + phatSinhMa(ds, "DP") + "','" + makhachhang + "',N'" + txtHoTen.Text + "','" + cboMaPhong.SelectedValue.ToString() + "','"+cboLoaiPhong.SelectedValue.ToString()+ "','"+txtSoDienThoai.Text+"','" + dtpNgayDen.Value.ToString() + "','" + dtpNgayTra.Value.ToString() + "'," + nhanphong + ")";
+                string sql = "insert into DatPhong values ('" + phatSinhMa(ds, "DP") + "','" + makhachhang + "',N'" + txtHoTen.Text + "','" + cboMaPhong.SelectedValue.ToString() + "','"+cboLoaiPhong.SelectedValue.ToString()+ "','"+txtSoDienThoai.Text+"','" + dtpNgayDen.Value.ToString() + "','" + dtpNgayTra.Value.ToString() + "'," + nhanphong +")";
                 if (c.CapNhatDuLieu(sql) != 0)
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thông báo");
@@ -277,6 +278,41 @@ namespace _17_PhuongDong_12_HienDuy
                 e.Handled = true;
                 MessageBox.Show("Bạn không được nhập Số vào đây!", "chú ý", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkNhanPhong_CheckedChanged(object sender, EventArgs e)
+        {
+            string sql = "update Phong set TinhTrang = 1 where MaPhong = '" + cboMaPhong.SelectedValue.ToString() + "'";
+            if (c.CapNhatDuLieu(sql) != 0)
+            {
+                MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                frmDatPhong_Load(sender, e);
+            }
+        }
+        void hienthitextbox(DataSet ds, int vt)
+        {
+            txtHoTen.Text = ds.Tables[0].Rows[vt]["HoTen"].ToString();
+            txtSoCMND.Text = ds.Tables[0].Rows[vt]["CMND"].ToString();
+            txtSoDienThoai.Text = ds.Tables[0].Rows[vt]["SDT"].ToString();
+            txtDiaChi.Text = ds.Tables[0].Rows[vt]["DiaChi"].ToString();
+            string gt = ds.Tables[0].Rows[vt]["GioiTinh"].ToString();
+            if (gt.ToLower() == "nam")
+                cboGioiTinh.SelectedIndex = 0;
+            else
+                cboGioiTinh.SelectedIndex = 1;
+            dtpNgaySinh.Value = (DateTime)ds.Tables[0].Rows[vt]["NgaySinh"];
+        }
+        private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvDanhSach.CurrentCell.RowIndex;
+            hienthitextbox(ds, vt);
+
+        
         }
     }
 }

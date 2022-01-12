@@ -242,7 +242,7 @@
             this.dtpNgayDen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpNgayDen.Location = new System.Drawing.Point(265, 207);
             this.dtpNgayDen.MaxDate = new System.DateTime(2026, 1, 8, 0, 0, 0, 0);
-            this.dtpNgayDen.MinDate = new System.DateTime(2022, 1, 11, 0, 0, 0, 0);
+            this.dtpNgayDen.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dtpNgayDen.Name = "dtpNgayDen";
             this.dtpNgayDen.Size = new System.Drawing.Size(202, 22);
             this.dtpNgayDen.TabIndex = 9;
