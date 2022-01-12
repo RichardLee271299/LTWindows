@@ -219,12 +219,8 @@ namespace _17_PhuongDong_12_HienDuy
             }
             else
             {
-                int nhanphong;
-                if(chkNhanPhong.Checked)
-                     nhanphong=1;
-                else
-                    nhanphong =0;
-                string sql = "insert into DatPhong values ('" + phatSinhMa(ds, "DP") + "','" + makhachhang + "',N'" + txtHoTen.Text + "','" + cboMaPhong.SelectedValue.ToString() + "','"+cboLoaiPhong.SelectedValue.ToString()+ "','"+txtSoDienThoai.Text+"','" + dtpNgayDen.Value.ToString() + "','" + dtpNgayTra.Value.ToString() + "'," + nhanphong +")";
+                
+                string sql = "insert into DatPhong values ('" + phatSinhMa(ds, "DP") + "','" + makhachhang + "',N'" + txtHoTen.Text + "','" + cboMaPhong.SelectedValue.ToString() + "','"+cboLoaiPhong.SelectedValue.ToString()+ "','"+txtSoDienThoai.Text+"','" + dtpNgayDen.Value.ToString() + "','" + dtpNgayTra.Value.ToString() + "'," + cboTinhTrang.SelectedIndex +")";
                 if (c.CapNhatDuLieu(sql) != 0)
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thông báo");
@@ -279,7 +275,7 @@ namespace _17_PhuongDong_12_HienDuy
             }
         }
 
-        private void chkNhanPhong_CheckedChanged(object sender, EventArgs e)
+     /*   private void chkNhanPhong_CheckedChanged(object sender, EventArgs e)
         {
 
            if(chkNhanPhong.Checked)
@@ -293,7 +289,7 @@ namespace _17_PhuongDong_12_HienDuy
                }
            }
 
-        }
+        }*/
         void hienthitextbox(DataSet ds, int vt)
         {
             
@@ -308,6 +304,11 @@ namespace _17_PhuongDong_12_HienDuy
             else
                 cboGioiTinh.SelectedIndex = 1;
             dtpNgaySinh.Value = (DateTime)ds.Tables[0].Rows[vt]["NgaySinh"];
+            string tt = ds.Tables[0].Rows[vt]["TinhTrang"].ToString();
+            if (tt.ToLower() == "chưa nhận")
+                cboTinhTrang.SelectedIndex = 0;
+            else
+                cboTinhTrang.SelectedIndex = 1;
         }
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
