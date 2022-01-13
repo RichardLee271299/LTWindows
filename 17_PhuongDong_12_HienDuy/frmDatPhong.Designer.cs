@@ -808,7 +808,7 @@
             this.btnSua.Size = new System.Drawing.Size(106, 38);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnDatPhong
             // 

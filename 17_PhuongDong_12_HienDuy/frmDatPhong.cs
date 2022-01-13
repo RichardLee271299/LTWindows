@@ -385,5 +385,10 @@ namespace _17_PhuongDong_12_HienDuy
             xulyMaPhong();
             
         }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
