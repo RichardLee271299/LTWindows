@@ -226,6 +226,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void cleartextbox(Boolean t)
         {
+<<<<<<< HEAD
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
 
@@ -239,6 +240,26 @@ namespace _17_PhuongDong_12_HienDuy
             cleartextbox(true);
            
             
+=======
+            if(cboLoaiPhong.SelectedIndex ==-1||cboGioiTinh.SelectedIndex == -1 || cboMaPhong.SelectedIndex == -1 || txtHoTen.Text== "" || txtSoCMND.Text == "" || lblSoDem.Text == "" || txtSoDienThoai.Text=="" || txtDiaChi.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
+            }
+            else
+            {
+                int nhanphong;
+                if(chkNhanPhong.Checked)
+                     nhanphong=1;
+                else
+                    nhanphong =0;
+                string sql = "insert into DatPhong values ('" + phatSinhMa(ds, "DP") + "','" + makhachhang + "',N'" + txtHoTen.Text + "','" + cboMaPhong.SelectedValue.ToString() + "','"+cboLoaiPhong.SelectedValue.ToString()+ "','"+txtSoDienThoai.Text+"','" + dtpNgayDen.Value.ToString() + "','" + dtpNgayTra.Value.ToString() + "'," + nhanphong +")";
+                if (c.CapNhatDuLieu(sql) != 0)
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                    frmDatPhong_Load(sender, e);
+                }
+            }
+>>>>>>> parent of 98bbc82 (update cbo tinhtrang)
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -287,7 +308,7 @@ namespace _17_PhuongDong_12_HienDuy
             }
         }
 
-     /*   private void chkNhanPhong_CheckedChanged(object sender, EventArgs e)
+        private void chkNhanPhong_CheckedChanged(object sender, EventArgs e)
         {
 
            if(chkNhanPhong.Checked)
@@ -301,7 +322,7 @@ namespace _17_PhuongDong_12_HienDuy
                }
            }
 
-        }*/
+        }
         void hienthitextbox(DataSet ds, int vt)
         {
             
@@ -334,11 +355,14 @@ namespace _17_PhuongDong_12_HienDuy
             else
                 cboGioiTinh.SelectedIndex = 1;
             dtpNgaySinh.Value = (DateTime)ds.Tables[0].Rows[vt]["NgaySinh"];
+<<<<<<< HEAD
             string tt = ds.Tables[0].Rows[vt]["TinhTrangDatPhong"].ToString();
             if (tt.ToLower() == "chưa nhận")
                 cboTinhTrang.SelectedIndex = 0;
             else
                 cboTinhTrang.SelectedIndex = 1;
+=======
+>>>>>>> parent of 98bbc82 (update cbo tinhtrang)
         }
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
