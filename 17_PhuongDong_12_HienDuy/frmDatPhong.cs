@@ -129,7 +129,7 @@ namespace _17_PhuongDong_12_HienDuy
       
         private void cboMaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(t && dgvClick == false)
+            if(t && dgvClick == false && loaiphong == false)
             if(cboMaPhong.SelectedIndex != -1)
                  hienthimota();
         }
@@ -226,14 +226,19 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void cleartextbox(Boolean t)
         {
-            cboMaPhong.SelectedIndex = -1;
+            dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
+            HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
 
         }
         private void btnDatPhong_Click(object sender, EventArgs e)
-        {
+        {    
+            dgvClick = false;
+            loaiphong = true;
             flag = 1;
             Xuly_Chucnang(false);
             cleartextbox(true);
+           
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -338,6 +343,7 @@ namespace _17_PhuongDong_12_HienDuy
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvClick = true;
+            loaiphong = false;
             int vt = dgvDanhSach.CurrentCell.RowIndex;
             hienthitextbox(ds, vt);
 
