@@ -27,10 +27,12 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet dsKhachHang = new DataSet();
         Boolean t = false;
         Boolean dgvClick = false;
+        frmKhachHang kh = new frmKhachHang();
         string maphong;
         string makhachhang;
         Boolean loaiphong = false;
         int flag;
+        string madatphong;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
             c.DataSource = ds.Tables[0];
@@ -100,11 +102,13 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Textbox(false);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
-            string sql = "select MaDatPhong,KhachHang.HoTen,KhachHang.GioiTinh,KhachHang.NgaySinh,KhachHang.DiaChi,LoaiPhong.LoaiPhong,MaPH,KhachHang.SDT,NgayNhan,NgayTra,N'TinhTrangDatPhong' = case when TinhTrangDatPhong='1' then N'Đã nhận' else N'Chưa nhận' end,CMND,Gia,MoTa from DatPhong inner join LoaiPhong on LoaiPhong.MaPhong = DatPhong.LoaiPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH inner join Phong on DatPhong.MaPH = Phong.MaPhong";
+            string sql = "select MaDatPhong,KhachHang.HoTen,KhachHang.GioiTinh,KhachHang.NgaySinh,KhachHang.DiaChi,LoaiPhong.LoaiPhong,MaPH,KhachHang.SDT,NgayNhan,NgayTra,N'TinhTrangDatPhong' = case when TinhTrangDatPhong='1' then N'Đã nhận' else N'Chưa nhận' end,CMND,Gia,MoTa,SoDem from DatPhong inner join LoaiPhong on LoaiPhong.MaPhong = DatPhong.LoaiPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH inner join Phong on DatPhong.MaPH = Phong.MaPhong";
             HienThiDuLieu(sql, dgvDanhSach, ref ds);
             t = true;
             Xuly_Chucnang(true);
             xulyMaPhong();
+            hienthitextbox(ds, 0);
+            cboMaPhong.SelectedIndex = 0;
         }
 
         void hienthimota()
@@ -129,7 +133,7 @@ namespace _17_PhuongDong_12_HienDuy
       
         private void cboMaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(t && dgvClick == false)
+            if(t && dgvClick == false && loaiphong == false)
             if(cboMaPhong.SelectedIndex != -1)
                  hienthimota();
         }
@@ -148,7 +152,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void btnThemKhachHang_Click(object sender, EventArgs e)
         {
-            frmKhachHang kh = new frmKhachHang();
+
             kh.ShowDialog();
             if(kh.GT != null)
             {
@@ -226,14 +230,26 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void cleartextbox(Boolean t)
         {
-            cboMaPhong.SelectedIndex = -1;
-
+            dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
+            HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
+            txtHoTen.Clear();
+            txtDiaChi.Clear();
+            txtSoCMND.Clear();
+            txtSoDienThoai.Clear();
+            cboGioiTinh.SelectedIndex = 0;
+            lblGiaPhong.Text = "";
+            rtbMoTa.Text = "";
         }
         private void btnDatPhong_Click(object sender, EventArgs e)
-        {
+        {    
+            dgvClick = false;
+            loaiphong = true;
             flag = 1;
             Xuly_Chucnang(false);
             cleartextbox(true);
+            cboTinhTrang.SelectedIndex = 0;
+           
+            
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -314,14 +330,17 @@ namespace _17_PhuongDong_12_HienDuy
             cboMaPhong.DisplayMember = "MaPH";
             cboMaPhong.ValueMember = "MaPH";
             dvmMaPhong.RowFilter = "MaPH ='" + maphong + "'";
+
+            //madatphong
+            madatphong = ds.Tables[0].Rows[vt]["MaDatPhong"].ToString();
             //Sodem
             dtpNgayDen.Value = (DateTime)ds.Tables[0].Rows[vt]["NgayNhan"];
             dtpNgayTra.Value = (DateTime)ds.Tables[0].Rows[vt]["NgayTra"];
-            tinhngay(dtpNgayDen, dtpNgayTra);
+            lblSoDem.Text = ds.Tables[0].Rows[vt]["SoDem"].ToString();
             string loaiphong = ds.Tables[0].Rows[vt]["LoaiPhong"].ToString();
             //loai phong
             DataSet dsLoai = new DataSet();
-            dsLoai = c.LayDuLieu("select * from LoaiPhong where LoaiPhong ='" + loaiphong + "'");
+            dsLoai = c.LayDuLieu("select * from LoaiPhong where LoaiPhong =N'" + loaiphong + "'");
             HienThiComboBox(dsLoai, "LoaiPhong", "MaPhong", cboLoaiPhong);
             cboLoaiPhong.SelectedIndex = 0;
             if (gt.ToLower() == "nam")
@@ -338,6 +357,7 @@ namespace _17_PhuongDong_12_HienDuy
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             dgvClick = true;
+            loaiphong = false;
             int vt = dgvDanhSach.CurrentCell.RowIndex;
             hienthitextbox(ds, vt);
 
@@ -353,22 +373,45 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if(flag == 1)
+            if (cboLoaiPhong.SelectedIndex == -1 || cboGioiTinh.SelectedIndex == -1 || cboMaPhong.SelectedIndex == -1 || txtHoTen.Text == "" || txtSoCMND.Text == "" || lblSoDem.Text == "" || txtSoDienThoai.Text == "" || txtDiaChi.Text == "")
             {
-                if (cboLoaiPhong.SelectedIndex == -1 || cboGioiTinh.SelectedIndex == -1 || cboMaPhong.SelectedIndex == -1 || txtHoTen.Text == "" || txtSoCMND.Text == "" || lblSoDem.Text == "" || txtSoDienThoai.Text == "" || txtDiaChi.Text == "")
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
+            }
+            else
+            {
+                string sql = "";
+                if (flag == 1)
                 {
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
+                    DialogResult kq = MessageBox.Show("Bạn có muốn thêm đặt phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (kq == DialogResult.Yes)
+                    {
+                        sql = "insert into DatPhong values ('" + phatSinhMa(ds, "DP") + "','" + makhachhang + "',N'" + txtHoTen.Text + "','" + cboMaPhong.SelectedValue.ToString() + "','" + cboLoaiPhong.SelectedValue.ToString() + "','" + txtSoDienThoai.Text + "','" + dtpNgayDen.Value.ToString() + "','" + dtpNgayTra.Value.ToString() + "'," + cboTinhTrang.SelectedIndex + ","+lblSoDem.Text+")";
+                    }
+
+                }
+                else if (flag == 2)
+                {
+                    DialogResult kq = MessageBox.Show("Bạn có muốn sửa đặt phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (kq == DialogResult.Yes)
+                    {
+                        sql = "update DatPhong set MaDatPhong = '"+ madatphong +"',HoTen = N'"+ txtHoTen.Text + "',MaPH = '"+cboMaPhong.SelectedValue.ToString()+"',LoaiPhong ='"+cboLoaiPhong.SelectedValue.ToString()+"',SDT = '"+txtSoDienThoai.Text+"',NgayNhan ='"+dtpNgayDen.Value+"', NgayTra = '"+dtpNgayTra.Value+"',TinhTrangDatPhong ="+ cboTinhTrang.SelectedIndex +",SoDem = "+lblSoDem.Text+" where MaDatPhong = '"+madatphong+"'";
+                    }
                 }
                 else
                 {
-
-                    string sql = "insert into DatPhong values ('" + phatSinhMa(ds, "DP") + "','" + makhachhang + "',N'" + txtHoTen.Text + "','" + cboMaPhong.SelectedValue.ToString() + "','" + cboLoaiPhong.SelectedValue.ToString() + "','" + txtSoDienThoai.Text + "','" + dtpNgayDen.Value.ToString() + "','" + dtpNgayTra.Value.ToString() + "'," + cboTinhTrang.SelectedIndex + ")";
-                    if (c.CapNhatDuLieu(sql) != 0)
+                    DialogResult kq = MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (kq == DialogResult.Yes)
                     {
-                        MessageBox.Show("Cập nhật thành công!", "Thông báo");
-                        frmDatPhong_Load(sender, e);
+                        sql = "delete from DatPhong where MaDatPhong = '" + madatphong + "'";
                     }
+
                 }
+                if (c.CapNhatDuLieu(sql) != 0)
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                    frmDatPhong_Load(sender, e);
+                }
+                flag = 0;
             }
         }
 
@@ -378,6 +421,30 @@ namespace _17_PhuongDong_12_HienDuy
 
             xulyMaPhong();
             
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Xuly_Textbox(true);
+            Xuly_Chucnang(true);
+            if (flag == 1)
+            { MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 2)
+            { MessageBox.Show("Bạn có muốn hủy sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 3)
+            { MessageBox.Show("Bạn có muốn hủy xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(false);
+            flag = 3;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(false);
+            flag = 2;
         }
     }
 }

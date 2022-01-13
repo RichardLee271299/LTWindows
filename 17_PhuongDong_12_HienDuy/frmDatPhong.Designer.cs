@@ -132,7 +132,7 @@
             // 
             // lblSoDem
             // 
-            this.lblSoDem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSoDem.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblSoDem.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblSoDem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.lblSoDem.Location = new System.Drawing.Point(31, 122);
@@ -383,6 +383,7 @@
             // 
             // cboGioiTinh
             // 
+            this.cboGioiTinh.Enabled = false;
             this.cboGioiTinh.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cboGioiTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cboGioiTinh.FormattingEnabled = true;
@@ -409,6 +410,7 @@
             // 
             // txtDiaChi
             // 
+            this.txtDiaChi.Enabled = false;
             this.txtDiaChi.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtDiaChi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtDiaChi.Location = new System.Drawing.Point(260, 189);
@@ -431,6 +433,7 @@
             // 
             // txtSoDienThoai
             // 
+            this.txtSoDienThoai.Enabled = false;
             this.txtSoDienThoai.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSoDienThoai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtSoDienThoai.Location = new System.Drawing.Point(260, 122);
@@ -455,6 +458,7 @@
             // 
             // txtSoCMND
             // 
+            this.txtSoCMND.Enabled = false;
             this.txtSoCMND.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtSoCMND.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtSoCMND.Location = new System.Drawing.Point(25, 123);
@@ -467,6 +471,7 @@
             // 
             // txtHoTen
             // 
+            this.txtHoTen.Enabled = false;
             this.txtHoTen.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtHoTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.txtHoTen.Location = new System.Drawing.Point(25, 61);
@@ -732,7 +737,7 @@
             this.btnThoat.Size = new System.Drawing.Size(106, 38);
             this.btnThoat.TabIndex = 0;
             this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnHuy
             // 
@@ -751,7 +756,7 @@
             this.btnHuy.Size = new System.Drawing.Size(106, 38);
             this.btnHuy.TabIndex = 0;
             this.btnHuy.Text = "Hủy";
-            this.btnHuy.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnXoa
             // 
@@ -770,7 +775,7 @@
             this.btnXoa.Size = new System.Drawing.Size(106, 38);
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -808,7 +813,7 @@
             this.btnSua.Size = new System.Drawing.Size(106, 38);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnDatPhong
             // 
