@@ -94,3 +94,4 @@ C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_Ph
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDangNhap.resources

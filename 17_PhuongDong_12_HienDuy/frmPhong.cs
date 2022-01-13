@@ -186,8 +186,7 @@ namespace _17_PhuongDong_12_HienDuy
                     if (kq == DialogResult.Yes)
                     {
                          sql = "delete from Phong where MaPhong = '" + txtMaPhong.Text + "'";
-                    }
-                   
+                    }                 
                 }
                 if(sql != "")
                 if (c.CapNhatDuLieu(sql) != 0)
@@ -196,10 +195,11 @@ namespace _17_PhuongDong_12_HienDuy
                     frmPhong_Load(sender, e);
                 }
 
-
+                
                 flag = 0;
             }
         }
+        
         string tachchuoi(string f)
         {
             string[] mangchuoi = f.Split('\\');

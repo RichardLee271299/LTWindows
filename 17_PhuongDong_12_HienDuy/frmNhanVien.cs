@@ -178,19 +178,33 @@ namespace _17_PhuongDong_12_HienDuy
                 string sql = "";
                 if (flag == 1)
                 {
-                    sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "','" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "','" + txtSoDienThoai.Text + "'," + tinhtrang + ",N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "',N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',N'" + txtHinhAnh.Text + "')";
-                    MessageBox.Show("Bạn có thêm thông tin nhân viên vừa nhập?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq = MessageBox.Show("Bạn có thêm thông tin nhân viên vừa nhập?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "insert into NhanVien values ('" + txtMaNv.Text + "',N'" + txtHoTen.Text + "','" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "','" + txtSoDienThoai.Text + "'," + tinhtrang + ",N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "',N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',N'" + txtHinhAnh.Text + "')";
+                    }
+                    
+                    
                 }
                 else if (flag == 2)
                 {
-                    sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = " + tinhtrang + ", SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',Image='" + txtHinhAnh.Text + "' where MaNv = '" + txtMaNv.Text + "'";
-                    MessageBox.Show("Bạn có muốn sửa thông tin nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq = MessageBox.Show("Bạn có muốn sửa thông tin nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "update NhanVien set MaNv = '" + txtMaNv.Text + "', HoTen = N'" + txtHoTen.Text + "', TinhTrang = " + tinhtrang + ", SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cboGioiTinh.Items[cboGioiTinh.SelectedIndex] + "', QuyenHan = N'" + cboQuyenHan.Items[cboQuyenHan.SelectedIndex] + "',Image='" + txtHinhAnh.Text + "' where MaNv = '" + txtMaNv.Text + "'";
+                    }                  
                 }
                 else
                 {
-                    sql = "delete from NhanVien where MaNv = '" + txtMaNv.Text + "'";
-                    MessageBox.Show("Bạn có muốn xóa nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq = MessageBox.Show("Bạn có muốn xóa nhân viên vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "delete from NhanVien where MaNv = '" + txtMaNv.Text + "'";
+                    }
+                    
+                    
                 }
+                if (sql != "")
                 if (c.CapNhatDuLieu(sql) != 0)
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thông báo");
