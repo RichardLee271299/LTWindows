@@ -88,26 +88,34 @@ namespace _17_PhuongDong_12_HienDuy
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into SanPham values('" + txtMaSP.Text + "',N'" + txtTenSP.Text + "',N'" + txtSoLuong.Text + "'," + txtGiaNhap.Text + "," + txtGiaBan.Text + ")";
-                MessageBox.Show("Bạn có muốn thêm sản phẩm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult kq = MessageBox.Show("Bạn có muốn thêm sản phẩm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (kq == DialogResult.Yes)
+                {
+                    sql = "insert into SanPham values('" + txtMaSP.Text + "',N'" + txtTenSP.Text + "',N'" + txtSoLuong.Text + "'," + txtGiaNhap.Text + "," + txtGiaBan.Text + ")";
+                }
             }
             else if (flag == 2)
             {
-                sql = "update SanPham set MaSP = '" + txtMaSP.Text + "', TenSP = N'" + txtTenSP.Text + "',SoLuongTon = N'" + txtSoLuong.Text + "' where MaSP = '" + txtMaSP.Text + "'";
-                MessageBox.Show("Bạn có muốn sửa thông tin sản phẩm vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult kq = MessageBox.Show("Bạn có muốn sửa thông tin sản phẩm vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (kq == DialogResult.Yes)
+                {
+                    sql = "update SanPham set MaSP = '" + txtMaSP.Text + "', TenSP = N'" + txtTenSP.Text + "',SoLuongTon = N'" + txtSoLuong.Text + "' where MaSP = '" + txtMaSP.Text + "'";
+                }
             }
             else
             {
-                sql = "delete from SanPham where MaSP = '" + txtMaSP.Text + "'";
-                MessageBox.Show("Bạn có muốn xóa sản phẩm vùa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult kq = MessageBox.Show("Bạn có muốn xóa sản phẩm vùa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (kq == DialogResult.Yes)
+                {
+                    sql = "delete from SanPham where MaSP = '" + txtMaSP.Text + "'";
+                }
             }
-            if (c.CapNhatDuLieu(sql) != 0)
-            {
-                MessageBox.Show("Cập nhật thành công!", "Thông báo");
-                frmSanPham_Load(sender, e);
-            }
-
-
+            if (sql != "")
+                if (c.CapNhatDuLieu(sql) != 0)
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông báo");
+                    frmSanPham_Load(sender, e);
+                }
             flag = 0;
         }
 
