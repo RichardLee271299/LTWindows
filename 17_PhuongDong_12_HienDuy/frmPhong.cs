@@ -73,6 +73,7 @@ namespace _17_PhuongDong_12_HienDuy
             txtKichThuoc.ReadOnly = t;
             txtGiaPhong.ReadOnly = t;
         }
+         
         void Xuly_Chucnang(Boolean t)
         {
             btnThem.Enabled = t;
@@ -158,38 +159,27 @@ namespace _17_PhuongDong_12_HienDuy
             if (txtGiaPhong.Text == "" || txtHinhAnh.Text == "" || txtKichThuoc.Text == "" || txtMaPhong.Text == "" || cboLoaiPhong.SelectedIndex == -1 || cboTinhTrang.SelectedIndex == -1 || rtbMoTa.Text=="")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
-                Xuly_Chucnang(false);
             }
             else
             {
                 string sql = "";
                 if (flag == 1)
-                {                
-                   DialogResult kq =  MessageBox.Show("Bạn có muốn thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                   if (kq == DialogResult.Yes)
-                    {
-                        sql = "insert into Phong values('" + txtMaPhong.Text + "','" + cboLoaiPhong.SelectedValue + "'," + tinhtrang + ",'" + txtGiaPhong.Text + "','" + txtKichThuoc.Text + "','" + txtHinhAnh.Text + "',N'" + rtbMoTa.Text + "')";
-                    }
+                {
+
+                    sql = "insert into Phong values('" + txtMaPhong.Text + "','" + cboLoaiPhong.SelectedValue + "'," + tinhtrang + ",'" + txtGiaPhong.Text + "','" + txtKichThuoc.Text + "','" + txtHinhAnh.Text + "',N'" + rtbMoTa.Text + "')";
+                    MessageBox.Show("Bạn có muốn thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 }
                 else if (flag == 2)
                 {
-                    DialogResult kq = MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (kq == DialogResult.Yes)
-                    {
-                         sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + ",Gia = " + txtGiaPhong.Text + ",KichThuoc ='" + txtKichThuoc.Text + "',Image = '" + txtHinhAnh.Text + "',MoTa = N'" + rtbMoTa.Text + "' where MaPhong = '" + txtMaPhong.Text + "'";
-                    }
+                    sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + ",Gia = " + txtGiaPhong.Text + ",KichThuoc ='" + txtKichThuoc.Text + "',Image = '" + txtHinhAnh.Text + "',MoTa = N'" + rtbMoTa.Text + "' where MaPhong = '" + txtMaPhong.Text + "'";
+                    MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 }
                 else
                 {
-                    DialogResult kq = MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (kq == DialogResult.Yes)
-                    {
-                         sql = "delete from Phong where MaPhong = '" + txtMaPhong.Text + "'";
-                    }
-                   
+                    sql = "delete from Phong where MaPhong = '" + txtMaPhong.Text + "'";
+                    MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 }
-                if(sql != "")
                 if (c.CapNhatDuLieu(sql) != 0)
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thông báo");
