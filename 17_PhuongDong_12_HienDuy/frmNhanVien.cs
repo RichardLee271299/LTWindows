@@ -216,7 +216,6 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Xuly_Chucnang(false);
             flag = 3;
-            MessageBox.Show("Bạn có muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         private void btnHuy_Click_1(object sender, EventArgs e)

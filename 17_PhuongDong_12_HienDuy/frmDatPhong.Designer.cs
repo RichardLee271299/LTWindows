@@ -76,6 +76,8 @@
             this.MaPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayDen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrangDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
@@ -175,6 +177,7 @@
             this.cboLoaiPhong.Name = "cboLoaiPhong";
             this.cboLoaiPhong.Size = new System.Drawing.Size(174, 24);
             this.cboLoaiPhong.TabIndex = 1;
+            this.cboLoaiPhong.SelectedIndexChanged += new System.EventHandler(this.cboLoaiPhong_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -590,7 +593,9 @@
             this.LoaiPhong,
             this.MaPH,
             this.NgayDen,
-            this.NgayTra});
+            this.NgayTra,
+            this.TinhTrangDatPhong,
+            this.Gia});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.Location = new System.Drawing.Point(3, 18);
             this.dgvDanhSach.Name = "dgvDanhSach";
@@ -676,6 +681,20 @@
             this.NgayTra.HeaderText = "Ngày Trả";
             this.NgayTra.Name = "NgayTra";
             this.NgayTra.ReadOnly = true;
+            // 
+            // TinhTrangDatPhong
+            // 
+            this.TinhTrangDatPhong.DataPropertyName = "TinhTrangDatPhong";
+            this.TinhTrangDatPhong.HeaderText = "Tình Trạng";
+            this.TinhTrangDatPhong.Name = "TinhTrangDatPhong";
+            this.TinhTrangDatPhong.ReadOnly = true;
+            // 
+            // Gia
+            // 
+            this.Gia.DataPropertyName = "Gia";
+            this.Gia.HeaderText = "Giá";
+            this.Gia.Name = "Gia";
+            this.Gia.ReadOnly = true;
             // 
             // groupBox5
             // 
@@ -764,13 +783,13 @@
             this.btnLuu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLuu.ForeColor = System.Drawing.Color.White;
             this.btnLuu.HoverState.Parent = this.btnLuu;
-            this.btnLuu.Location = new System.Drawing.Point(244, 34);
+            this.btnLuu.Location = new System.Drawing.Point(68, 80);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.ShadowDecoration.Parent = this.btnLuu;
             this.btnLuu.Size = new System.Drawing.Size(106, 38);
             this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnTimKiem_Click);
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnSua
             // 
@@ -783,7 +802,7 @@
             this.btnSua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(68, 80);
+            this.btnSua.Location = new System.Drawing.Point(244, 33);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
             this.btnSua.Size = new System.Drawing.Size(106, 38);
@@ -912,6 +931,15 @@
         private System.Windows.Forms.Label lblGiaPhong;
         private Guna.UI2.WinForms.Guna2Button btnThemKhachHang;
         private System.Windows.Forms.Label lblSoDem;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private Guna.UI2.WinForms.Guna2Button btnThoat;
+        private Guna.UI2.WinForms.Guna2Button btnHuy;
+        private Guna.UI2.WinForms.Guna2Button btnXoa;
+        private Guna.UI2.WinForms.Guna2Button btnLuu;
+        private Guna.UI2.WinForms.Guna2Button btnSua;
+        private Guna.UI2.WinForms.Guna2Button btnDatPhong;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox cboTinhTrang;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDatPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
         private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
@@ -923,14 +951,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPH;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayDen;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayTra;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private Guna.UI2.WinForms.Guna2Button btnThoat;
-        private Guna.UI2.WinForms.Guna2Button btnHuy;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
-        private Guna.UI2.WinForms.Guna2Button btnLuu;
-        private Guna.UI2.WinForms.Guna2Button btnSua;
-        private Guna.UI2.WinForms.Guna2Button btnDatPhong;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox cboTinhTrang;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangDatPhong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gia;
     }
 }
