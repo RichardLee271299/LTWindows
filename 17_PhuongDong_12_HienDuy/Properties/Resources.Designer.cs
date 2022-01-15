@@ -79,5 +79,15 @@ namespace _17_PhuongDong_12_HienDuy.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap khachsan {
+            get {
+                object obj = ResourceManager.GetObject("khachsan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

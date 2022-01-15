@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace _17_PhuongDong_12_HienDuy
 {
-    public partial class frmHoaDon : Form
+    public partial class frmDangNhap : Form
     {
-        public frmHoaDon(frmGiaoDienChinh frm)
+        public frmDangNhap()
         {
             InitializeComponent();
-            frm1 = frm;
-            this.CenterToScreen();
-        }
-        frmGiaoDienChinh frm1;
-        private void HoaDon_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            frm1.Show();
         }
     }
 }
