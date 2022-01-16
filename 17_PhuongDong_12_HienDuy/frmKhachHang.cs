@@ -123,7 +123,7 @@ namespace _17_PhuongDong_12_HienDuy
         private void btnThem_Click(object sender, EventArgs e)
         {
             
-            txtMaKH.Text = phatSinhMa(ds, "kH");
+            txtMaKH.Text = phatSinhMa(ds, "KH");
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtMaKH.ReadOnly = true;
