@@ -52,27 +52,6 @@ C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_
 C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
 C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
 C:\Users\Duy\Desktop\LT Win\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csprojResolveAssemblyReference.cache
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.pdb
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDatPhong.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDichVu.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmGiaoDienChinh.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmHoaDon.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmKhachHang.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmLoaiPhong.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmNhanVien.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmPhong.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmSanPham.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmSuDungDichVu.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemKH.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemPhong.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemSanPham.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.Properties.Resources.resources
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
-C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csprojResolveAssemblyReference.cache
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.pdb
@@ -95,3 +74,23 @@ C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_Phu
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.pdb
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDatPhong.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDichVu.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmGiaoDienChinh.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmHoaDon.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmKhachHang.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmLoaiPhong.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmNhanVien.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmPhong.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmSanPham.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmSuDungDichVu.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemKH.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemPhong.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTimKiemSanPham.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.Properties.Resources.resources
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csproj.GenerateResource.Cache
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
