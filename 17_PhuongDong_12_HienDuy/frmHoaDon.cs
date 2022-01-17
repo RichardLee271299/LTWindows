@@ -23,6 +23,7 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet timkhachhang = new DataSet();
         DataSet dsnhanvien = new DataSet();
         DataSet ds = new DataSet();
+        DataSet dsLoaiDV = new DataSet();
         int flag = 0;
         string makh;
         private void HoaDon_FormClosing(object sender, FormClosingEventArgs e)
@@ -39,7 +40,9 @@ namespace _17_PhuongDong_12_HienDuy
             dsnhanvien = c.LayDuLieu("select * from NhanVien");
             HienThiComboBox(dsnhanvien, "HoTen", "MaNV", cboNhanVien);
             cboTrangThai.SelectedIndex = 0;
-            HienThiDuLieu("select * from HoaDon ORDER BY MaHD ASC", dgvHD, ref ds);
+            btnAdd.Enabled = false;
+            Xuly_Chucnang(true);
+            HienThiDuLieu("select MaHD,HoaDon.MaKH,KhachHang.SDT,DatPhong.MaPH,MaNV,NgayTao,DatPhong.SoDem,ThanhTien,N'TrangThai' = case when HoaDon.TrangThai='1' then N'Đã thanh toán' else N'Chưa thanh toán' end from HoaDon inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join DatPhong on HoaDon.MaKH = DatPhong.MaKH ORDER BY MaHD ASC", dgvHD, ref ds);
             
         }
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
@@ -48,6 +51,14 @@ namespace _17_PhuongDong_12_HienDuy
             c.DisplayMember = ten;
             c.ValueMember = ma;
             c.SelectedIndex = -1;
+        }
+        void Xuly_Chucnang(Boolean t)
+        {
+            btnThem.Enabled = t;
+            btnSua.Enabled = t;
+            btnHuy.Enabled = !t;
+            btnXoa.Enabled = t;
+            btnLuu.Enabled = !t;
         }
         private void btnTim_Click(object sender, EventArgs e)
         {
@@ -93,18 +104,20 @@ namespace _17_PhuongDong_12_HienDuy
             txtSdt.Clear();
             cboNhanVien.SelectedIndex = -1;
             cboSuDungDv.SelectedIndex = -1;
-            txtGia.Clear();
+            lblGia.Text = "";
             txtSoLuong.Clear();
             txtKhuyenMai.Clear();
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             cleartextbox();
+            btnAdd.Enabled = true;
            lblMaHD.Text = phatSinhMa(ds, "HD");
            dgvCTHD.DataSource = null;
            dgvCTHD.Rows.Clear();
            taocot_cthd();
            flag = 1;
+           Xuly_Chucnang(false);
         }
         void taocot_cthd()
         {
@@ -148,6 +161,7 @@ namespace _17_PhuongDong_12_HienDuy
                             MessageBox.Show("Cập nhật thành công!", "Thông Báo");
                         }
                     }
+                    frmHoaDon_Load(sender, e);
                 }
             }
         }
@@ -161,11 +175,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
             string km;
             float tt = 0;
+            string[] gia = lblGia.Text.Split(new char[] { '.' });
             if (txtKhuyenMai.Text == "")
                 km = "0";
             else
                 km =txtKhuyenMai.Text;
-            tt = int.Parse(txtGia.Text) * int.Parse(txtSoLuong.Text) - int.Parse(km);  
+            tt = int.Parse(gia[0]) * int.Parse(txtSoLuong.Text) - int.Parse(km);  
             tongtien += tt;
             lblTongTien.Text = tongtien.ToString();
             string ctkm;
@@ -173,7 +188,7 @@ namespace _17_PhuongDong_12_HienDuy
                 ctkm = "0";
             else
                ctkm = txtKhuyenMai.Text;
-            object[] t = { txtTenDV.Text, txtGia.Text, txtSoLuong.Text, ctkm,tt.ToString() };
+            object[] t = { cboTenDV.SelectedValue.ToString(), lblGia.Text, txtSoLuong.Text, ctkm,tt.ToString() };
             dgvCTHD.Rows.Add(t);
         }
 
@@ -197,6 +212,64 @@ namespace _17_PhuongDong_12_HienDuy
               else
                   MessageBox.Show("Vui lòng nhập số điện thoại!", "Thông Báo");
           }
+        }
+        Boolean loaidv = false;
+        void xulyloaidv()
+        {
+            if(cboSuDungDv.SelectedIndex == 0)
+            {
+                dsLoaiDV = c.LayDuLieu("select * from DichVu");
+                HienThiComboBox(dsLoaiDV, "TenDV", "MaDV", cboTenDV);
+            }
+            if (cboSuDungDv.SelectedIndex == 1)
+            {
+                dsLoaiDV = c.LayDuLieu("select * from SanPham");
+                HienThiComboBox(dsLoaiDV, "TenSp", "MaSP", cboTenDV);
+            }
+         
+               
+        }
+        private void cboSuDungDv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            xulyloaidv();
+            loaidv = true;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(false);
+            flag = 2;
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(false);
+            flag = 3;
+        }
+        void hienthigia()
+        {
+           if(loaidv)
+           {
+               if (cboSuDungDv.SelectedIndex == 0)
+               {
+                   string sql = "select Gia from DichVu where MaDV ='" + cboTenDV.SelectedValue.ToString() + "'";
+                   DataSet dsgia = c.LayDuLieu(sql);
+                   lblGia.Text = dsgia.Tables[0].Rows[0]["Gia"].ToString();
+                   loaidv = false;
+               }
+               else if (cboSuDungDv.SelectedIndex == 1)
+               {
+                   string sql = "select GiaBan from SanPham where MaSP ='" + cboTenDV.SelectedValue.ToString() + "'";
+                   DataSet dsgia = c.LayDuLieu(sql);
+                   lblGia.Text = dsgia.Tables[0].Rows[0]["GiaBan"].ToString();
+                   loaidv = false;
+               }
+           }
+        }
+        private void cboTenDV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            hienthigia();
         }
     }
 }
