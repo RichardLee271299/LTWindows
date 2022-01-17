@@ -24,6 +24,7 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet dsnhanvien = new DataSet();
         DataSet ds = new DataSet();
         int flag = 0;
+        string makh;
         private void HoaDon_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm1.Show();
@@ -50,20 +51,6 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void btnTim_Click(object sender, EventArgs e)
         {
-            if(txtSdt.Text != "")
-            {
-                string sql = "select * from KhachHang where SDT ='" + txtSdt.Text + "'";
-                timkhachhang = c.LayDuLieu(sql);
-                if (timkhachhang.Tables[0].Rows.Count != 0)
-                {
-                    lblTenKH.Text = timkhachhang.Tables[0].Rows[0]["HoTen"].ToString();
-
-                }
-                else
-                    MessageBox.Show("Khách hàng không tồn tại!", "Thông Báo");
-            }
-            else
-                MessageBox.Show("Vui lòng nhập số điện thoại!", "Thông Báo");
          }
         string phatSinhMa(DataSet d, string kytu)
         {
@@ -114,6 +101,9 @@ namespace _17_PhuongDong_12_HienDuy
         {
             cleartextbox();
            lblMaHD.Text = phatSinhMa(ds, "HD");
+           dgvCTHD.DataSource = null;
+           dgvCTHD.Rows.Clear();
+           taocot_cthd();
            flag = 1;
         }
         void taocot_cthd()
@@ -132,11 +122,32 @@ namespace _17_PhuongDong_12_HienDuy
             }
             else
             {
-                if(flag ==1)
+                string sql = "";
+                if (flag == 1)
                 {
-                    dgvCTHD.DataSource = null;
-                    dgvCTHD.Rows.Clear();
-                    taocot_cthd();
+                    sql = "insert HoaDon values ('" + lblMaHD.Text + "','" + makh + "','" + cboNhanVien.SelectedValue + "','" + dtpNgayLapHD.Value + "'," + lblTongTien.Text + "," + cboTrangThai.SelectedIndex + ")";
+                }
+                if (c.CapNhatDuLieu(sql) != 0)
+                {
+                    MessageBox.Show("Cập nhật thành công!", "Thông Báo");
+                    DataSet dsHoaDon = c.LayDuLieu("Select * from HoaDon");
+                    dgvHD.DataSource = dsHoaDon.Tables[0];
+
+                    //CTHD
+                    for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
+                    {
+                        string madv = dgvCTHD.Rows[i].Cells[0].Value.ToString();
+                        string gia = dgvCTHD.Rows[i].Cells[1].Value.ToString();
+                        string sl = dgvCTHD.Rows[i].Cells[2].Value.ToString();
+                        string gg = dgvCTHD.Rows[i].Cells[3].Value.ToString();
+                        string tt = dgvCTHD.Rows[i].Cells[4].Value.ToString();
+
+                        string s = "insert into ChiTietHoaDon values ('"+ lblMaHD.Text + "','" + madv + "'," + gia + "," + sl + "," + gg + "," + tt + ")";
+                        if (c.CapNhatDuLieu(s) != 0)
+                        {
+                            MessageBox.Show("Cập nhật thành công!", "Thông Báo");
+                        }
+                    }
                 }
             }
         }
@@ -148,12 +159,44 @@ namespace _17_PhuongDong_12_HienDuy
          float tongtien = 0;
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            string km;
             float tt = 0;
-            tt = int.Parse(txtGia.Text) * int.Parse(txtSoLuong.Text) - int.Parse(txtKhuyenMai.Text);
+            if (txtKhuyenMai.Text == "")
+                km = "0";
+            else
+                km =txtKhuyenMai.Text;
+            tt = int.Parse(txtGia.Text) * int.Parse(txtSoLuong.Text) - int.Parse(km);  
             tongtien += tt;
             lblTongTien.Text = tongtien.ToString();
-            object[] t = { txtTenDV.Text, txtGia.Text, txtSoLuong.Text, txtKhuyenMai.Text,tt.ToString() };
+            string ctkm;
+            if (txtKhuyenMai.Text == "")
+                ctkm = "0";
+            else
+               ctkm = txtKhuyenMai.Text;
+            object[] t = { txtTenDV.Text, txtGia.Text, txtSoLuong.Text, ctkm,tt.ToString() };
             dgvCTHD.Rows.Add(t);
+        }
+
+        private void txtSdt_KeyDown(object sender, KeyEventArgs e)
+        {
+
+          if(e.KeyCode == Keys.Enter)
+          {
+              if (txtSdt.Text != "")
+              {
+                  string sql = "select MaKH,HoTen from KhachHang where SDT ='" + txtSdt.Text + "'";
+                  timkhachhang = c.LayDuLieu(sql);
+                  if (timkhachhang.Tables[0].Rows.Count != 0)
+                  {
+                      lblTenKH.Text = timkhachhang.Tables[0].Rows[0]["HoTen"].ToString();
+                      makh =timkhachhang.Tables[0].Rows[0]["MaKH"].ToString();
+                  }
+                  else
+                      MessageBox.Show("Khách hàng không tồn tại!", "Thông Báo");
+              }
+              else
+                  MessageBox.Show("Vui lòng nhập số điện thoại!", "Thông Báo");
+          }
         }
     }
 }
