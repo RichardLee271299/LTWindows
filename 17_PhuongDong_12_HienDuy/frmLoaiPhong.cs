@@ -59,7 +59,7 @@ namespace _17_PhuongDong_12_HienDuy
             {
                 return kytu + "01";
             }
-            else if (sodong < 2)
+            else if (sodong > 0 && sodong < 2)
             {
                 return kytu + "02";
             }
@@ -110,19 +110,29 @@ namespace _17_PhuongDong_12_HienDuy
             {
                 if (flag == 1)
                 {
-                    sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + txtLoaiPhong.Text + "')";
-                    MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq = MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "insert into LoaiPhong values('" + txtMaPH.Text + "',N'" + txtLoaiPhong.Text + "')";
+                    }                   
                 }
                 else if (flag == 2)
                 {
-                    sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + txtLoaiPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
-                    MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq = MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); 
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "update LoaiPhong set MaPhong = '" + txtMaPH.Text + "', LoaiPhong = N'" + txtLoaiPhong.Text + "' where MaPhong = '" + txtMaPH.Text + "'";
+                    }                   
                 }
                 else
                 {
-                    sql = "delete from LoaiPhong where MaPhong = '" + txtMaPH.Text + "'";
-                    MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq =  MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "delete from LoaiPhong where MaPhong = '" + txtMaPH.Text + "'";
+                    }                    
                 }
+                if (sql != "")
                 if (c.CapNhatDuLieu(sql) != 0)
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thông báo");

@@ -93,7 +93,7 @@ namespace _17_PhuongDong_12_HienDuy
             {
                 return kytu + "01";
             }
-            else if (sodong < 2)
+            else if (sodong > 0 && sodong < 2)
             {
                 return kytu + "02";
             }
@@ -150,19 +150,29 @@ namespace _17_PhuongDong_12_HienDuy
             { 
             if (flag == 1)
             {
-                sql = "insert into KhachHang values ('" + txtMaKH.Text +"',N'"+ txtHoTen.Text + "','"+ dtpNgaySinh.Text +"','" + txtSoDienThoai.Text +"', '" + txtSoCMND.Text+"',N'" +txtDiaChi.Text+"',N'"+ cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] +"','" + dtpNgayDen.Text+"')";
-                MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult kq = MessageBox.Show("Bạn có muốn thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "insert into KhachHang values ('" + txtMaKH.Text + "',N'" + txtHoTen.Text + "','" + dtpNgaySinh.Text + "','" + txtSoDienThoai.Text + "', '" + txtSoCMND.Text + "',N'" + txtDiaChi.Text + "',N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "','" + dtpNgayDen.Text + "')"; 
+                    }              
             }
             else if (flag == 2)
             {
-                sql = "update KhachHang set MaKH = '" + txtMaKH.Text + "', HoTen = N'" + txtHoTen.Text + "', NgaySinh = '"+dtpNgaySinh.Text+"', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', NgayDen = '" + dtpNgayDen.Text + "' where MaKH = '" + txtMaKH.Text + "'";
-                MessageBox.Show("Bạn có muốn sửa thông tin khách hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult kq = MessageBox.Show("Bạn có muốn sửa thông tin khách hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "update KhachHang set MaKH = '" + txtMaKH.Text + "', HoTen = N'" + txtHoTen.Text + "', NgaySinh = '" + dtpNgaySinh.Text + "', SDT = '" + txtSoDienThoai.Text + "', CMND = '" + txtSoCMND.Text + "',DiaChi= N'" + txtDiaChi.Text + "', GioiTinh = N'" + cbmGioiTinh.Items[cbmGioiTinh.SelectedIndex] + "', NgayDen = '" + dtpNgayDen.Text + "' where MaKH = '" + txtMaKH.Text + "'";
+                    }              
             }
             else
             {
-                sql = "delete from KhachHang where MaKH = '" + txtMaKH.Text + "'";
-                MessageBox.Show("Bạn có muốn xóa thông tin khách hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult kq = MessageBox.Show("Bạn có muốn xóa thông tin khách hàng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "delete from KhachHang where MaKH = '" + txtMaKH.Text + "'";
+                    }                
             }
+            if (sql != "")
             if (c.CapNhatDuLieu(sql) != 0)
             {
                 KH = txtMaKH.Text;
