@@ -96,28 +96,38 @@ namespace _17_PhuongDong_12_HienDuy
         }
         string phatSinhMa(DataSet d, string kytu)
         {
-            int max=0;
+            int max = 0;
             int sodong = d.Tables[0].Rows.Count;
-            for(int i = 0; i< sodong-1;i++)
+            if (sodong < 0)
             {
-                string row1 = d.Tables[0].Rows[i]["MaPhong"].ToString();
-                int newrow1 = Convert.ToInt32(row1.Substring(2, 2));
-                string row2 = d.Tables[0].Rows[i+1]["MaPhong"].ToString();
-                int newrow2 = Convert.ToInt32(row2.Substring(2, 2));
-                if (newrow1 < newrow2)
-                    max = newrow2;
-                else
-                    max = newrow1;
-              
+                return kytu + "01";
             }
-            string ma = "";
-            sodong = max + 1;
-            if (sodong < 10)
-                ma = kytu + "0" + sodong.ToString();
+            else if (sodong > 0 && sodong < 2)
+            {
+                return kytu + "02";
+            }
             else
-                ma = kytu + sodong.ToString();
-            return ma;
-           
+            {
+                for (int i = 0; i < sodong - 1; i++)
+                {
+                    string row1 = d.Tables[0].Rows[i]["MaPhong"].ToString();
+                    int newrow1 = Convert.ToInt32(row1.Substring(2, 2));
+                    string row2 = d.Tables[0].Rows[i + 1]["MaPhong"].ToString();
+                    int newrow2 = Convert.ToInt32(row2.Substring(2, 2));
+                    if (newrow1 < newrow2)
+                        max = newrow2;
+                    else
+                        max = newrow1;
+
+                }
+                string ma = "";
+                sodong = max + 1;
+                if (sodong < 10)
+                    ma = kytu + "0" + sodong.ToString();
+                else
+                    ma = kytu + sodong.ToString();
+                return ma;
+            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -126,7 +136,7 @@ namespace _17_PhuongDong_12_HienDuy
             Xuly_Chucnang(false);
             cboTinhTrang.SelectedIndex = 0;
             txtMaPhong.ReadOnly = true;
-            txtMaPhong.Text = phatSinhMa(ds, "PH");
+            txtMaPhong.Text = phatSinhMa(ds, "PH"); 
             flag = 1;
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
             clearTextbox();
@@ -165,21 +175,29 @@ namespace _17_PhuongDong_12_HienDuy
                 string sql = "";
                 if (flag == 1)
                 {
-
-                    sql = "insert into Phong values('" + txtMaPhong.Text + "','" + cboLoaiPhong.SelectedValue + "'," + tinhtrang + ",'" + txtGiaPhong.Text + "','" + txtKichThuoc.Text + "','" + txtHinhAnh.Text + "',N'" + rtbMoTa.Text + "')";
-                    MessageBox.Show("Bạn có muốn thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
+                    DialogResult kq = MessageBox.Show("Bạn có muốn thêm phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                         sql = "insert into Phong values('" + txtMaPhong.Text + "','" + cboLoaiPhong.SelectedValue + "'," + tinhtrang + ",'" + txtGiaPhong.Text + "','" + txtKichThuoc.Text + "','" + txtHinhAnh.Text + "',N'" + rtbMoTa.Text + "')";
+                    } 
                 }
                 else if (flag == 2)
                 {
-                    sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + ",Gia = " + txtGiaPhong.Text + ",KichThuoc ='" + txtKichThuoc.Text + "',Image = '" + txtHinhAnh.Text + "',MoTa = N'" + rtbMoTa.Text + "' where MaPhong = '" + txtMaPhong.Text + "'";
-                    MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq =  MessageBox.Show("Bạn có muốn sửa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "update Phong set MaPhong = '" + txtMaPhong.Text + "', MaLoai = '" + cboLoaiPhong.SelectedValue + "',TinhTrang = " + tinhtrang + ",Gia = " + txtGiaPhong.Text + ",KichThuoc ='" + txtKichThuoc.Text + "',Image = '" + txtHinhAnh.Text + "',MoTa = N'" + rtbMoTa.Text + "' where MaPhong = '" + txtMaPhong.Text + "'";
+                    }                    
                 }
                 else
                 {
-                    sql = "delete from Phong where MaPhong = '" + txtMaPhong.Text + "'";
-                    MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult kq =  MessageBox.Show("Bạn có muốn xóa phòng vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "delete from Phong where MaPhong = '" + txtMaPhong.Text + "'";
+                    }              
                 }
+                if (sql != "")
                 if (c.CapNhatDuLieu(sql) != 0)
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thông báo");

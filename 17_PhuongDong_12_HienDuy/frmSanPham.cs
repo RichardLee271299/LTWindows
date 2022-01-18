@@ -62,19 +62,43 @@ namespace _17_PhuongDong_12_HienDuy
         }
         string phatSinhMa(DataSet d, string kytu)
         {
-            string ma = "";
+            int max = 0;
             int sodong = d.Tables[0].Rows.Count;
-            sodong++;
-            if (sodong < 10)
-                ma = kytu + "0" + sodong.ToString();
+            if (sodong < 0)
+            {
+                return kytu + "01";
+            }
+            else if (sodong > 0 && sodong < 2)
+            {
+                return kytu + "02";
+            }
             else
-                ma = kytu + sodong.ToString();
-            return ma;
+            {
+                for (int i = 0; i < sodong - 1; i++)
+                {
+                    string row1 = d.Tables[0].Rows[i]["MaSP"].ToString();
+                    int newrow1 = Convert.ToInt32(row1.Substring(2, 2));
+                    string row2 = d.Tables[0].Rows[i + 1]["MaSP"].ToString();
+                    int newrow2 = Convert.ToInt32(row2.Substring(2, 2));
+                    if (newrow1 < newrow2)
+                        max = newrow2;
+                    else
+                        max = newrow1;
+
+                }
+                string ma = "";
+                sodong = max + 1;
+                if (sodong < 10)
+                    ma = kytu + "0" + sodong.ToString();
+                else
+                    ma = kytu + sodong.ToString();
+                return ma;
+            }
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
             clearTextBox();
-            txtMaSP.Text = phatSinhMa(ds, "A");
+            txtMaSP.Text = phatSinhMa(ds, "SP");
             Xuly_Textbox(false);
             Xuly_Chucnang(false);
             txtMaSP.ReadOnly = true;
@@ -88,26 +112,34 @@ namespace _17_PhuongDong_12_HienDuy
             string sql = "";
             if (flag == 1)
             {
-                sql = "insert into SanPham values('" + txtMaSP.Text + "',N'" + txtTenSP.Text + "',N'" + txtSoLuong.Text + "'," + txtGiaNhap.Text + "," + txtGiaBan.Text + ")";
-                MessageBox.Show("Bạn có muốn thêm sản phẩm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult kq = MessageBox.Show("Bạn có muốn thêm sản phẩm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "insert into SanPham values('" + txtMaSP.Text + "',N'" + txtTenSP.Text + "',N'" + txtSoLuong.Text + "'," + txtGiaNhap.Text + "," + txtGiaBan.Text + ")";
+                    }                
             }
             else if (flag == 2)
             {
-                sql = "update SanPham set MaSP = '" + txtMaSP.Text + "', TenSP = N'" + txtTenSP.Text + "',SoLuongTon = N'" + txtSoLuong.Text + "' where MaSP = '" + txtMaSP.Text + "'";
-                MessageBox.Show("Bạn có muốn sửa thông tin sản phẩm vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult kq = MessageBox.Show("Bạn có muốn sửa thông tin sản phẩm vừa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "update SanPham set MaSP = '" + txtMaSP.Text + "', TenSP = N'" + txtTenSP.Text + "',SoLuongTon = N'" + txtSoLuong.Text + "' where MaSP = '" + txtMaSP.Text + "'";
+                    }                
             }
             else
             {
-                sql = "delete from SanPham where MaSP = '" + txtMaSP.Text + "'";
-                MessageBox.Show("Bạn có muốn xóa sản phẩm vùa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            }
+                DialogResult kq = MessageBox.Show("Bạn có muốn xóa sản phẩm vùa chọn?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                   if (kq == DialogResult.Yes)
+                    {
+                        sql = "delete from SanPham where MaSP = '" + txtMaSP.Text + "'";
+                    }                                 
+            }            
+            if (sql != "")
             if (c.CapNhatDuLieu(sql) != 0)
             {
                 MessageBox.Show("Cập nhật thành công!", "Thông báo");
                 frmSanPham_Load(sender, e);
             }
-
-
             flag = 0;
         }
 

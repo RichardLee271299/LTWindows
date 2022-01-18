@@ -95,3 +95,5 @@ C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_Phu
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
 C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Desktop\LTWin\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmDangNhap.resources
