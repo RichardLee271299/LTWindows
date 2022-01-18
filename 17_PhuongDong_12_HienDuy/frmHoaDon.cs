@@ -121,7 +121,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void taocot_cthd()
         {
-            dgvCTHD.Columns.Add("TenDV", "Tên DV");
+            dgvCTHD.Columns.Add("MaDV", "Mã DV");
             dgvCTHD.Columns.Add("Gia", "Giá");
             dgvCTHD.Columns.Add("SoLuong", "Số Lượng");
             dgvCTHD.Columns.Add("KhuyenMai", "Khuyến Mãi");
@@ -270,6 +270,26 @@ namespace _17_PhuongDong_12_HienDuy
         private void cboTenDV_SelectedIndexChanged(object sender, EventArgs e)
         {
             hienthigia();
+        }
+
+        private void dgvCTHD_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex>=1 && e.ColumnIndex<=3)
+            {
+                float gia ,km, tt;
+                int sl;
+                gia = float.Parse(dgvCTHD.CurrentRow.Cells[1].Value.ToString());
+                km = float.Parse(dgvCTHD.CurrentRow.Cells[3].Value.ToString());
+                sl = int.Parse(dgvCTHD.CurrentRow.Cells[2].Value.ToString());
+                tt = gia * sl - km;
+                dgvCTHD.CurrentRow.Cells[4].Value = tt.ToString();         
+            }
+            float tinhtongtien =0;
+            for(int i = 0; i < dgvCTHD.Rows.Count-1; i++)
+            {
+                  tinhtongtien += float.Parse(dgvCTHD.Rows[i].Cells[4].Value.ToString());
+            }
+            lblTongTien.Text = tinhtongtien.ToString();
         }
     }
 }

@@ -43,10 +43,20 @@
             this.dgvCTHD = new System.Windows.Forms.DataGridView();
             this.dgvHoaDon = new System.Windows.Forms.GroupBox();
             this.dgvHD = new System.Windows.Forms.DataGridView();
+            this.ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sodem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongTienHD = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLuuHD = new Guna.UI2.WinForms.Guna2Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblGia = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -71,16 +81,6 @@
             this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.txtSdt = new Guna.UI2.WinForms.Guna2TextBox();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblGia = new System.Windows.Forms.Label();
-            this.ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaPH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sodem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5.SuspendLayout();
             this.dgvDichVu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
@@ -300,6 +300,7 @@
             this.dgvCTHD.Name = "dgvCTHD";
             this.dgvCTHD.Size = new System.Drawing.Size(607, 263);
             this.dgvCTHD.TabIndex = 3;
+            this.dgvCTHD.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTHD_CellValueChanged);
             // 
             // dgvHoaDon
             // 
@@ -336,6 +337,69 @@
             this.dgvHD.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHD.Size = new System.Drawing.Size(403, 210);
             this.dgvHD.TabIndex = 3;
+            // 
+            // ma
+            // 
+            this.ma.DataPropertyName = "MaHD";
+            this.ma.HeaderText = "Mã HD";
+            this.ma.Name = "ma";
+            this.ma.ReadOnly = true;
+            // 
+            // kh
+            // 
+            this.kh.DataPropertyName = "MaKH";
+            this.kh.HeaderText = "Mã KH";
+            this.kh.Name = "kh";
+            this.kh.ReadOnly = true;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "SDT";
+            this.SDT.HeaderText = "SĐT";
+            this.SDT.Name = "SDT";
+            this.SDT.ReadOnly = true;
+            // 
+            // MaPH
+            // 
+            this.MaPH.DataPropertyName = "MaPH";
+            this.MaPH.HeaderText = "Mã Phòng";
+            this.MaPH.Name = "MaPH";
+            this.MaPH.ReadOnly = true;
+            // 
+            // MaNV
+            // 
+            this.MaNV.DataPropertyName = "MaNV";
+            this.MaNV.HeaderText = "Mã NV";
+            this.MaNV.Name = "MaNV";
+            this.MaNV.ReadOnly = true;
+            // 
+            // NgayTao
+            // 
+            this.NgayTao.DataPropertyName = "NgayTao";
+            this.NgayTao.HeaderText = "Ngày Lập HĐ";
+            this.NgayTao.Name = "NgayTao";
+            this.NgayTao.ReadOnly = true;
+            // 
+            // Sodem
+            // 
+            this.Sodem.DataPropertyName = "SoDem";
+            this.Sodem.HeaderText = "Số ngày ở";
+            this.Sodem.Name = "Sodem";
+            this.Sodem.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.DataPropertyName = "ThanhTien";
+            this.ThanhTien.HeaderText = "Thành Tiền";
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
+            // 
+            // TrangThai
+            // 
+            this.TrangThai.DataPropertyName = "TrangThai";
+            this.TrangThai.HeaderText = "Trạng Thái";
+            this.TrangThai.Name = "TrangThai";
+            this.TrangThai.ReadOnly = true;
             // 
             // lblTongTienHD
             // 
@@ -395,6 +459,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết hóa đơn";
+            // 
+            // lblGia
+            // 
+            this.lblGia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblGia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.lblGia.Location = new System.Drawing.Point(160, 106);
+            this.lblGia.Name = "lblGia";
+            this.lblGia.Size = new System.Drawing.Size(200, 27);
+            this.lblGia.TabIndex = 13;
             // 
             // label5
             // 
@@ -717,79 +791,6 @@
             this.MaHD.HeaderText = "Mã HD";
             this.MaHD.Name = "MaHD";
             this.MaHD.ReadOnly = true;
-            // 
-            // lblGia
-            // 
-            this.lblGia.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblGia.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblGia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.lblGia.Location = new System.Drawing.Point(160, 106);
-            this.lblGia.Name = "lblGia";
-            this.lblGia.Size = new System.Drawing.Size(200, 27);
-            this.lblGia.TabIndex = 13;
-            // 
-            // ma
-            // 
-            this.ma.DataPropertyName = "MaHD";
-            this.ma.HeaderText = "Mã HD";
-            this.ma.Name = "ma";
-            this.ma.ReadOnly = true;
-            // 
-            // kh
-            // 
-            this.kh.DataPropertyName = "MaKH";
-            this.kh.HeaderText = "Mã KH";
-            this.kh.Name = "kh";
-            this.kh.ReadOnly = true;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "SDT";
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.Name = "SDT";
-            this.SDT.ReadOnly = true;
-            // 
-            // MaPH
-            // 
-            this.MaPH.DataPropertyName = "MaPH";
-            this.MaPH.HeaderText = "Mã Phòng";
-            this.MaPH.Name = "MaPH";
-            this.MaPH.ReadOnly = true;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã NV";
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            // 
-            // NgayTao
-            // 
-            this.NgayTao.DataPropertyName = "NgayTao";
-            this.NgayTao.HeaderText = "Ngày Lập HĐ";
-            this.NgayTao.Name = "NgayTao";
-            this.NgayTao.ReadOnly = true;
-            // 
-            // Sodem
-            // 
-            this.Sodem.DataPropertyName = "SoDem";
-            this.Sodem.HeaderText = "Số ngày ở";
-            this.Sodem.Name = "Sodem";
-            this.Sodem.ReadOnly = true;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.DataPropertyName = "ThanhTien";
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.ReadOnly = true;
-            // 
-            // TrangThai
-            // 
-            this.TrangThai.DataPropertyName = "TrangThai";
-            this.TrangThai.HeaderText = "Trạng Thái";
-            this.TrangThai.Name = "TrangThai";
-            this.TrangThai.ReadOnly = true;
             // 
             // frmHoaDon
             // 
