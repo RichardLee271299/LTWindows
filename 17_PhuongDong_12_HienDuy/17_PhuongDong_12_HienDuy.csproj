@@ -211,6 +211,33 @@
   <ItemGroup>
     <None Include="Resources\khachsan.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dichvu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\khachhang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanvien.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phong2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zyro-image %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zyro-image %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zyro-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dichvu1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
