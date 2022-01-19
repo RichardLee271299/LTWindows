@@ -43,7 +43,6 @@
             this.mnuTimKiemKhacHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemSanPham = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -198,17 +197,6 @@
             this.mnuTimKiemSanPham.Size = new System.Drawing.Size(188, 22);
             this.mnuTimKiemSanPham.Text = "Tìm kiếm sản phẩm";
             this.mnuTimKiemSanPham.Click += new System.EventHandler(this.mnuTimKiemSanPham_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.Location = new System.Drawing.Point(629, 7);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(84, 17);
-            this.btnThoat.TabIndex = 2;
-            this.btnThoat.Text = "button1";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // label6
             // 
@@ -504,6 +492,7 @@
             this.btnDatPhong.PressedState.Parent = this.btnDatPhong;
             this.btnDatPhong.Size = new System.Drawing.Size(147, 302);
             this.btnDatPhong.TabIndex = 27;
+            this.btnDatPhong.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
             // 
             // frmGiaoDienChinh
             // 
@@ -531,10 +520,9 @@
             this.Controls.Add(this.guna2ImageButton9);
             this.Controls.Add(this.guna2ImageButton7);
             this.Controls.Add(this.btnDatPhong);
-            this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.menuStrip2);
             this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGiaoDienChinh";
             this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.frmGiaoDienChinh_Load);
@@ -561,7 +549,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLyPhong;
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLyNhanVien;
         private System.Windows.Forms.ToolStripMenuItem đặtPhòngToolStripMenuItem;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.ToolStripMenuItem mnuSuDungDichVu;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
