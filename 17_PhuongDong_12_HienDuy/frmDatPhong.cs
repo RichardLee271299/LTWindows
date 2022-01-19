@@ -32,6 +32,7 @@ namespace _17_PhuongDong_12_HienDuy
         string makhachhang;
         Boolean loaiphong = false;
         int flag;
+        Boolean mt;
         string madatphong;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
@@ -98,7 +99,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
-           
+            mt = false;
             Xuly_Textbox(false);
             dsLoaiPhong = c.LayDuLieu("select * from LoaiPhong");
             HienThiComboBox(dsLoaiPhong, "LoaiPhong", "MaPhong", cboLoaiPhong);
@@ -113,13 +114,11 @@ namespace _17_PhuongDong_12_HienDuy
 
         void hienthimota()
         {
-           if(cboMaPhong.SelectedIndex != -1)
-           {
+         
                string sql = "select Gia,MoTa from Phong where MaPhong ='" + cboMaPhong.SelectedValue.ToString() + "'";
                dsMoTa = c.LayDuLieu(sql);
                rtbMoTa.Text = dsMoTa.Tables[0].Rows[0]["MoTa"].ToString();
                lblGiaPhong.Text = dsMoTa.Tables[0].Rows[0]["Gia"].ToString();
-           }
         }
         private void dtpNgayDen_ValueChanged(object sender, EventArgs e)
         {
@@ -133,9 +132,16 @@ namespace _17_PhuongDong_12_HienDuy
       
         private void cboMaPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(t && dgvClick == false && loaiphong == false)
+          
+            if(t && dgvClick == false && loaiphong == true && mt)
             if(cboMaPhong.SelectedIndex != -1)
-                 hienthimota();
+            {       
+                hienthimota();
+
+            }
+                
+                
+               
         }
 
         private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
@@ -244,6 +250,7 @@ namespace _17_PhuongDong_12_HienDuy
         {    
             dgvClick = false;
             loaiphong = true;
+            mt = true;
             flag = 1;
             Xuly_Chucnang(false);
             cleartextbox(true);
@@ -345,7 +352,7 @@ namespace _17_PhuongDong_12_HienDuy
             cboLoaiPhong.SelectedIndex = 0;
             if (gt.ToLower() == "nam")
                cboGioiTinh.SelectedIndex = 0;
-            else
+            else if (gt.ToLower() == "nữ")
                 cboGioiTinh.SelectedIndex = 1;
             dtpNgaySinh.Value = (DateTime)ds.Tables[0].Rows[vt]["NgaySinh"];
             string tt = ds.Tables[0].Rows[vt]["TinhTrangDatPhong"].ToString();
@@ -360,6 +367,7 @@ namespace _17_PhuongDong_12_HienDuy
             loaiphong = false;
             int vt = dgvDanhSach.CurrentCell.RowIndex;
             hienthitextbox(ds, vt);
+            cboMaPhong.SelectedIndex = 0;
 
         
         }
@@ -412,14 +420,20 @@ namespace _17_PhuongDong_12_HienDuy
                     frmDatPhong_Load(sender, e);
                 }
                 flag = 0;
+                mt = false;
             }
         }
 
         private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             loaiphong = true;
-
+            dgvClick = false;
             xulyMaPhong();
+            if(mt)
+            {
+                lblGiaPhong.Text = "";
+                rtbMoTa.Clear();
+            }
             
         }
 
