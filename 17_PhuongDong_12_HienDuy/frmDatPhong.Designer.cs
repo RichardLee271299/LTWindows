@@ -79,7 +79,7 @@
             this.TinhTrangDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnHuyPhong = new Guna.UI2.WinForms.Guna2Button();
+            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
@@ -703,7 +703,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnHuyPhong);
+            this.groupBox5.Controls.Add(this.btnThoat);
             this.groupBox5.Controls.Add(this.btnHuy);
             this.groupBox5.Controls.Add(this.btnXoa);
             this.groupBox5.Controls.Add(this.btnLuu);
@@ -720,24 +720,24 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chức năng";
             // 
-            // btnHuyPhong
+            // btnThoat
             // 
-            this.btnHuyPhong.BackColor = System.Drawing.Color.White;
-            this.btnHuyPhong.BorderColor = System.Drawing.Color.White;
-            this.btnHuyPhong.BorderRadius = 11;
-            this.btnHuyPhong.CheckedState.Parent = this.btnHuyPhong;
-            this.btnHuyPhong.CustomImages.Parent = this.btnHuyPhong;
-            this.btnHuyPhong.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnHuyPhong.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnHuyPhong.ForeColor = System.Drawing.Color.White;
-            this.btnHuyPhong.HoverState.Parent = this.btnHuyPhong;
-            this.btnHuyPhong.Location = new System.Drawing.Point(244, 128);
-            this.btnHuyPhong.Name = "btnHuyPhong";
-            this.btnHuyPhong.ShadowDecoration.Parent = this.btnHuyPhong;
-            this.btnHuyPhong.Size = new System.Drawing.Size(106, 38);
-            this.btnHuyPhong.TabIndex = 0;
-            this.btnHuyPhong.Text = "Thoát";
-            this.btnHuyPhong.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnThoat.BackColor = System.Drawing.Color.White;
+            this.btnThoat.BorderColor = System.Drawing.Color.White;
+            this.btnThoat.BorderRadius = 11;
+            this.btnThoat.CheckedState.Parent = this.btnThoat;
+            this.btnThoat.CustomImages.Parent = this.btnThoat;
+            this.btnThoat.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnThoat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.HoverState.Parent = this.btnThoat;
+            this.btnThoat.Location = new System.Drawing.Point(244, 128);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ShadowDecoration.Parent = this.btnThoat;
+            this.btnThoat.Size = new System.Drawing.Size(106, 38);
+            this.btnThoat.TabIndex = 0;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnHuy
             // 
@@ -938,7 +938,7 @@
         private Guna.UI2.WinForms.Guna2Button btnThemKhachHang;
         private System.Windows.Forms.Label lblSoDem;
         private System.Windows.Forms.GroupBox groupBox5;
-        private Guna.UI2.WinForms.Guna2Button btnHuyPhong;
+        private Guna.UI2.WinForms.Guna2Button btnThoat;
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
