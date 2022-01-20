@@ -221,18 +221,27 @@ namespace _17_PhuongDong_12_HienDuy
                 dsLoaiDV = c.LayDuLieu("select * from DichVu");
                 HienThiComboBox(dsLoaiDV, "TenDV", "MaDV", cboTenDV);
             }
-            if (cboSuDungDv.SelectedIndex == 1)
+            else if (cboSuDungDv.SelectedIndex == 1)
             {
                 dsLoaiDV = c.LayDuLieu("select * from SanPham");
                 HienThiComboBox(dsLoaiDV, "TenSp", "MaSP", cboTenDV);
             }
-         
+            else
+            {
+                dsLoaiDV = c.LayDuLieu("Select * from Phong where TinhTrang = 1");
+                lblTen.Text = "Mã Phòng";
+                HienThiComboBox(dsLoaiDV, "MaPhong", "MaPhong", cboTenDV);
+            }
                
         }
         private void cboSuDungDv_SelectedIndexChanged(object sender, EventArgs e)
         {
+            lblGia.Text = "";
+            txtKhuyenMai.Clear();
+            txtSoLuong.Clear();
             xulyloaidv();
             loaidv = true;
+           
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -263,6 +272,13 @@ namespace _17_PhuongDong_12_HienDuy
                    string sql = "select GiaBan from SanPham where MaSP ='" + cboTenDV.SelectedValue.ToString() + "'";
                    DataSet dsgia = c.LayDuLieu(sql);
                    lblGia.Text = dsgia.Tables[0].Rows[0]["GiaBan"].ToString();
+                   loaidv = false;
+               }
+               else
+               {
+                   string sql = "select Gia from Phong where MaPhong ='" + cboTenDV.SelectedValue.ToString() + "'";
+                   DataSet dsgia = c.LayDuLieu(sql);
+                   lblGia.Text = dsgia.Tables[0].Rows[0]["Gia"].ToString();
                    loaidv = false;
                }
            }
