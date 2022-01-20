@@ -359,10 +359,12 @@ namespace _17_PhuongDong_12_HienDuy
                 dvmLoaiPhong.RowFilter = "LoaiPhong ='" + loai + "'";
                 cboLoaiPhong.SelectedIndex = 0;
             }
-            if (gt.ToLower() == "nam")
-               cboGioiTinh.SelectedIndex = 0;
-            else if (gt.ToLower() == "nữ")
-                cboGioiTinh.SelectedIndex = 1;
+            DataView dvmGioiTinh = new DataView();
+            dvmGioiTinh.Table = ds.Tables[0];
+            cboGioiTinh.DataSource = dvmGioiTinh;
+            cboGioiTinh.DisplayMember = "GioiTinh";
+            cboGioiTinh.ValueMember = "GioiTinh";
+            dvmGioiTinh.RowFilter = "GioiTinh ='" + gt + "'";
             dtpNgaySinh.Value = (DateTime)ds.Tables[0].Rows[vt]["NgaySinh"];
             string tt = ds.Tables[0].Rows[vt]["TinhTrangDatPhong"].ToString();
             if (tt.ToLower() == "chưa nhận")
