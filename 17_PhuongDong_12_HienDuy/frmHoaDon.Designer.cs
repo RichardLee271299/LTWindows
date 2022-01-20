@@ -100,7 +100,7 @@
             this.groupBox5.Controls.Add(this.btnThem);
             this.groupBox5.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.groupBox5.ForeColor = System.Drawing.Color.Teal;
-            this.groupBox5.Location = new System.Drawing.Point(12, 313);
+            this.groupBox5.Location = new System.Drawing.Point(12, 283);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -229,7 +229,7 @@
             this.dgvDichVu.Controls.Add(this.dgvCTHD);
             this.dgvDichVu.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvDichVu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.dgvDichVu.Location = new System.Drawing.Point(442, 362);
+            this.dgvDichVu.Location = new System.Drawing.Point(442, 332);
             this.dgvDichVu.Name = "dgvDichVu";
             this.dgvDichVu.Size = new System.Drawing.Size(613, 346);
             this.dgvDichVu.TabIndex = 29;
@@ -310,7 +310,7 @@
             this.dgvHoaDon.Controls.Add(this.btnLuuHD);
             this.dgvHoaDon.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvHoaDon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.dgvHoaDon.Location = new System.Drawing.Point(12, 420);
+            this.dgvHoaDon.Location = new System.Drawing.Point(12, 390);
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.Size = new System.Drawing.Size(409, 288);
             this.dgvHoaDon.TabIndex = 28;
@@ -453,7 +453,7 @@
             this.groupBox2.Controls.Add(this.txtSoLuong);
             this.groupBox2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Teal;
-            this.groupBox2.Location = new System.Drawing.Point(442, 46);
+            this.groupBox2.Location = new System.Drawing.Point(442, 16);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(613, 297);
             this.groupBox2.TabIndex = 1;
@@ -631,7 +631,7 @@
             this.groupBox1.Controls.Add(this.txtSdt);
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Teal;
-            this.groupBox1.Location = new System.Drawing.Point(12, 46);
+            this.groupBox1.Location = new System.Drawing.Point(12, 16);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(409, 268);
             this.groupBox1.TabIndex = 0;
@@ -798,7 +798,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1072, 718);
+            this.ClientSize = new System.Drawing.Size(1072, 692);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.dgvDichVu);
             this.Controls.Add(this.dgvHoaDon);
