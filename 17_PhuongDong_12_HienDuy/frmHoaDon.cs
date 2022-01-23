@@ -43,7 +43,7 @@ namespace _17_PhuongDong_12_HienDuy
             btnAdd.Enabled = false;
             Xuly_Chucnang(true);
             HienThiDuLieu("select MaHD,HoaDon.MaKH,KhachHang.SDT,DatPhong.MaPH,MaNV,NgayTao,DatPhong.SoDem,ThanhTien,N'TrangThai' = case when HoaDon.TrangThai='1' then N'Đã thanh toán' else N'Chưa thanh toán' end from HoaDon inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join DatPhong on HoaDon.MaKH = DatPhong.MaKH ORDER BY MaHD ASC", dgvHD, ref ds);
-            
+            hienthitextbox(ds, 0);
         }
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
@@ -287,6 +287,41 @@ namespace _17_PhuongDong_12_HienDuy
         {
             hienthigia();
         }
+        void hienthitextbox(DataSet ds, int vt)
+        {
+            string mahd = ds.Tables[0].Rows[vt]["MaHD"].ToString();
+            lblMaHD.Text = mahd;
+            dtpNgayLapHD.Value = (DateTime)ds.Tables[0].Rows[vt]["NgayTao"];
+            txtSdt.Text = ds.Tables[0].Rows[vt]["SDT"].ToString();
+            string a = ds.Tables[0].Rows[vt]["MaKH"].ToString();
+            DataSet dskh = c.LayDuLieu("select MaKH,HoTen from KhachHang where MaKH = '" + a + "'");
+            lblTenKH.Text = dskh.Tables[0].Rows[0]["HoTen"].ToString();
+
+            string MaNV = ds.Tables[0].Rows[vt]["MaNV"].ToString();
+            DataSet dsMaNV = c.LayDuLieu("select MaNV,HoTen from NhanVien where MaNV = '" + MaNV + "'");
+            HienThiComboBox(dsMaNV, "HoTen", "MaNV", cboNhanVien);
+            cboNhanVien.SelectedIndex = 0;
+
+            string trangthai = ds.Tables[0].Rows[vt]["TrangThai"].ToString();
+            DataView dvmTrangThai = new DataView();
+            dvmTrangThai.Table = ds.Tables[0];
+            cboTrangThai.DataSource = dvmTrangThai;
+            cboTrangThai.DisplayMember = "TrangThai";
+            cboTrangThai.ValueMember = "TrangThai";
+            dvmTrangThai.RowFilter = "TrangThai ='" + trangthai + "'";
+
+            //hienthiCTHD
+            string sql = "select MaDV,Gia,Soluong,KhuyenMai,ThanhTien from ChiTietHoaDon where MaHD ='"+mahd+"'";
+            ds = c.LayDuLieu(sql);
+            dgvCTHD.DataSource = ds.Tables[0];
+
+            float tong = 0;
+            for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
+            {
+                tong += float.Parse(dgvCTHD.Rows[i].Cells[4].Value.ToString());
+            }
+            lblTongTien.Text = tong.ToString();
+        }
 
         private void dgvCTHD_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -306,6 +341,12 @@ namespace _17_PhuongDong_12_HienDuy
                   tinhtongtien += float.Parse(dgvCTHD.Rows[i].Cells[4].Value.ToString());
             }
             lblTongTien.Text = tinhtongtien.ToString();
+        }
+
+        private void dgvHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvHD.CurrentCell.RowIndex;
+            hienthitextbox(ds, vt);
         }
     }
 }

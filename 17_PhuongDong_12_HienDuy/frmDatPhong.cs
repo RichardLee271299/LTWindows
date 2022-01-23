@@ -151,9 +151,7 @@ namespace _17_PhuongDong_12_HienDuy
         private void frmDatPhong_FormClosing(object sender, FormClosingEventArgs e)
         {
             frm1.Show();
-            DialogResult kq = MessageBox.Show("Bạn có muốn thoát?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (kq == DialogResult.No)
-                e.Cancel = true;  
+            
         }
 
         private void label15_Click(object sender, EventArgs e)
