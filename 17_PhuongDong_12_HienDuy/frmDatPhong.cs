@@ -26,6 +26,7 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet dsMoTa = new DataSet();
         DataSet dsKhachHang = new DataSet();
         Boolean t = false;
+        Boolean lp = false;
         Boolean dgvClick = false;
         frmKhachHang kh = new frmKhachHang();
         string maphong;
@@ -101,6 +102,7 @@ namespace _17_PhuongDong_12_HienDuy
         private void frmDatPhong_Load(object sender, EventArgs e)
         {
             mt = false;
+            lp = false;
             Xuly_Textbox(false);
             string sql = "select MaDatPhong,KhachHang.HoTen,KhachHang.GioiTinh,KhachHang.NgaySinh,KhachHang.DiaChi,LoaiPhong,MaPH,KhachHang.SDT,NgayNhan,NgayTra,N'TinhTrangDatPhong' = case when TinhTrangDatPhong='1' then N'Đã nhận' when TinhTrangDatPhong='0' then N'Chưa nhận' else N'Đã hủy' end,CMND,Gia,MoTa,SoDem from DatPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH inner join Phong on DatPhong.MaPH = Phong.MaPhong";
             HienThiDuLieu(sql, dgvDanhSach, ref ds);
@@ -250,8 +252,8 @@ namespace _17_PhuongDong_12_HienDuy
             rtbMoTa.Text = "";
         }
         private void btnDatPhong_Click(object sender, EventArgs e)
-        {    
-
+        {
+            lp = true;
             dgvClick = false;
             loaiphong = true;
             mt = true;
@@ -325,7 +327,6 @@ namespace _17_PhuongDong_12_HienDuy
         }*/
         void hienthitextbox(DataSet ds, int vt)
         {
-            
             txtHoTen.Text = ds.Tables[0].Rows[vt]["HoTen"].ToString();
             txtSoCMND.Text = ds.Tables[0].Rows[vt]["CMND"].ToString();
             txtSoDienThoai.Text = ds.Tables[0].Rows[vt]["SDT"].ToString();
@@ -335,12 +336,15 @@ namespace _17_PhuongDong_12_HienDuy
             string gt = ds.Tables[0].Rows[vt]["GioiTinh"].ToString();
             maphong = ds.Tables[0].Rows[vt]["MaPH"].ToString();
             string loai = ds.Tables[0].Rows[vt]["LoaiPhong"].ToString();
+
             DataView dvmMaPhong = new DataView();
             dvmMaPhong.Table = ds.Tables[0];
             cboMaPhong.DataSource = dvmMaPhong;
             cboMaPhong.DisplayMember = "MaPH";
             cboMaPhong.ValueMember = "MaPH";
             dvmMaPhong.RowFilter = "MaPH ='" + maphong + "'";
+            
+
             //madatphong
             madatphong = ds.Tables[0].Rows[vt]["MaDatPhong"].ToString();
             //Sodem
@@ -349,16 +353,10 @@ namespace _17_PhuongDong_12_HienDuy
             lblSoDem.Text = ds.Tables[0].Rows[vt]["SoDem"].ToString();
             string loaiphong = ds.Tables[0].Rows[vt]["LoaiPhong"].ToString();
             //loai phong
-            if(mt == false)
-            {
-                DataView dvmLoaiPhong = new DataView();
-                dvmLoaiPhong.Table = ds.Tables[0];
-                cboLoaiPhong.DataSource = dvmLoaiPhong;
-                cboLoaiPhong.DisplayMember = "LoaiPhong";
-                cboLoaiPhong.ValueMember = "LoaiPhong";
-                dvmLoaiPhong.RowFilter = "LoaiPhong ='" + loai + "'";
-                cboLoaiPhong.SelectedIndex = 0;
-            }
+        
+            DataSet dsLP = c.LayDuLieu("select * from LoaiPhong where MaPhong ='"+loaiphong+"'");      
+            HienThiComboBox(dsLP, "LoaiPhong", "MaPhong", cboLoaiPhong);
+            cboLoaiPhong.SelectedIndex = 0;
             DataView dvmGioiTinh = new DataView();
             dvmGioiTinh.Table = ds.Tables[0];
             cboGioiTinh.DataSource = dvmGioiTinh;
@@ -380,7 +378,7 @@ namespace _17_PhuongDong_12_HienDuy
             loaiphong = false;
             int vt = dgvDanhSach.CurrentCell.RowIndex;
             hienthitextbox(ds, vt);
-            
+            lp = false;
         
         }
         void Xuly_Chucnang(Boolean t)
@@ -451,15 +449,10 @@ namespace _17_PhuongDong_12_HienDuy
         private void cboLoaiPhong_SelectedIndexChanged(object sender, EventArgs e)
         {
             loaiphong = true;
-            dgvClick = false;
+            dgvClick = false;    
             mt = true;
+            if(lp)
             xulyMaPhong();
-            if(mt)
-            {
-                lblGiaPhong.Text = "";
-                rtbMoTa.Clear();
-            }
-            
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
