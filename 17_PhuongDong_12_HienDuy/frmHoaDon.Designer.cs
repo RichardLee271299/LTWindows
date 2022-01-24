@@ -78,7 +78,6 @@
             this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.txtSdt = new Guna.UI2.WinForms.Guna2TextBox();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTest = new System.Windows.Forms.Label();
             this.groupBox5.SuspendLayout();
             this.dgvDichVu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
@@ -363,7 +362,6 @@
             this.groupBox2.Controls.Add(this.lblGia);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.lblTest);
             this.groupBox2.Controls.Add(this.lblTen);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -740,16 +738,6 @@
             this.MaHD.Name = "MaHD";
             this.MaHD.ReadOnly = true;
             // 
-            // lblTest
-            // 
-            this.lblTest.AutoSize = true;
-            this.lblTest.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTest.Location = new System.Drawing.Point(497, 248);
-            this.lblTest.Name = "lblTest";
-            this.lblTest.Size = new System.Drawing.Size(61, 18);
-            this.lblTest.TabIndex = 6;
-            this.lblTest.Text = "Tên DV";
-            // 
             // frmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 16F);
@@ -832,6 +820,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private System.Windows.Forms.ComboBox cboMaPhong;
-        private System.Windows.Forms.Label lblTest;
     }
 }

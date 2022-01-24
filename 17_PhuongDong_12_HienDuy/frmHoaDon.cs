@@ -25,6 +25,7 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet ds = new DataSet();
         DataSet dsLoaiDV = new DataSet();
         Boolean Congtong = false;
+        Boolean themCTHD = false;
         int flag = 0;
         int SlCTHD = 0;
         string makh;
@@ -39,6 +40,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
+            themCTHD = false;
             SlCTHD = 0;
             dsnhanvien = c.LayDuLieu("select * from NhanVien");
             HienThiComboBox(dsnhanvien, "HoTen", "MaNV", cboNhanVien);
@@ -238,24 +240,37 @@ namespace _17_PhuongDong_12_HienDuy
          float tongtien = 0;
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
             string km;
             float tt = 0;
             string[] gia = lblGia.Text.Split(new char[] { '.' });
             if (txtKhuyenMai.Text == "")
                 km = "0";
             else
-                km =txtKhuyenMai.Text;
-            tt = int.Parse(gia[0]) * int.Parse(txtSoLuong.Text) - int.Parse(km);  
+                km = txtKhuyenMai.Text;
+            tt = int.Parse(gia[0]) * int.Parse(txtSoLuong.Text) - int.Parse(km);
             tongtien += tt;
             lblTongTien.Text = tongtien.ToString();
             string ctkm;
             if (txtKhuyenMai.Text == "")
                 ctkm = "0";
             else
-               ctkm = txtKhuyenMai.Text;
-            object[] t = { cboTenDV.SelectedValue.ToString(), lblGia.Text, txtSoLuong.Text, ctkm,tt.ToString() };
-            dgvCTHD.Rows.Add(t);
+                ctkm = txtKhuyenMai.Text;
+
+            //
+            if(themCTHD == false)
+            {
+                object[] t = { cboTenDV.SelectedValue.ToString(), lblGia.Text, txtSoLuong.Text, ctkm, tt.ToString() };
+                dgvCTHD.Rows.Add(t);
+            }
+            else
+            {
+                object[] t = { cboTenDV.SelectedValue.ToString(), lblGia.Text, txtSoLuong.Text, ctkm, tt.ToString() };
+
+                
+
+
+                ///Code ở đây còn thiếu
+            }
         }
 
         private void txtSdt_KeyDown(object sender, KeyEventArgs e)
@@ -318,6 +333,7 @@ namespace _17_PhuongDong_12_HienDuy
         private void btnSua_Click(object sender, EventArgs e)
         {
             Xuly_Chucnang(false);
+            themCTHD = true;
             btnAdd.Enabled = true;
             flag = 2;
 
