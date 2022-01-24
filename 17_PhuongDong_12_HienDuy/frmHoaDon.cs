@@ -24,8 +24,8 @@ namespace _17_PhuongDong_12_HienDuy
         DataSet dsnhanvien = new DataSet();
         DataSet ds = new DataSet();
         DataSet dsLoaiDV = new DataSet();
+        Boolean Congtong = false;
         int flag = 0;
-        Boolean CongTong = false;
         string makh;
         private void HoaDon_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -43,9 +43,11 @@ namespace _17_PhuongDong_12_HienDuy
             cboTrangThai.SelectedIndex = 0;
             btnAdd.Enabled = false;
             Xuly_Chucnang(true);
-            HienThiDuLieu("select MaHD,HoaDon.MaKH,KhachHang.SDT,DatPhong.MaPH,MaNV,NgayTao,DatPhong.SoDem,ThanhTien,N'TrangThai' = case when HoaDon.TrangThai='1' then N'Đã thanh toán' else N'Chưa thanh toán' end from HoaDon inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join DatPhong on HoaDon.MaPH = DatPhong.MaPH ORDER BY MaHD ASC", dgvHD, ref ds);
-            CongTong = false;
+            HienThiDuLieu("select MaHD,HoaDon.MaKH,KhachHang.SDT,DatPhong.MaPH,MaNV,NgayTao,DatPhong.SoDem,ThanhTien,N'TrangThai' = case when HoaDon.TrangThai='1' then N'Đã thanh toán' else N'Chưa thanh toán' end from HoaDon inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join DatPhong on HoaDon.MaPH = DatPhong.MaPH ORDER BY MaHD ASC", dgvHD, ref ds);    
+            if(Congtong)
+              huycot_cthd();
             hienthitextbox(ds, 0);
+            Congtong = false;
         }
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
@@ -102,6 +104,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void cleartextbox()
         {
+
             lblTenKH.Text = "";
             txtSdt.Clear();
             cboNhanVien.SelectedIndex = -1;
@@ -113,6 +116,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            Congtong = true;
            cleartextbox();
            cboMaPhong.SelectedIndex = -1;
            btnAdd.Enabled = true;
@@ -121,18 +125,26 @@ namespace _17_PhuongDong_12_HienDuy
            lblMaHD.Text = phatSinhMa(ds, "HD");
            dgvCTHD.DataSource = null;
            dgvCTHD.Rows.Clear();
-           if(CongTong)
            taocot_cthd();
            flag = 1;
            Xuly_Chucnang(false);
         }
         void taocot_cthd()
         {
-            dgvCTHD.Columns.Add("MaDV", "Mã DV");
-            dgvCTHD.Columns.Add("Gia", "Giá");
-            dgvCTHD.Columns.Add("SoLuong", "Số Lượng");
-            dgvCTHD.Columns.Add("KhuyenMai", "Khuyến Mãi");
-            dgvCTHD.Columns.Add("ThanhTien", "Thành Tiền");
+            dgvCTHD.Columns.Add("ma", "Mã DV");
+            dgvCTHD.Columns.Add("g", "Giá");
+            dgvCTHD.Columns.Add("sl", "Số Lượng");
+            dgvCTHD.Columns.Add("km", "Khuyến Mãi");
+            dgvCTHD.Columns.Add("tt", "Thành Tiền");
+        }
+        void huycot_cthd()
+        {
+            dgvCTHD.Columns.Remove("ma");
+            dgvCTHD.Columns.Remove("g");
+            dgvCTHD.Columns.Remove("sl");
+            dgvCTHD.Columns.Remove("km");
+            dgvCTHD.Columns.Remove("tt");
+
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -168,8 +180,6 @@ namespace _17_PhuongDong_12_HienDuy
                             MessageBox.Show("Cập nhật thành công!", "Thông Báo");
                         }
                     }
-                    dgvCTHD.DataSource = null;
-                    dgvCTHD.Rows.Clear();
                     frmHoaDon_Load(sender, e);
                 }
             }
@@ -339,10 +349,10 @@ namespace _17_PhuongDong_12_HienDuy
             dgvCTHD.DataSource = ds.Tables[0];
 
             float tong = 0;
-            /*for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
+            for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
             {
                 tong += float.Parse(dgvCTHD.Rows[i].Cells[4].Value.ToString());
-            }*/
+            }
             lblTongTien.Text = tong.ToString();
 
         }
