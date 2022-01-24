@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
@@ -66,6 +64,7 @@
             this.txtSoLuong = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblMaHD = new System.Windows.Forms.Label();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTenKH = new System.Windows.Forms.Label();
             this.guna2HtmlLabel10 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -73,13 +72,13 @@
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.cboMaPhong = new System.Windows.Forms.ComboBox();
             this.cboTrangThai = new System.Windows.Forms.ComboBox();
             this.dtpNgayLapHD = new System.Windows.Forms.DateTimePicker();
             this.cboNhanVien = new System.Windows.Forms.ComboBox();
             this.txtSdt = new Guna.UI2.WinForms.Guna2TextBox();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.cboMaPhong = new System.Windows.Forms.ComboBox();
+            this.lblTest = new System.Windows.Forms.Label();
             this.groupBox5.SuspendLayout();
             this.dgvDichVu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
@@ -91,9 +90,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnThoat);
             this.groupBox5.Controls.Add(this.btnHuy);
-            this.groupBox5.Controls.Add(this.btnXoa);
             this.groupBox5.Controls.Add(this.btnLuu);
             this.groupBox5.Controls.Add(this.btnSua);
             this.groupBox5.Controls.Add(this.btnThem);
@@ -107,24 +104,6 @@
             this.groupBox5.TabIndex = 31;
             this.groupBox5.TabStop = false;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.White;
-            this.btnThoat.BorderColor = System.Drawing.Color.White;
-            this.btnThoat.BorderRadius = 11;
-            this.btnThoat.CheckedState.Parent = this.btnThoat;
-            this.btnThoat.CustomImages.Parent = this.btnThoat;
-            this.btnThoat.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnThoat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.HoverState.Parent = this.btnThoat;
-            this.btnThoat.Location = new System.Drawing.Point(265, 67);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.ShadowDecoration.Parent = this.btnThoat;
-            this.btnThoat.Size = new System.Drawing.Size(71, 30);
-            this.btnThoat.TabIndex = 0;
-            this.btnThoat.Text = "Thoát";
-            // 
             // btnHuy
             // 
             this.btnHuy.BackColor = System.Drawing.Color.White;
@@ -136,31 +115,12 @@
             this.btnHuy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.HoverState.Parent = this.btnHuy;
-            this.btnHuy.Location = new System.Drawing.Point(155, 67);
+            this.btnHuy.Location = new System.Drawing.Point(219, 67);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.ShadowDecoration.Parent = this.btnHuy;
-            this.btnHuy.Size = new System.Drawing.Size(71, 30);
+            this.btnHuy.Size = new System.Drawing.Size(121, 30);
             this.btnHuy.TabIndex = 0;
             this.btnHuy.Text = "Hủy";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.BackColor = System.Drawing.Color.White;
-            this.btnXoa.BorderColor = System.Drawing.Color.White;
-            this.btnXoa.BorderRadius = 11;
-            this.btnXoa.CheckedState.Parent = this.btnXoa;
-            this.btnXoa.CustomImages.Parent = this.btnXoa;
-            this.btnXoa.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnXoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.HoverState.Parent = this.btnXoa;
-            this.btnXoa.Location = new System.Drawing.Point(265, 26);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(71, 30);
-            this.btnXoa.TabIndex = 0;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -176,7 +136,7 @@
             this.btnLuu.Location = new System.Drawing.Point(45, 67);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.ShadowDecoration.Parent = this.btnLuu;
-            this.btnLuu.Size = new System.Drawing.Size(71, 30);
+            this.btnLuu.Size = new System.Drawing.Size(121, 30);
             this.btnLuu.TabIndex = 0;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -192,10 +152,10 @@
             this.btnSua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(155, 26);
+            this.btnSua.Location = new System.Drawing.Point(219, 26);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
-            this.btnSua.Size = new System.Drawing.Size(71, 30);
+            this.btnSua.Size = new System.Drawing.Size(121, 30);
             this.btnSua.TabIndex = 0;
             this.btnSua.Text = "Sửa";
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -214,7 +174,7 @@
             this.btnThem.Location = new System.Drawing.Point(45, 26);
             this.btnThem.Name = "btnThem";
             this.btnThem.ShadowDecoration.Parent = this.btnThem;
-            this.btnThem.Size = new System.Drawing.Size(71, 30);
+            this.btnThem.Size = new System.Drawing.Size(121, 30);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -403,6 +363,7 @@
             this.groupBox2.Controls.Add(this.lblGia);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.lblTest);
             this.groupBox2.Controls.Add(this.lblTen);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
@@ -610,6 +571,17 @@
             this.lblMaHD.Size = new System.Drawing.Size(200, 22);
             this.lblMaHD.TabIndex = 13;
             // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Teal;
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(39, 181);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(72, 20);
+            this.guna2HtmlLabel2.TabIndex = 12;
+            this.guna2HtmlLabel2.Text = "Mã phòng";
+            // 
             // lblTenKH
             // 
             this.lblTenKH.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -686,6 +658,19 @@
             this.guna2HtmlLabel6.TabIndex = 12;
             this.guna2HtmlLabel6.Text = "Mã HĐ";
             // 
+            // cboMaPhong
+            // 
+            this.cboMaPhong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cboMaPhong.FormattingEnabled = true;
+            this.cboMaPhong.ItemHeight = 16;
+            this.cboMaPhong.Items.AddRange(new object[] {
+            "Chưa thanh toán",
+            "Đâ thanh toán"});
+            this.cboMaPhong.Location = new System.Drawing.Point(169, 174);
+            this.cboMaPhong.Name = "cboMaPhong";
+            this.cboMaPhong.Size = new System.Drawing.Size(200, 24);
+            this.cboMaPhong.TabIndex = 2;
+            // 
             // cboTrangThai
             // 
             this.cboTrangThai.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -755,29 +740,15 @@
             this.MaHD.Name = "MaHD";
             this.MaHD.ReadOnly = true;
             // 
-            // guna2HtmlLabel2
+            // lblTest
             // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.ForeColor = System.Drawing.Color.Teal;
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(39, 181);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(72, 20);
-            this.guna2HtmlLabel2.TabIndex = 12;
-            this.guna2HtmlLabel2.Text = "Mã phòng";
-            // 
-            // cboMaPhong
-            // 
-            this.cboMaPhong.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cboMaPhong.FormattingEnabled = true;
-            this.cboMaPhong.ItemHeight = 16;
-            this.cboMaPhong.Items.AddRange(new object[] {
-            "Chưa thanh toán",
-            "Đâ thanh toán"});
-            this.cboMaPhong.Location = new System.Drawing.Point(169, 174);
-            this.cboMaPhong.Name = "cboMaPhong";
-            this.cboMaPhong.Size = new System.Drawing.Size(200, 24);
-            this.cboMaPhong.TabIndex = 2;
+            this.lblTest.AutoSize = true;
+            this.lblTest.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTest.Location = new System.Drawing.Point(497, 248);
+            this.lblTest.Name = "lblTest";
+            this.lblTest.Size = new System.Drawing.Size(61, 18);
+            this.lblTest.TabIndex = 6;
+            this.lblTest.Text = "Tên DV";
             // 
             // frmHoaDon
             // 
@@ -812,9 +783,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox5;
-        private Guna.UI2.WinForms.Guna2Button btnThoat;
         private Guna.UI2.WinForms.Guna2Button btnHuy;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnThem;
@@ -863,5 +832,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private System.Windows.Forms.ComboBox cboMaPhong;
+        private System.Windows.Forms.Label lblTest;
     }
 }
