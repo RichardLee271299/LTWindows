@@ -325,7 +325,7 @@ namespace _17_PhuongDong_12_HienDuy
             }
             else
             {
-                dsLoaiDV = c.LayDuLieu("Select * from Phong where TinhTrang = 1");
+                dsLoaiDV = c.LayDuLieu("Select * from Phong");
                 lblTen.Text = "Mã Phòng";
                 HienThiComboBox(dsLoaiDV, "MaPhong", "MaPhong", cboTenDV);
             }
