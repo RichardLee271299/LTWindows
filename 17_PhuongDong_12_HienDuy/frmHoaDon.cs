@@ -275,7 +275,14 @@ namespace _17_PhuongDong_12_HienDuy
                 drToAdd["ThanhTien"] = tt.ToString();
                 dataTable.Rows.Add(drToAdd);
                 dataTable.AcceptChanges();
-                
+                float tinhtongtien = 0;
+                for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
+                {
+                    tinhtongtien += float.Parse(dgvCTHD.Rows[i].Cells[4].Value.ToString());
+                }
+                lblTongTien.Text = tinhtongtien.ToString();
+
+
             }
         }
        
