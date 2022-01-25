@@ -256,7 +256,7 @@ namespace _17_PhuongDong_12_HienDuy
             else
                 ctkm = txtKhuyenMai.Text;
 
-            //
+            //Sua CTHĐ
             if(themCTHD == false)
             {
                 object[] t = { cboTenDV.SelectedValue.ToString(), lblGia.Text, txtSoLuong.Text, ctkm, tt.ToString() };
@@ -264,15 +264,21 @@ namespace _17_PhuongDong_12_HienDuy
             }
             else
             {
-                object[] t = { cboTenDV.SelectedValue.ToString(), lblGia.Text, txtSoLuong.Text, ctkm, tt.ToString() };
+                //Them CTHĐ
+                DataTable dataTable = (DataTable)dgvCTHD.DataSource;
+                DataRow drToAdd = dataTable.NewRow();
 
+                drToAdd["MaDV"] = cboTenDV.SelectedValue.ToString();
+                drToAdd["Gia"] = lblGia.Text;
+                drToAdd["SoLuong"] = txtSoLuong.Text;
+                drToAdd["KhuyenMai"] = ctkm;
+                drToAdd["ThanhTien"] = tt.ToString();
+                dataTable.Rows.Add(drToAdd);
+                dataTable.AcceptChanges();
                 
-
-
-                ///Code ở đây còn thiếu
             }
         }
-
+       
         private void txtSdt_KeyDown(object sender, KeyEventArgs e)
         {
 
