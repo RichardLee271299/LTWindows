@@ -101,6 +101,12 @@ namespace _17_PhuongDong_12_HienDuy
         {
 
         }
+
+        private void mnuTraPhong_Click(object sender, EventArgs e)
+        {
+            frmTraPhong frm = new frmTraPhong();
+            frm.Show();
+        }
         
     }
 }

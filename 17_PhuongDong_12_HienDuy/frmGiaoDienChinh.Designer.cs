@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.mnuTraPhong = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQuanLy = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhapLoaiSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLyPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhapSanPham = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +38,7 @@
             this.QuanLyHoaDonDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTraPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemKhacHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemPhong = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,7 +63,6 @@
             this.guna2ImageButton9 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButton7 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.btnDatPhong = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.trảPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +70,7 @@
             // 
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuTraPhong,
+            this.mnuQuanLy,
             this.tìmKiếmToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -79,9 +79,9 @@
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // mnuTraPhong
+            // mnuQuanLy
             // 
-            this.mnuTraPhong.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuQuanLy.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNhapLoaiSanPham,
             this.mnuQuanLyPhong,
             this.mnuNhapSanPham,
@@ -90,11 +90,11 @@
             this.QuanLyHoaDonDichVuToolStripMenuItem,
             this.mnuQuanLyNhanVien,
             this.đặtPhòngToolStripMenuItem,
-            this.trảPhòngToolStripMenuItem});
-            this.mnuTraPhong.Name = "mnuTraPhong";
-            this.mnuTraPhong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
-            this.mnuTraPhong.Size = new System.Drawing.Size(60, 20);
-            this.mnuTraPhong.Text = "Quản lý";
+            this.mnuTraPhong});
+            this.mnuQuanLy.Name = "mnuQuanLy";
+            this.mnuQuanLy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
+            this.mnuQuanLy.Size = new System.Drawing.Size(60, 20);
+            this.mnuQuanLy.Text = "Quản lý";
             // 
             // mnuNhapLoaiSanPham
             // 
@@ -159,6 +159,14 @@
             this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.đặtPhòngToolStripMenuItem.Text = "8. Đặt phòng";
             this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
+            // 
+            // mnuTraPhong
+            // 
+            this.mnuTraPhong.Name = "mnuTraPhong";
+            this.mnuTraPhong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
+            this.mnuTraPhong.Size = new System.Drawing.Size(237, 22);
+            this.mnuTraPhong.Text = "9. Trả phòng";
+            this.mnuTraPhong.Click += new System.EventHandler(this.mnuTraPhong_Click);
             // 
             // tìmKiếmToolStripMenuItem
             // 
@@ -487,12 +495,6 @@
             this.btnDatPhong.TabIndex = 27;
             this.btnDatPhong.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
             // 
-            // trảPhòngToolStripMenuItem
-            // 
-            this.trảPhòngToolStripMenuItem.Name = "trảPhòngToolStripMenuItem";
-            this.trảPhòngToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.trảPhòngToolStripMenuItem.Text = "9. Trả phòng";
-            // 
             // frmGiaoDienChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -535,7 +537,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem mnuTraPhong;
+        private System.Windows.Forms.ToolStripMenuItem mnuQuanLy;
         private System.Windows.Forms.ToolStripMenuItem mnuNhapLoaiSanPham;
         private System.Windows.Forms.ToolStripMenuItem mnuNhapSanPham;
         private System.Windows.Forms.ToolStripMenuItem nhậpDịchVụToolStripMenuItem;
@@ -568,6 +570,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton9;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton7;
         private Guna.UI2.WinForms.Guna2ImageButton btnDatPhong;
-        private System.Windows.Forms.ToolStripMenuItem trảPhòngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuTraPhong;
     }
 }
