@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.QuanLyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuQuanLy = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhapLoaiSanPham = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLyPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuNhapSanPham = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,7 +38,6 @@
             this.QuanLyHoaDonDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuSuDungDichVu = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemKhacHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemPhong = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,7 +69,7 @@
             // 
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.QuanLyToolStripMenuItem,
+            this.mnuQuanLy,
             this.tìmKiếmToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -79,9 +78,9 @@
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             // 
-            // QuanLyToolStripMenuItem
+            // mnuQuanLy
             // 
-            this.QuanLyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuQuanLy.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNhapLoaiSanPham,
             this.mnuQuanLyPhong,
             this.mnuNhapSanPham,
@@ -89,11 +88,11 @@
             this.quảnLýKháchHàngToolStripMenuItem,
             this.QuanLyHoaDonDichVuToolStripMenuItem,
             this.mnuQuanLyNhanVien,
-            this.đặtPhòngToolStripMenuItem,
-            this.mnuSuDungDichVu});
-            this.QuanLyToolStripMenuItem.Name = "QuanLyToolStripMenuItem";
-            this.QuanLyToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.QuanLyToolStripMenuItem.Text = "Quản lý";
+            this.đặtPhòngToolStripMenuItem});
+            this.mnuQuanLy.Name = "mnuQuanLy";
+            this.mnuQuanLy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
+            this.mnuQuanLy.Size = new System.Drawing.Size(60, 20);
+            this.mnuQuanLy.Text = "Quản lý";
             // 
             // mnuNhapLoaiSanPham
             // 
@@ -158,14 +157,6 @@
             this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.đặtPhòngToolStripMenuItem.Text = "8. Đặt phòng";
             this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
-            // 
-            // mnuSuDungDichVu
-            // 
-            this.mnuSuDungDichVu.Name = "mnuSuDungDichVu";
-            this.mnuSuDungDichVu.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
-            this.mnuSuDungDichVu.Size = new System.Drawing.Size(237, 22);
-            this.mnuSuDungDichVu.Text = "9.Sử dụng dịch vụ";
-            this.mnuSuDungDichVu.Click += new System.EventHandler(this.mnuSuDungDichVu_Click);
             // 
             // tìmKiếmToolStripMenuItem
             // 
@@ -536,7 +527,7 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem QuanLyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuQuanLy;
         private System.Windows.Forms.ToolStripMenuItem mnuNhapLoaiSanPham;
         private System.Windows.Forms.ToolStripMenuItem mnuNhapSanPham;
         private System.Windows.Forms.ToolStripMenuItem nhậpDịchVụToolStripMenuItem;
@@ -549,7 +540,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLyPhong;
         private System.Windows.Forms.ToolStripMenuItem mnuQuanLyNhanVien;
         private System.Windows.Forms.ToolStripMenuItem đặtPhòngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuSuDungDichVu;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2ImageButton btnQuanLiLoaiPhong;

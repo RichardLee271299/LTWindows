@@ -12,23 +12,24 @@ namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmHoaDon : Form
     {
-        public frmHoaDon(frmGiaoDienChinh frm)
+        public frmHoaDon()
         {
             InitializeComponent();
-            frm1 = frm;
             this.CenterToScreen();
         }
         clsQuanLyKhachSan c = new clsQuanLyKhachSan();
-        frmGiaoDienChinh frm1;
         DataSet timkhachhang = new DataSet();
         DataSet dsnhanvien = new DataSet();
         DataSet ds = new DataSet();
         DataSet dsLoaiDV = new DataSet();
+        Boolean Congtong = false;
+        Boolean themCTHD = false;
         int flag = 0;
+        int SlCTHD = 0;
         string makh;
         private void HoaDon_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frm1.Show();
+            
         }
         void HienThiDuLieu(String sql, DataGridView dgs,ref DataSet ds)
         {
@@ -37,13 +38,18 @@ namespace _17_PhuongDong_12_HienDuy
         }
         private void frmHoaDon_Load(object sender, EventArgs e)
         {
+            themCTHD = false;
+            SlCTHD = 0;
             dsnhanvien = c.LayDuLieu("select * from NhanVien");
             HienThiComboBox(dsnhanvien, "HoTen", "MaNV", cboNhanVien);
             cboTrangThai.SelectedIndex = 0;
             btnAdd.Enabled = false;
             Xuly_Chucnang(true);
-            HienThiDuLieu("select MaHD,HoaDon.MaKH,KhachHang.SDT,DatPhong.MaPH,MaNV,NgayTao,DatPhong.SoDem,ThanhTien,N'TrangThai' = case when HoaDon.TrangThai='1' then N'Đã thanh toán' else N'Chưa thanh toán' end from HoaDon inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join DatPhong on HoaDon.MaKH = DatPhong.MaKH ORDER BY MaHD ASC", dgvHD, ref ds);
-            
+            HienThiDuLieu("select MaHD,HoaDon.MaKH,KhachHang.SDT,DatPhong.MaPH,MaNV,NgayTao,DatPhong.SoDem,ThanhTien,N'TrangThai' = case when HoaDon.TrangThai='1' then N'Đã thanh toán' else N'Chưa thanh toán' end from HoaDon inner join KhachHang on HoaDon.MaKH = KhachHang.MaKH inner join DatPhong on HoaDon.MaPH = DatPhong.MaPH ORDER BY MaHD ASC", dgvHD, ref ds);    
+            if(Congtong)
+              huycot_cthd();
+            hienthitextbox(ds, 0);
+            Congtong = false;
         }
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
@@ -57,7 +63,6 @@ namespace _17_PhuongDong_12_HienDuy
             btnThem.Enabled = t;
             btnSua.Enabled = t;
             btnHuy.Enabled = !t;
-            btnXoa.Enabled = t;
             btnLuu.Enabled = !t;
         }
         private void btnTim_Click(object sender, EventArgs e)
@@ -100,6 +105,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void cleartextbox()
         {
+
             lblTenKH.Text = "";
             txtSdt.Clear();
             cboNhanVien.SelectedIndex = -1;
@@ -107,11 +113,16 @@ namespace _17_PhuongDong_12_HienDuy
             lblGia.Text = "";
             txtSoLuong.Clear();
             txtKhuyenMai.Clear();
+            cboTrangThai.SelectedIndex = 0;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            cleartextbox();
-            btnAdd.Enabled = true;
+            Congtong = true;
+           cleartextbox();
+           cboMaPhong.SelectedIndex = -1;
+           btnAdd.Enabled = true;
+           DataSet dsNV = c.LayDuLieu("select * from NhanVien");
+           HienThiComboBox(dsNV, "HoTen", "MaNV", cboNhanVien); 
            lblMaHD.Text = phatSinhMa(ds, "HD");
            dgvCTHD.DataSource = null;
            dgvCTHD.Rows.Clear();
@@ -121,11 +132,20 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void taocot_cthd()
         {
-            dgvCTHD.Columns.Add("MaDV", "Mã DV");
-            dgvCTHD.Columns.Add("Gia", "Giá");
-            dgvCTHD.Columns.Add("SoLuong", "Số Lượng");
-            dgvCTHD.Columns.Add("KhuyenMai", "Khuyến Mãi");
-            dgvCTHD.Columns.Add("ThanhTien", "Thành Tiền");
+            dgvCTHD.Columns.Add("ma", "Mã DV");
+            dgvCTHD.Columns.Add("g", "Giá");
+            dgvCTHD.Columns.Add("sl", "Số Lượng");
+            dgvCTHD.Columns.Add("km", "Khuyến Mãi");
+            dgvCTHD.Columns.Add("tt", "Thành Tiền");
+        }
+        void huycot_cthd()
+        {
+            dgvCTHD.Columns.Remove("ma");
+            dgvCTHD.Columns.Remove("g");
+            dgvCTHD.Columns.Remove("sl");
+            dgvCTHD.Columns.Remove("km");
+            dgvCTHD.Columns.Remove("tt");
+
         }
         private void btnLuu_Click(object sender, EventArgs e)
         {
@@ -138,7 +158,11 @@ namespace _17_PhuongDong_12_HienDuy
                 string sql = "";
                 if (flag == 1)
                 {
-                    sql = "insert HoaDon values ('" + lblMaHD.Text + "','" + makh + "','" + cboNhanVien.SelectedValue + "','" + dtpNgayLapHD.Value + "'," + lblTongTien.Text + "," + cboTrangThai.SelectedIndex + ")";
+                    sql = "insert HoaDon values ('" + lblMaHD.Text + "','" + makh + "','" + cboNhanVien.SelectedValue + "','" + dtpNgayLapHD.Value + "'," + lblTongTien.Text + "," + cboTrangThai.SelectedIndex + ",'" +cboMaPhong.SelectedValue.ToString() +"')";
+                }
+                else if(flag == 2)
+                {
+                    sql = "update HoaDon set MaNV='" + cboNhanVien.SelectedValue + "',NgayTao = '" + dtpNgayLapHD.Value + "',ThanhTien =" + lblTongTien.Text + ",TrangThai =" + cboTrangThai.SelectedIndex + ",MaPH='" + cboMaPhong.SelectedValue.ToString() + "' where MaHD ='"+lblMaHD.Text+"'";
                 }
                 if (c.CapNhatDuLieu(sql) != 0)
                 {
@@ -147,20 +171,61 @@ namespace _17_PhuongDong_12_HienDuy
                     dgvHD.DataSource = dsHoaDon.Tables[0];
 
                     //CTHD
-                    for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
+                    if(flag == 1)
                     {
-                        string madv = dgvCTHD.Rows[i].Cells[0].Value.ToString();
-                        string gia = dgvCTHD.Rows[i].Cells[1].Value.ToString();
-                        string sl = dgvCTHD.Rows[i].Cells[2].Value.ToString();
-                        string gg = dgvCTHD.Rows[i].Cells[3].Value.ToString();
-                        string tt = dgvCTHD.Rows[i].Cells[4].Value.ToString();
-
-                        string s = "insert into ChiTietHoaDon values ('"+ lblMaHD.Text + "','" + madv + "'," + gia + "," + sl + "," + gg + "," + tt + ")";
-                        if (c.CapNhatDuLieu(s) != 0)
+                        for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
                         {
-                            MessageBox.Show("Cập nhật thành công!", "Thông Báo");
+                            string madv = dgvCTHD.Rows[i].Cells[0].Value.ToString();
+                            string gia = dgvCTHD.Rows[i].Cells[1].Value.ToString();
+                            string sl = dgvCTHD.Rows[i].Cells[2].Value.ToString();
+                            string gg = dgvCTHD.Rows[i].Cells[3].Value.ToString();
+                            string tt = dgvCTHD.Rows[i].Cells[4].Value.ToString();
+
+                            string s = "insert into ChiTietHoaDon values ('" + lblMaHD.Text + "','" + madv + "'," + gia + "," + sl + "," + gg + "," + tt + ")";
+                            if (c.CapNhatDuLieu(s) != 0)
+                            {
+                                MessageBox.Show("Cập nhật thành công!", "Thông Báo");
+                            }
                         }
                     }
+                    else if(flag == 2)
+                    {
+                         string s = "";
+                         if(dgvCTHD.Rows.Count -1 == SlCTHD)
+                         {
+                                for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
+                                    {
+                                        string madv = dgvCTHD.Rows[i].Cells[0].Value.ToString();
+                                        string gia = dgvCTHD.Rows[i].Cells[1].Value.ToString();
+                                        string sl = dgvCTHD.Rows[i].Cells[2].Value.ToString();
+                                        string gg = dgvCTHD.Rows[i].Cells[3].Value.ToString();
+                                        string tt = dgvCTHD.Rows[i].Cells[4].Value.ToString();
+                                        s = "update ChiTietHoaDon set MaDV = '" + madv + "',Gia = " + gia + ",SoLuong =" + sl + ",KhuyenMai=" + gg + ",ThanhTien =" + tt + "where MaHD ='"+lblMaHD.Text+"' AND MaDV = '"+madv+"'";
+                                        if (c.CapNhatDuLieu(s) != 0)
+                                        {
+                                            MessageBox.Show("Cập nhật thành công!", "Thông Báo");
+                                        }
+                                    }
+                         }
+                         else
+                         {
+                                for (int j = SlCTHD; j < dgvCTHD.Rows.Count - 1; j++ )
+                                {
+                                        string madv = dgvCTHD.Rows[j].Cells[0].Value.ToString();
+                                        string gia = dgvCTHD.Rows[j].Cells[1].Value.ToString();
+                                        string sl = dgvCTHD.Rows[j].Cells[2].Value.ToString();
+                                        string gg = dgvCTHD.Rows[j].Cells[3].Value.ToString();
+                                        string tt = dgvCTHD.Rows[j].Cells[4].Value.ToString();
+                                      s = "insert into ChiTietHoaDon values ('" + lblMaHD.Text + "','" + madv + "'," + gia + "," + sl + "," + gg + "," + tt + ")";
+                                      if (c.CapNhatDuLieu(s) != 0)
+                                      {
+                                          MessageBox.Show("Cập nhật thành công!", "Thông Báo");
+                                      }
+                                }
+                                   
+                         }
+                            
+                   }
                     frmHoaDon_Load(sender, e);
                 }
             }
@@ -179,19 +244,46 @@ namespace _17_PhuongDong_12_HienDuy
             if (txtKhuyenMai.Text == "")
                 km = "0";
             else
-                km =txtKhuyenMai.Text;
-            tt = int.Parse(gia[0]) * int.Parse(txtSoLuong.Text) - int.Parse(km);  
+                km = txtKhuyenMai.Text;
+            tt = int.Parse(gia[0]) * int.Parse(txtSoLuong.Text) - int.Parse(km);
             tongtien += tt;
             lblTongTien.Text = tongtien.ToString();
             string ctkm;
             if (txtKhuyenMai.Text == "")
                 ctkm = "0";
             else
-               ctkm = txtKhuyenMai.Text;
-            object[] t = { cboTenDV.SelectedValue.ToString(), lblGia.Text, txtSoLuong.Text, ctkm,tt.ToString() };
-            dgvCTHD.Rows.Add(t);
-        }
+                ctkm = txtKhuyenMai.Text;
 
+            //Sua CTHĐ
+            if(themCTHD == false)
+            {
+                object[] t = { cboTenDV.SelectedValue.ToString(), lblGia.Text, txtSoLuong.Text, ctkm, tt.ToString() };
+                dgvCTHD.Rows.Add(t);
+            }
+            else
+            {
+                //Them CTHĐ
+                DataTable dataTable = (DataTable)dgvCTHD.DataSource;
+                DataRow drToAdd = dataTable.NewRow();
+
+                drToAdd["MaDV"] = cboTenDV.SelectedValue.ToString();
+                drToAdd["Gia"] = lblGia.Text;
+                drToAdd["SoLuong"] = txtSoLuong.Text;
+                drToAdd["KhuyenMai"] = ctkm;
+                drToAdd["ThanhTien"] = tt.ToString();
+                dataTable.Rows.Add(drToAdd);
+                dataTable.AcceptChanges();
+                float tinhtongtien = 0;
+                for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
+                {
+                    tinhtongtien += float.Parse(dgvCTHD.Rows[i].Cells[4].Value.ToString());
+                }
+                lblTongTien.Text = tinhtongtien.ToString();
+
+
+            }
+        }
+       
         private void txtSdt_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -199,12 +291,17 @@ namespace _17_PhuongDong_12_HienDuy
           {
               if (txtSdt.Text != "")
               {
-                  string sql = "select MaKH,HoTen from KhachHang where SDT ='" + txtSdt.Text + "'";
+                  string sql = "select MaKH,HoTen from KhachHang where SDT ='" + txtSdt.Text + "'";              
                   timkhachhang = c.LayDuLieu(sql);
                   if (timkhachhang.Tables[0].Rows.Count != 0)
                   {
                       lblTenKH.Text = timkhachhang.Tables[0].Rows[0]["HoTen"].ToString();
                       makh =timkhachhang.Tables[0].Rows[0]["MaKH"].ToString();
+                      
+                      string sql2 = "select MaPH from DatPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH where DatPhong.MaKH ='"+makh+"'";
+                      DataSet dsLayMaPH = c.LayDuLieu(sql2);
+                      HienThiComboBox(dsLayMaPH, "MaPH", "MaPH", cboMaPhong);
+                     
                   }
                   else
                       MessageBox.Show("Khách hàng không tồn tại!", "Thông Báo");
@@ -228,7 +325,7 @@ namespace _17_PhuongDong_12_HienDuy
             }
             else
             {
-                dsLoaiDV = c.LayDuLieu("Select * from Phong where TinhTrang = 1");
+                dsLoaiDV = c.LayDuLieu("Select * from Phong");
                 lblTen.Text = "Mã Phòng";
                 HienThiComboBox(dsLoaiDV, "MaPhong", "MaPhong", cboTenDV);
             }
@@ -247,6 +344,8 @@ namespace _17_PhuongDong_12_HienDuy
         private void btnSua_Click(object sender, EventArgs e)
         {
             Xuly_Chucnang(false);
+            themCTHD = true;
+            btnAdd.Enabled = true;
             flag = 2;
 
         }
@@ -287,6 +386,59 @@ namespace _17_PhuongDong_12_HienDuy
         {
             hienthigia();
         }
+        void hienthitextbox(DataSet ds, int vt)
+        {
+            SlCTHD = 0;
+            string mahd = ds.Tables[0].Rows[vt]["MaHD"].ToString();
+            lblMaHD.Text = mahd;
+            dtpNgayLapHD.Value = (DateTime)ds.Tables[0].Rows[vt]["NgayTao"];
+            txtSdt.Text = ds.Tables[0].Rows[vt]["SDT"].ToString();
+            string a = ds.Tables[0].Rows[vt]["MaKH"].ToString();
+            DataSet dskh = c.LayDuLieu("select MaKH,HoTen from KhachHang where MaKH = '" + a + "'");
+            lblTenKH.Text = dskh.Tables[0].Rows[0]["HoTen"].ToString();
+
+            string MaNV = ds.Tables[0].Rows[vt]["MaNV"].ToString();
+            DataSet dsMaNV = c.LayDuLieu("select MaNV,HoTen from NhanVien where MaNV = '" + MaNV + "'");
+            HienThiComboBox(dsMaNV, "HoTen", "MaNV", cboNhanVien);
+            cboNhanVien.SelectedIndex = 0;
+
+            string trangthai = ds.Tables[0].Rows[vt]["TrangThai"].ToString();
+            if (trangthai.ToLower() == "chưa thanh toán")
+            {
+                cboTrangThai.SelectedIndex = 0;
+            }
+            else
+            {
+                cboTrangThai.SelectedIndex = 1;
+            }       
+            
+            //MaPH
+            string maph = ds.Tables[0].Rows[vt]["MaPH"].ToString();
+            DataView dvmMaPhong = new DataView();
+            dvmMaPhong.Table = ds.Tables[0];
+            cboMaPhong.DataSource = dvmMaPhong;
+            cboMaPhong.DisplayMember = "MaPH";
+            cboMaPhong.ValueMember = "MaPH";
+            dvmMaPhong.RowFilter = "MaPH ='" + maph + "'";
+
+            //hienthiCTHD
+            string sql = "select MaDV,Gia,Soluong,KhuyenMai,ThanhTien from ChiTietHoaDon where MaHD ='"+mahd+"'";
+            ds = c.LayDuLieu(sql);
+            dgvCTHD.DataSource = ds.Tables[0];
+
+            float tong = 0;
+            for (int i = 0; i < dgvCTHD.Rows.Count - 1; i++)
+            {
+                tong += float.Parse(dgvCTHD.Rows[i].Cells[4].Value.ToString());
+            }
+            lblTongTien.Text = tong.ToString();
+
+            //TinhTongSoCHiTietHoaDon
+            for (int i = 0; i < dgvCTHD.Rows.Count - 1;i++ )
+            {
+                SlCTHD++;
+            }
+        }
 
         private void dgvCTHD_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -306,6 +458,12 @@ namespace _17_PhuongDong_12_HienDuy
                   tinhtongtien += float.Parse(dgvCTHD.Rows[i].Cells[4].Value.ToString());
             }
             lblTongTien.Text = tinhtongtien.ToString();
+        }
+
+        private void dgvHD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int vt = dgvHD.CurrentCell.RowIndex;
+            hienthitextbox(ds, vt);
         }
     }
 }
