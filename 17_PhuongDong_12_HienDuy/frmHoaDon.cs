@@ -390,6 +390,7 @@ namespace _17_PhuongDong_12_HienDuy
         }
         void hienthitextbox(DataSet ds, int vt)
         {
+            SlCTHD = 0;
             string mahd = ds.Tables[0].Rows[vt]["MaHD"].ToString();
             lblMaHD.Text = mahd;
             dtpNgayLapHD.Value = (DateTime)ds.Tables[0].Rows[vt]["NgayTao"];
@@ -404,12 +405,14 @@ namespace _17_PhuongDong_12_HienDuy
             cboNhanVien.SelectedIndex = 0;
 
             string trangthai = ds.Tables[0].Rows[vt]["TrangThai"].ToString();
-            DataView dvmTrangThai = new DataView();
-            dvmTrangThai.Table = ds.Tables[0];
-            cboTrangThai.DataSource = dvmTrangThai;
-            cboTrangThai.DisplayMember = "TrangThai";
-            cboTrangThai.ValueMember = "TrangThai";
-            dvmTrangThai.RowFilter = "TrangThai ='" + trangthai + "'";
+            if (trangthai.ToLower() == "chưa thanh toán")
+            {
+                cboTrangThai.SelectedIndex = 0;
+            }
+            else
+            {
+                cboTrangThai.SelectedIndex = 1;
+            }       
             
             //MaPH
             string maph = ds.Tables[0].Rows[vt]["MaPH"].ToString();
