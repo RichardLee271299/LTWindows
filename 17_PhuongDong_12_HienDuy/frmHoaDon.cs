@@ -465,5 +465,16 @@ namespace _17_PhuongDong_12_HienDuy
             int vt = dgvHD.CurrentCell.RowIndex;
             hienthitextbox(ds, vt);
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Xuly_Chucnang(true);
+            if (flag == 1)
+            { MessageBox.Show("Bạn có muốn hủy thêm?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 2)
+            { MessageBox.Show("Bạn có muốn hủy sửa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+            if (flag == 3)
+            { MessageBox.Show("Bạn có muốn hủy xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question); }
+        }
     }
 }
