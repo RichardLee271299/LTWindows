@@ -73,8 +73,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void QuanLyHoaDonDichVuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmHoaDon frm = new frmHoaDon(this);
-            this.Hide(); //ẩn form1
+            frmHoaDon frm = new frmHoaDon();
             frm.Show(); //sử dụng Show thôi
              
         }
@@ -104,8 +103,7 @@ namespace _17_PhuongDong_12_HienDuy
 
         private void mnuTraPhong_Click(object sender, EventArgs e)
         {
-            frmTraPhong frm = new frmTraPhong();
-            frm.Show();
+          
         }
         
     }

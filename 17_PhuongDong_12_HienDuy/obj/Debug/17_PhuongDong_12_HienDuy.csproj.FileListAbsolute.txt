@@ -122,4 +122,3 @@ C:\Users\Admin\Desktop\wed\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_Phuon
 C:\Users\Admin\Desktop\LTWindows\17_PhuongDong_12_HienDuy\bin\Debug\17_PhuongDong_12_HienDuy.exe.config
 C:\Users\Admin\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.exe
 C:\Users\Admin\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\17_PhuongDong_12_HienDuy.pdb
-C:\Users\Phuong Dong\Desktop\LTWindows\17_PhuongDong_12_HienDuy\obj\Debug\_17_PhuongDong_12_HienDuy.frmTraPhong.resources

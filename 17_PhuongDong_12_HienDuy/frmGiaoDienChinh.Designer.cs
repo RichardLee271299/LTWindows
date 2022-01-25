@@ -38,7 +38,6 @@
             this.QuanLyHoaDonDichVuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuQuanLyNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.đặtPhòngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTraPhong = new System.Windows.Forms.ToolStripMenuItem();
             this.tìmKiếmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemKhacHang = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTimKiemPhong = new System.Windows.Forms.ToolStripMenuItem();
@@ -89,8 +88,7 @@
             this.quảnLýKháchHàngToolStripMenuItem,
             this.QuanLyHoaDonDichVuToolStripMenuItem,
             this.mnuQuanLyNhanVien,
-            this.đặtPhòngToolStripMenuItem,
-            this.mnuTraPhong});
+            this.đặtPhòngToolStripMenuItem});
             this.mnuQuanLy.Name = "mnuQuanLy";
             this.mnuQuanLy.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
             this.mnuQuanLy.Size = new System.Drawing.Size(60, 20);
@@ -159,14 +157,6 @@
             this.đặtPhòngToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
             this.đặtPhòngToolStripMenuItem.Text = "8. Đặt phòng";
             this.đặtPhòngToolStripMenuItem.Click += new System.EventHandler(this.đặtPhòngToolStripMenuItem_Click);
-            // 
-            // mnuTraPhong
-            // 
-            this.mnuTraPhong.Name = "mnuTraPhong";
-            this.mnuTraPhong.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.D9)));
-            this.mnuTraPhong.Size = new System.Drawing.Size(237, 22);
-            this.mnuTraPhong.Text = "9. Trả phòng";
-            this.mnuTraPhong.Click += new System.EventHandler(this.mnuTraPhong_Click);
             // 
             // tìmKiếmToolStripMenuItem
             // 
@@ -570,6 +560,5 @@
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton9;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton7;
         private Guna.UI2.WinForms.Guna2ImageButton btnDatPhong;
-        private System.Windows.Forms.ToolStripMenuItem mnuTraPhong;
     }
 }

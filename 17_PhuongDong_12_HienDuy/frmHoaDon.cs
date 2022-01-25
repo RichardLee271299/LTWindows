@@ -12,14 +12,12 @@ namespace _17_PhuongDong_12_HienDuy
 {
     public partial class frmHoaDon : Form
     {
-        public frmHoaDon(frmGiaoDienChinh frm)
+        public frmHoaDon()
         {
             InitializeComponent();
-            frm1 = frm;
             this.CenterToScreen();
         }
         clsQuanLyKhachSan c = new clsQuanLyKhachSan();
-        frmGiaoDienChinh frm1;
         DataSet timkhachhang = new DataSet();
         DataSet dsnhanvien = new DataSet();
         DataSet ds = new DataSet();
@@ -31,7 +29,7 @@ namespace _17_PhuongDong_12_HienDuy
         string makh;
         private void HoaDon_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frm1.Show();
+            
         }
         void HienThiDuLieu(String sql, DataGridView dgs,ref DataSet ds)
         {

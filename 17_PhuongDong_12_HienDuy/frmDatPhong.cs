@@ -35,6 +35,7 @@ namespace _17_PhuongDong_12_HienDuy
         int flag;
         Boolean mt;
         string madatphong;
+        string mp;
         void HienThiComboBox(DataSet ds, string ten, string ma, ComboBox c)
         {
             c.DataSource = ds.Tables[0];
@@ -104,7 +105,7 @@ namespace _17_PhuongDong_12_HienDuy
             mt = false;
             lp = false;
             Xuly_Textbox(false);
-            string sql = "select MaDatPhong,KhachHang.HoTen,KhachHang.GioiTinh,KhachHang.NgaySinh,KhachHang.DiaChi,LoaiPhong,MaPH,KhachHang.SDT,NgayNhan,NgayTra,N'TinhTrangDatPhong' = case when TinhTrangDatPhong='1' then N'Đã nhận' when TinhTrangDatPhong='0' then N'Chưa nhận' else N'Đã hủy' end,CMND,Gia,MoTa,SoDem from DatPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH inner join Phong on DatPhong.MaPH = Phong.MaPhong";
+            string sql = "select MaDatPhong,KhachHang.HoTen,KhachHang.GioiTinh,KhachHang.NgaySinh,KhachHang.DiaChi,LoaiPhong,MaPH,KhachHang.SDT,NgayNhan,NgayTra,N'TinhTrangDatPhong' = case when TinhTrangDatPhong='1' then N'Đã nhận' when TinhTrangDatPhong='0' then N'Chưa nhận' when TinhTrangDatPhong='3' then N'Đã trả' else N'Đã hủy' end,CMND,Gia,MoTa,SoDem from DatPhong inner join KhachHang on DatPhong.MaKH = KhachHang.MaKH inner join Phong on DatPhong.MaPH = Phong.MaPhong";
             HienThiDuLieu(sql, dgvDanhSach, ref ds);
             t = true;
             Xuly_Chucnang(true);
@@ -341,8 +342,8 @@ namespace _17_PhuongDong_12_HienDuy
             cboMaPhong.DisplayMember = "MaPH";
             cboMaPhong.ValueMember = "MaPH";
             dvmMaPhong.RowFilter = "MaPH ='" + maphong + "'";
-            
-
+            //laymaphong
+            mp = ds.Tables[0].Rows[vt]["MaPH"].ToString();
             //madatphong
             madatphong = ds.Tables[0].Rows[vt]["MaDatPhong"].ToString();
             //Sodem
@@ -367,8 +368,10 @@ namespace _17_PhuongDong_12_HienDuy
                 cboTinhTrang.SelectedIndex = 0;
             else if (tt.ToLower() == "đã nhận")
                 cboTinhTrang.SelectedIndex = 1;
-            else
+            else if (tt.ToLower() == "đã hủy")
                 cboTinhTrang.SelectedIndex = 2;
+            else
+                cboTinhTrang.SelectedIndex = 3;
         }
         private void dgvDanhSach_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -480,6 +483,24 @@ namespace _17_PhuongDong_12_HienDuy
         private void btnHuyPhong_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTraPhong_Click(object sender, EventArgs e)
+        {
+           DialogResult kq = MessageBox.Show("Bạn có muốn trả phòng?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+           if (kq == DialogResult.Yes)
+           {
+              string sql = "update DatPhong set TinhTrangDatPhong = 3 where MaDatPhong ='"+madatphong+"'";
+              string sql2 = "update Phong set TinhTrang = 0 where MaPhong = '"+mp+"'";
+              if (c.CapNhatDuLieu(sql) != 0)
+              {
+                  c.CapNhatDuLieu(sql2);
+                  MessageBox.Show("Cập nhật thành công, mời bạn thanh toán!", "Thông báo");
+                  frmHoaDon frm = new frmHoaDon();
+                  frm.Show();
+                  frmDatPhong_Load(sender, e);
+              }
+           }
         }
     }
 }

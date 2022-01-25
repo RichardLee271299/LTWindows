@@ -79,7 +79,7 @@
             this.TinhTrangDatPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.btnThoat = new Guna.UI2.WinForms.Guna2Button();
+            this.btnTraPhong = new Guna.UI2.WinForms.Guna2Button();
             this.btnHuy = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnLuu = new Guna.UI2.WinForms.Guna2Button();
@@ -703,7 +703,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.btnThoat);
+            this.groupBox5.Controls.Add(this.btnTraPhong);
             this.groupBox5.Controls.Add(this.btnHuy);
             this.groupBox5.Controls.Add(this.btnXoa);
             this.groupBox5.Controls.Add(this.btnLuu);
@@ -720,24 +720,24 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chức năng";
             // 
-            // btnThoat
+            // btnTraPhong
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.White;
-            this.btnThoat.BorderColor = System.Drawing.Color.White;
-            this.btnThoat.BorderRadius = 11;
-            this.btnThoat.CheckedState.Parent = this.btnThoat;
-            this.btnThoat.CustomImages.Parent = this.btnThoat;
-            this.btnThoat.FillColor = System.Drawing.Color.LightSeaGreen;
-            this.btnThoat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.HoverState.Parent = this.btnThoat;
-            this.btnThoat.Location = new System.Drawing.Point(244, 128);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.ShadowDecoration.Parent = this.btnThoat;
-            this.btnThoat.Size = new System.Drawing.Size(106, 38);
-            this.btnThoat.TabIndex = 0;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.btnTraPhong.BackColor = System.Drawing.Color.White;
+            this.btnTraPhong.BorderColor = System.Drawing.Color.White;
+            this.btnTraPhong.BorderRadius = 11;
+            this.btnTraPhong.CheckedState.Parent = this.btnTraPhong;
+            this.btnTraPhong.CustomImages.Parent = this.btnTraPhong;
+            this.btnTraPhong.FillColor = System.Drawing.Color.LightSeaGreen;
+            this.btnTraPhong.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnTraPhong.ForeColor = System.Drawing.Color.White;
+            this.btnTraPhong.HoverState.Parent = this.btnTraPhong;
+            this.btnTraPhong.Location = new System.Drawing.Point(244, 33);
+            this.btnTraPhong.Name = "btnTraPhong";
+            this.btnTraPhong.ShadowDecoration.Parent = this.btnTraPhong;
+            this.btnTraPhong.Size = new System.Drawing.Size(106, 38);
+            this.btnTraPhong.TabIndex = 0;
+            this.btnTraPhong.Text = "Trả Phòng";
+            this.btnTraPhong.Click += new System.EventHandler(this.btnTraPhong_Click);
             // 
             // btnHuy
             // 
@@ -807,7 +807,7 @@
             this.btnSua.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSua.ForeColor = System.Drawing.Color.White;
             this.btnSua.HoverState.Parent = this.btnSua;
-            this.btnSua.Location = new System.Drawing.Point(244, 33);
+            this.btnSua.Location = new System.Drawing.Point(244, 127);
             this.btnSua.Name = "btnSua";
             this.btnSua.ShadowDecoration.Parent = this.btnSua;
             this.btnSua.Size = new System.Drawing.Size(106, 38);
@@ -854,7 +854,8 @@
             this.cboTinhTrang.Items.AddRange(new object[] {
             "Chưa nhận",
             "Đã nhận",
-            "Đã hủy"});
+            "Đã hủy",
+            "Đã trả"});
             this.cboTinhTrang.Location = new System.Drawing.Point(505, 396);
             this.cboTinhTrang.Name = "cboTinhTrang";
             this.cboTinhTrang.Size = new System.Drawing.Size(180, 24);
@@ -866,7 +867,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1253, 679);
+            this.ClientSize = new System.Drawing.Size(1270, 679);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.cboTinhTrang);
@@ -938,7 +939,7 @@
         private Guna.UI2.WinForms.Guna2Button btnThemKhachHang;
         private System.Windows.Forms.Label lblSoDem;
         private System.Windows.Forms.GroupBox groupBox5;
-        private Guna.UI2.WinForms.Guna2Button btnThoat;
+        private Guna.UI2.WinForms.Guna2Button btnTraPhong;
         private Guna.UI2.WinForms.Guna2Button btnHuy;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnLuu;
