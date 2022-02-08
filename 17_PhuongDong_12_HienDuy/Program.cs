@@ -16,7 +16,7 @@ namespace _17_PhuongDong_12_HienDuy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmGiaoDienChinh());
+            Application.Run(new frmDangNhap());
         }
     }
 }
