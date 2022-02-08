@@ -73,6 +73,26 @@ namespace _17_PhuongDong_12_HienDuy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cua {
+            get {
+                object obj = ResourceManager.GetObject("cua", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cua2 {
+            get {
+                object obj = ResourceManager.GetObject("cua2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dichvu {
             get {
                 object obj = ResourceManager.GetObject("dichvu", resourceCulture);
@@ -146,6 +166,36 @@ namespace _17_PhuongDong_12_HienDuy.Properties {
         internal static System.Drawing.Bitmap phong2 {
             get {
                 object obj = ResourceManager.GetObject("phong2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixlr_bg_result {
+            get {
+                object obj = ResourceManager.GetObject("pixlr-bg-result", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pixlr_bg_result__1_ {
+            get {
+                object obj = ResourceManager.GetObject("pixlr-bg-result (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thantai_unscreen {
+            get {
+                object obj = ResourceManager.GetObject("thantai-unscreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

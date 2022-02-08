@@ -238,6 +238,21 @@
   <ItemGroup>
     <None Include="Resources\dichvu1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cua.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cua2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixlr-bg-result.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thantai-unscreen.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pixlr-bg-result %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
